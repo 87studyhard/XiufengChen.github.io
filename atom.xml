@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-15T16:16:26.809Z</updated>
+  <updated>2016-07-20T12:44:45.918Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Working with Google Map API on Reactjs[C</title>
+    <title>Working with Google Map API on Reactjs</title>
     <link href="http://yoursite.com/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/"/>
     <id>http://yoursite.com/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/</id>
     <published>2016-07-15T16:01:38.000Z</published>
-    <updated>2016-07-15T16:16:26.809Z</updated>
+    <updated>2016-07-20T12:44:45.918Z</updated>
     
     <content type="html">&lt;p&gt;When we develop a component using 3rd party APIs like Google, Github, we must use their API or load their javascript libraries to get instances they made. There are multiple ways to load 3rd API libraries: one is including libraries with &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;  on the original markup for the page, another is lazily-loading the libraries.&lt;/p&gt;
 &lt;p&gt;We can get the purpose and tutorial of Lazy Loading Asyncronous Javascript &lt;a href=&quot;https://friendlybit.com/js/lazy-loading-asyncronous-javascript/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;here&lt;/a&gt;. &lt;/p&gt;
@@ -36,11 +36,11 @@
   </entry>
   
   <entry>
-    <title>Learning Reactjs 2</title>
+    <title>Reactjs学习笔记（二）</title>
     <link href="http://yoursite.com/2016/07/07/Learning-Reactjs-2/"/>
     <id>http://yoursite.com/2016/07/07/Learning-Reactjs-2/</id>
     <published>2016-07-07T23:01:59.000Z</published>
-    <updated>2016-07-20T12:39:25.970Z</updated>
+    <updated>2016-07-20T12:44:02.360Z</updated>
     
     <content type="html">&lt;h1 id=&quot;START-UP-A-REACT-PROJECT&quot;&gt;&lt;a href=&quot;#START-UP-A-REACT-PROJECT&quot; class=&quot;headerlink&quot; title=&quot;START UP A REACT PROJECT&quot;&gt;&lt;/a&gt;START UP A REACT PROJECT&lt;/h1&gt;&lt;h2 id=&quot;Setting-up-package-json&quot;&gt;&lt;a href=&quot;#Setting-up-package-json&quot; class=&quot;headerlink&quot; title=&quot;Setting up package.json&quot;&gt;&lt;/a&gt;Setting up package.json&lt;/h2&gt;&lt;p&gt;Create a new one using npm init command, selecting defaults where uncertain.&lt;br&gt;&lt;strong&gt;/package.json&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;react-speed-coding-code&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;string&quot;&gt;&quot;version&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;1.0.0&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;string&quot;&gt;&quot;description&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Companion code for React Speed Coding book&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;string&quot;&gt;&quot;main&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;index.js&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;string&quot;&gt;&quot;private&quot;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;string&quot;&gt;&quot;scripts&quot;&lt;/span&gt;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		&lt;span class=&quot;string&quot;&gt;&quot;test&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;echo \&quot;Error: no test specified\&quot; &amp;amp;&amp;amp; exit 1&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;string&quot;&gt;&quot;author&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Manav Sehgal&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&lt;span class=&quot;string&quot;&gt;&quot;license&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;MIT&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -278,11 +278,11 @@
   </entry>
   
   <entry>
-    <title>Learning Reactjs</title>
+    <title>Reactjs学习笔记（一）</title>
     <link href="http://yoursite.com/2016/06/14/Learning-Reactjs-1/"/>
     <id>http://yoursite.com/2016/06/14/Learning-Reactjs-1/</id>
     <published>2016-06-14T20:19:34.000Z</published>
-    <updated>2016-07-20T12:37:39.694Z</updated>
+    <updated>2016-07-20T12:43:15.532Z</updated>
     
     <content type="html">&lt;h1 id=&quot;Cheatsheet-for-props-state-events&quot;&gt;&lt;a href=&quot;#Cheatsheet-for-props-state-events&quot; class=&quot;headerlink&quot; title=&quot;Cheatsheet for props, state, events&quot;&gt;&lt;/a&gt;Cheatsheet for props, state, events&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Properties:&lt;/strong&gt; Passing input data from Root/Owner component to Child. Owner defines a property=value which is used within rendered component. The “Owner-ownee” relationship can exist without property passing, as in owner simply rendering a component.&lt;br&gt;Owner component passing property:&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;Hello greet=&amp;#123; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.state.currentGreeting &amp;#125; message=&lt;span class=&quot;string&quot;&gt;&quot;World!&quot;&lt;/span&gt; /&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;State:&lt;/strong&gt; Defined within component whose state changes. State change updates rendered markup. Components can be stateless. Treat this.state as immutable. Do not change its value directly. Use setState method instead.&lt;br&gt;Default state:&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.state = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	currentGreeting: props.greet&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -312,19 +312,18 @@
   </entry>
   
   <entry>
-    <title>Learning Angularjs 4</title>
+    <title>Angularjs学习笔记（四）</title>
     <link href="http://yoursite.com/2016/05/05/Learning-Angularjs-4/"/>
     <id>http://yoursite.com/2016/05/05/Learning-Angularjs-4/</id>
     <published>2016-05-05T21:39:41.000Z</published>
-    <updated>2016-07-20T12:36:21.997Z</updated>
+    <updated>2016-07-20T12:42:35.134Z</updated>
     
     <content type="html">&lt;h2 id=&quot;HTML-Compiler&quot;&gt;&lt;a href=&quot;#HTML-Compiler&quot; class=&quot;headerlink&quot; title=&quot;HTML Compiler&quot;&gt;&lt;/a&gt;HTML Compiler&lt;/h2&gt;&lt;p&gt;每一个网页元素都对应着一个对象object&lt;/p&gt;
-</content>
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;</content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;HTML-Compiler&quot;&gt;&lt;a href=&quot;#HTML-Compiler&quot; class=&quot;headerlink&quot; title=&quot;HTML Compiler&quot;&gt;&lt;/a&gt;HTML Compiler&lt;/h2&gt;&lt;p&gt;每一个网页元素都对应着一个对象object&lt;/p&gt;
-
     
     </summary>
     
@@ -340,10 +339,12 @@
     <link href="http://yoursite.com/2016/04/29/Learning-Angularjs-3/"/>
     <id>http://yoursite.com/2016/04/29/Learning-Angularjs-3/</id>
     <published>2016-04-29T19:09:20.000Z</published>
-    <updated>2016-07-20T12:35:26.826Z</updated>
+    <updated>2016-07-20T12:57:33.499Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Angularjs中的路由&quot;&gt;&lt;a href=&quot;#Angularjs中的路由&quot; class=&quot;headerlink&quot; title=&quot;Angularjs中的路由&quot;&gt;&lt;/a&gt;Angularjs中的路由&lt;/h2&gt;&lt;p&gt;Angularjs的路由策略属于前端路由，前端路由和后端路由的区别在于，Angularjs前端路由属于锚点路由，锚点路由和后端路由的区别就像点击html中设置的锚点和点击html中设置的超链接之间的不同。首先来看怎样设置锚点：&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;a id = &quot;top&quot;&amp;gt;这里是一段文字&amp;lt;/a&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;div&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&amp;lt;!-- 此处有若干行代码 --&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;a href = &quot;#top&quot;&amp;gt;点击&amp;lt;/a&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;设置锚点由两部分组成，锚点和点击链接，因为锚点标签的href属性值以“#”开头，并且锚点目标在本页中，所以点击链接不会带来页面的刷新。&lt;br&gt;锚点路由原理与之类似，如果当前页面处于&lt;figure class=&quot;highlight&quot;&gt;&lt;figcaption&gt;&lt;span&gt;http://localhost:9000/#/ ```，当点击锚点时触发**hashchange事件**，锚点部分的值变为```js&lt;/span&gt;&lt;a href=&quot;http://localhost:9000/#/about```,之后根据Angularjs的routeProvider设置的路由策略去取得相应的页面部分，当前页面不刷新，并不是去后端重新取回页面。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;link&lt;/a&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;和锚点与超链接一样，在URL中加入“#”是区分Angularjs管理路径还是WebServer管理路径的方法。默认情况下，是Angularjs管理路径，如果这时在锚点标签中不加入“#”开头，会引起“Cannot get /..”错误，因为当前连接以为是发给后端的请求，但是后端没有对应的后端路由。因此Angularjs的URL会出现#参与前端路由。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;但是有#参与的URL使得用户体验不太友好，也使得业务逻辑直接暴露出来，其他开发者能直接看出来哪些部分是前端，哪些部分是后端。所以，Angularjs提供了HTML5的路由模式，可以去掉#并且实现前端路由。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;具体如何处理可以参见一片博客[AngularJS去掉的URL里的#号](http://blog.fens.me/angularjs-url/)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;该博客中提出了一个问题，如果直接访问```http://localhost:9000/about```，会出现“Cannot get /about”错误。原因就是因为浏览器直接解析URL路径，没有进入Angularjs的业务逻辑，之前设置的HTML5路由策略一概忽略，后端没有设置/about的路由，当然请求无法得到。解决方法就是在后端路由添加代码，转发给Angularjs进行路由管理。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;前面文章中提到过provider实现的方法与过程，通过Angular源码可以看出当使用provider recipe创建一个provider时，实例化了一个它name对应的service，返回了一个name+Provider对应的provider，以便在config函数里使用。除了config函数以外，都使用name对应的service。因此，Angularjs提供的$route服务和$routeProvider的使用区别一目了然。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;## $routeProvider&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;## $route&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$route 服务依赖$location和$routeParams&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;```javascript&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	// Given:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	// URL: http://server.com/index.html#/Chapter/1/Section/2?search=moby&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	// Route: /Chapter/:chapterId/Section/:sectionId&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	//&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	// Then&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	$routeParams ==&amp;gt; &amp;#123;chapterId:&#39;1&#39;, sectionId:&#39;2&#39;, search:&#39;moby&#39;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;设置锚点由两部分组成，锚点和点击链接，因为锚点标签的href属性值以“#”开头，并且锚点目标在本页中，所以点击链接不会带来页面的刷新。&lt;br&gt;锚点路由原理与之类似，如果当前页面处于&lt;a href=&quot;http://localhost:9000/#/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:9000/#/&lt;/a&gt; ，当点击锚点时触发&lt;strong&gt;hashchange事件&lt;/strong&gt;，锚点部分的值变为 &lt;a href=&quot;http://localhost:9000/#/about&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:9000/#/about&lt;/a&gt;, 之后根据Angularjs的routeProvider设置的路由策略去取得相应的页面部分，当前页面不刷新，并不是去后端重新取回页面。&lt;br&gt;和锚点与超链接一样，在URL中加入“#”是区分Angularjs管理路径还是WebServer管理路径的方法。默认情况下，是Angularjs管理路径，如果这时在锚点标签中不加入“#”开头，会引起“Cannot get /..”错误，因为当前连接以为是发给后端的请求，但是后端没有对应的后端路由。因此Angularjs的URL会出现#参与前端路由。&lt;br&gt;但是有#参与的URL使得用户体验不太友好，也使得业务逻辑直接暴露出来，其他开发者能直接看出来哪些部分是前端，哪些部分是后端。所以，Angularjs提供了HTML5的路由模式，可以去掉#并且实现前端路由。&lt;br&gt;具体如何处理可以参见一片博客&lt;a href=&quot;http://blog.fens.me/angularjs-url/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AngularJS去掉的URL里的#号&lt;/a&gt;&lt;br&gt;该博客中提出了一个问题，如果直接访问&lt;a href=&quot;http://localhost:9000/about，会出现“Cannot&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:9000/about，会出现“Cannot&lt;/a&gt; get /about”错误。原因就是因为浏览器直接解析URL路径，没有进入Angularjs的业务逻辑，之前设置的HTML5路由策略一概忽略，后端没有设置/about的路由，当然请求无法得到。解决方法就是在后端路由添加代码，转发给Angularjs进行路由管理。&lt;/p&gt;
+&lt;p&gt;前面文章中提到过provider实现的方法与过程，通过Angular源码可以看出当使用provider recipe创建一个provider时，实例化了一个它name对应的service，返回了一个name+Provider对应的provider，以便在config函数里使用。除了config函数以外，都使用name对应的service。因此，Angularjs提供的$route服务和$routeProvider的使用区别一目了然。&lt;/p&gt;
+&lt;h2 id=&quot;routeProvider&quot;&gt;&lt;a href=&quot;#routeProvider&quot; class=&quot;headerlink&quot; title=&quot;$routeProvider&quot;&gt;&lt;/a&gt;$routeProvider&lt;/h2&gt;&lt;h2 id=&quot;route&quot;&gt;&lt;a href=&quot;#route&quot; class=&quot;headerlink&quot; title=&quot;$route&quot;&gt;&lt;/a&gt;$route&lt;/h2&gt;&lt;p&gt;$route 服务依赖$location和$routeParams&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Given:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// URL: http://server.com/index.html#/Chapter/1/Section/2?search=moby&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Route: /Chapter/:chapterId/Section/:sectionId&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Then&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$routeParams ==&amp;gt; &amp;#123;chapterId:&lt;span class=&quot;string&quot;&gt;&#39;1&#39;&lt;/span&gt;, sectionId:&lt;span class=&quot;string&quot;&gt;&#39;2&#39;&lt;/span&gt;, search:&lt;span class=&quot;string&quot;&gt;&#39;moby&#39;&lt;/span&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
