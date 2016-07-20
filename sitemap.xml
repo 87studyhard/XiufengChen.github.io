@@ -2,16 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2016/03/02/Array-Questions/</loc>
+    <loc>http://yoursite.com/2016/07/07/Learning-Reactjs-2/</loc>
     
-    <lastmod>2016-07-13T02:06:44.780Z</lastmod>
+    <lastmod>2016-07-20T12:39:25.970Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/06/14/Learning-Reactjs-1/</loc>
+    
+    <lastmod>2016-07-20T12:37:39.694Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/05/05/Learning-Angularjs-4/</loc>
+    
+    <lastmod>2016-07-20T12:36:21.997Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/04/29/Learning-Angularjs-3/</loc>
+    
+    <lastmod>2016-07-20T12:35:26.826Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/04/28/Learning-Angularjs-2/</loc>
+    
+    <lastmod>2016-07-20T12:34:40.195Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/03/30/Learning-Angularjs-1/</loc>
+    
+    <lastmod>2016-07-20T12:33:06.756Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/</loc>
+    
+    <lastmod>2016-07-15T16:16:26.809Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2016/03/02/Basic-Algorithm-Questions-Updating-all-the-time/</loc>
     
-    <lastmod>2016-04-24T04:10:31.860Z</lastmod>
+    <lastmod>2016-07-13T02:52:12.276Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/03/02/Array-Questions/</loc>
+    
+    <lastmod>2016-07-13T02:06:44.780Z</lastmod>
     
   </url>
   
