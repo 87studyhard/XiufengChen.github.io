@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Upload Code to Github · Xiufeng</title><meta name="description" content="Upload Code to Github - Xiufeng Chen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Upload Code to Github</h1><div class="post-info">Mar 23, 2016</div><div class="post-content"><p>After setting up your rrs keyparse and those a banch of work. How to submit code to github repository.</p>
+<ol>
+<li>Create a repository on your github on website.</li>
+<li>Check adding .readme file.</li>
+<li>Go to your github folder in your file explore, for myself I use windows file  explore.</li>
+<li>Right click and choose ‘Git Bash Here’.</li>
+<li><p>Before starting initalizing your work, we need to authenticate your public key.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
+</li>
+<li><p>You have to type your passparse to authenticaate the rrs key.</p>
+</li>
+<li><p>After that, you can clone your repository created through the website down to your machine, using:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/XiufengChen/XXXXXXX.git</div></pre></td></tr></table></figure>
+</li>
+<li><p>Then you can copy and paste your code to this  local repository.</p>
+</li>
+<li>Submit your code to remote git repository using:<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add .    // add . means aadd all files to repos</div><div class="line">git commit -m <span class="string">"your comment"</span></div><div class="line">git push origin master</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</div></article></div></section><footer><div class="paginator"><a href="/2016/03/24/Dynamic-Programming/" class="prev">PREV</a><a href="/2016/03/22/Module-in-Nodejs/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>

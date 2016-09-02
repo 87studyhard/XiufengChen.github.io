@@ -1,0 +1,61 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Database Questions · Xiufeng</title><meta name="description" content="Database Questions - Xiufeng Chen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Database Questions</h1><div class="post-info">Mar 18, 2016</div><div class="post-content"><p>Here comes some database questions which can represent common knowledgement of database.<br>All the contents derive from <a href="http://www.javatpoint.com/sql-interview-questions" target="_blank" rel="external">Interview Questions</a></p>
+<h3 id="How-many-types-of-database-languages-are"><a href="#How-many-types-of-database-languages-are" class="headerlink" title="How many types of database languages are?"></a>How many types of database languages are?</h3><p>There are four types of database languages:</p>
+<ul>
+<li>Data Definition Language (DDL) e.g. CREATE, ALTER, DROP etc.</li>
+<li>Data Manipulation Language (DML) e.g. SELECT, UPDATE, INSERT etc.</li>
+<li>DATA Control Language (DCL) e.g. GRANT and REVOKE.</li>
+<li>Transaction Control Language (TCL) e.g. COMMIT and ROLLBACK.</li>
+</ul>
+<a id="more"></a>
+<h3 id="What-is-normalization"><a href="#What-is-normalization" class="headerlink" title="What is normalization?"></a>What is normalization?</h3><p>Normalization is a process of analyzing the given relation schemas according to their functional dependencies. It is used to minimize redundancy and also minimize insertion, deletion and update distractions.</p>
+<h3 id="What-is-Denormalization"><a href="#What-is-Denormalization" class="headerlink" title="What is Denormalization?"></a>What is Denormalization?</h3><p>Denormalization is the process of boosting up database performance and adding of redundant data which helps to get rid of complex data.</p>
+<h3 id="What-is-functional-Dependency"><a href="#What-is-functional-Dependency" class="headerlink" title="What is functional Dependency?"></a>What is functional Dependency?</h3><p>Functional Dependency is the starting point of normalization. It exists when a relation between two attributes allows you to uniquely determine the corresponding attribute’s value.</p>
+<h3 id="What-is-the-difference-between-clustered-and-non-clustered-index-in-SQL"><a href="#What-is-the-difference-between-clustered-and-non-clustered-index-in-SQL" class="headerlink" title="What is the difference between clustered and non clustered index in SQL?"></a>What is the difference between clustered and non clustered index in SQL?</h3><p>There are mainly two type of indexes in SQL, Clustered index and non clustered index. The differences between these two indexes is very important from SQL performance perspective.</p>
+<ol>
+<li><p>One table can have only one clustered index but it can have many non clustered index. (approximately 250).</p>
+</li>
+<li><p>clustered index determines how data is stored physically in table. Actually clustered index stores data in cluster, related data is stored together so it makes simple to retrieve data.</p>
+</li>
+<li><p>reading from a clustered index is much faster than reading from non clustered index from the same table.</p>
+</li>
+<li><p>clustered index sort and store data rows in the table or view based on their key value, while non cluster have a structure separate from the data row.</p>
+</li>
+</ol>
+<h3 id="What-is-the-difference-between-DELETE-and-TRUNCATE-statement-in-SQL"><a href="#What-is-the-difference-between-DELETE-and-TRUNCATE-statement-in-SQL" class="headerlink" title="What is the difference between DELETE and TRUNCATE statement in SQL?"></a>What is the difference between DELETE and TRUNCATE statement in SQL?</h3><p>The main differences between SQL DELETE and TRUNCATE statements are given below:</p>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>DELETE</th>
+<th>TRUNCATE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>DELETE is a DML command.</td>
+<td>TRUNCATE is a DDL command.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>We can use WHERE clause in DELETE command.</td>
+<td>We cannot use WHERE clause with TRUNCATE</td>
+</tr>
+<tr>
+<td>3</td>
+<td>DELETE statement is used to delete a row from a table</td>
+<td>TRUNCATE statement is used to remove all the rows from a table.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>DELETE is slower than TRUNCATE statement.</td>
+<td>TRUNCATE statement is faster than DELETE statement.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>You can rollback data after using DELETE statement.</td>
+<td>It is not possible to rollback after using TRUNCATE statement.</td>
+</tr>
+</tbody>
+</table>
+</div></article></div></section><footer><div class="paginator"><a href="/2016/03/22/Module-in-Nodejs/" class="prev">PREV</a><a href="/2016/03/16/Thinking-in-Comparing-Two-Objects/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
