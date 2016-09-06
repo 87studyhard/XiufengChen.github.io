@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xiufengchen.github.io/2016/04/22/K-sum-in-Leetcode/</loc>
+    
+    <lastmod>2016-09-06T18:49:36.803Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xiufengchen.github.io/2016/06/14/Learning-Reactjs-1/</loc>
+    
+    <lastmod>2016-09-06T18:48:45.711Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://xiufengchen.github.io/2016/07/07/Learning-Reactjs-2/</loc>
     
-    <lastmod>2016-09-06T18:00:50.757Z</lastmod>
+    <lastmod>2016-09-06T18:48:24.218Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xiufengchen.github.io/2016/08/15/Async-Actions/</loc>
+    
+    <lastmod>2016-09-06T18:45:24.983Z</lastmod>
     
   </url>
   
@@ -37,20 +58,6 @@
   </url>
   
   <url>
-    <loc>http://xiufengchen.github.io/2016/06/14/Learning-Reactjs-1/</loc>
-    
-    <lastmod>2016-09-06T17:40:01.845Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xiufengchen.github.io/2016/08/15/Async-Actions/</loc>
-    
-    <lastmod>2016-09-06T17:36:21.908Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://xiufengchen.github.io/2016/04/29/Learning-Angularjs-3/</loc>
     
     <lastmod>2016-09-06T17:14:16.799Z</lastmod>
@@ -72,14 +79,14 @@
   </url>
   
   <url>
-    <loc>http://xiufengchen.github.io/categories/index.html</loc>
+    <loc>http://xiufengchen.github.io/about/index.html</loc>
     
     <lastmod>2016-09-06T14:23:09.130Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://xiufengchen.github.io/about/index.html</loc>
+    <loc>http://xiufengchen.github.io/categories/index.html</loc>
     
     <lastmod>2016-09-06T14:23:09.130Z</lastmod>
     
@@ -145,13 +152,6 @@
     <loc>http://xiufengchen.github.io/2016/03/02/List-Node-Summary/</loc>
     
     <lastmod>2016-09-02T20:30:00.633Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xiufengchen.github.io/2016/04/22/K-sum-in-Leetcode/</loc>
-    
-    <lastmod>2016-09-02T20:29:07.629Z</lastmod>
     
   </url>
   
