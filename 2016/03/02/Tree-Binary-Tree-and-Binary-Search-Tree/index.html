@@ -1,4 +1,91 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Tree, Binary Tree and Binary Search Tree · Xiufeng</title><meta name="description" content="Tree, Binary Tree and Binary Search Tree - Xiufeng Chen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Tree, Binary Tree and Binary Search Tree</h1><div class="post-info">Mar 2, 2016</div><div class="post-content"><h2 id="Balanced-Tree"><a href="#Balanced-Tree" class="headerlink" title="Balanced Tree"></a>Balanced Tree</h2><p>判断一个二叉树是否为平衡二叉树的方法：<br>根据定义：<br>A height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.<br>说明要分别计算二叉树的左右子树，如果差度大于1，则不是平衡二叉树。<br>计算二叉树深度：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getDepth</span><span class="params">(TreeNode r)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(r == <span class="keyword">null</span>)&#123;</div><div class="line">    	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span> + Math.max(getDepth(r.left), getDepth(r.right));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Tree, Binary Tree and Binary Search Tree - Xiufeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Balanced Tree判断一个二叉树是否为平衡二叉树的方法：根据定义：A height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.说明要分别计算二叉树的左右子树，如果差度大于1，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tree, Binary Tree and Binary Search Tree">
+<meta property="og:url" content="http://yoursite.com/2016/03/02/Tree-Binary-Tree-and-Binary-Search-Tree/index.html">
+<meta property="og:site_name" content="Xiufeng">
+<meta property="og:description" content="Balanced Tree判断一个二叉树是否为平衡二叉树的方法：根据定义：A height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.说明要分别计算二叉树的左右子树，如果差度大于1，">
+<meta property="og:image" content="http://7xrk1c.com1.z0.glb.clouddn.com/preOrderInOrderPostOrder.png">
+<meta property="og:updated_time" content="2016-09-02T20:37:11.317Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tree, Binary Tree and Binary Search Tree">
+<meta name="twitter:description" content="Balanced Tree判断一个二叉树是否为平衡二叉树的方法：根据定义：A height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.说明要分别计算二叉树的左右子树，如果差度大于1，">
+<meta name="twitter:image" content="http://7xrk1c.com1.z0.glb.clouddn.com/preOrderInOrderPostOrder.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Tree-Binary-Tree-and-Binary-Search-Tree" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Tree, Binary Tree and Binary Search Tree
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/02/Tree-Binary-Tree-and-Binary-Search-Tree/" class="article-date">
+  <time datetime="2016-03-03T04:58:15.000Z" itemprop="datePublished">2016-03-02</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Balanced-Tree"><a href="#Balanced-Tree" class="headerlink" title="Balanced Tree"></a>Balanced Tree</h2><p>判断一个二叉树是否为平衡二叉树的方法：<br>根据定义：<br>A height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.<br>说明要分别计算二叉树的左右子树，如果差度大于1，则不是平衡二叉树。<br>计算二叉树深度：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getDepth</span><span class="params">(TreeNode r)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(r == <span class="keyword">null</span>)&#123;</div><div class="line">    	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span> + Math.max(getDepth(r.left), getDepth(r.right));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>如果差度小于1，则分别计算左右子节点。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isBalanced</span><span class="params">(TreeNode root)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    <span class="keyword">int</span> leftDepth = getDepth(root.left);</div><div class="line">    <span class="keyword">int</span> rightDepth = getDepth(root.right);</div><div class="line">    <span class="keyword">if</span>(Math.abs(leftDepth - rightDepth) &gt; <span class="number">1</span>)<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">return</span> isBalanced(root.left)&amp;&amp;isBalanced(root.right);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h2 id="BFS-广度优先搜索"><a href="#BFS-广度优先搜索" class="headerlink" title="BFS: 广度优先搜索"></a>BFS: 广度优先搜索</h2><p>广度优先搜索二叉树（层序遍历）是用队列来实现的，从二叉树第一层（根节点）开始，自上之下逐层遍历，从左到右的顺序对结点逐一访问。</p>
@@ -8,4 +95,77 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">levelOrderTraversal</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)&#123;</div><div class="line">    	System.out.println(<span class="string">"empty tree"</span>);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    ArrayDeque&lt;TreeNode&gt; queue = <span class="keyword">new</span> ArrayDeque&lt;TreeNode&gt;();</div><div class="line">    queue.add(root);</div><div class="line">    <span class="keyword">while</span>(queue.isEmpty() == <span class="keyword">false</span>)&#123;</div><div class="line">    	TreeNode node = queue.remove();</div><div class="line">        System.out.print(node.value + <span class="string">"   "</span>);</div><div class="line">        <span class="keyword">if</span>(node.left != <span class="keyword">null</span>)&#123;</div><div class="line">        	queue.add(node.left);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(node.right != <span class="keyword">null</span>)&#123;</div><div class="line">        	queue.add(node.right);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    System.out.print(<span class="string">"\n"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="DFS：深度优先搜索实现方式：栈。"><a href="#DFS：深度优先搜索实现方式：栈。" class="headerlink" title="DFS：深度优先搜索实现方式：栈。"></a>DFS：深度优先搜索实现方式：栈。</h2><p>深度优先遍历，相当于先根遍历，采用非递归方法实现，需要辅助的数据结构是栈。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">depthOrderTraversal</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)&#123;</div><div class="line">    	System.out.println(<span class="string">"empty tree"</span>);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    ArrayDeque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;TreeNode&gt;();</div><div class="line">    stack.push(root);</div><div class="line">    <span class="keyword">while</span>(stack.isEmpty()==<span class="keyword">false</span>)&#123;</div><div class="line">    	TreeNode node = stack.pop();</div><div class="line">        System.out.print(node.value + <span class="string">"   "</span>);</div><div class="line">        <span class="keyword">if</span>(node.right != <span class="keyword">null</span>)&#123;</div><div class="line">        	stack.push(node.right);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(node.left != <span class="keyword">null</span>)&#123;</div><div class="line">        	stack.push(node.left);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    System.out.print(<span class="string">"\n"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="Per-Order-In-Order-Post-Order"><a href="#Per-Order-In-Order-Post-Order" class="headerlink" title="Per-Order, In-Order, Post-Order"></a>Per-Order, In-Order, Post-Order</h2><p><img src="http://7xrk1c.com1.z0.glb.clouddn.com/preOrderInOrderPostOrder.png" alt="perorder-inorder-postorder"></p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/03/03/String-Questions/" class="prev">PREV</a><a href="/2016/03/02/Array-Questions/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BST/">BST</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/03/String-Questions/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          String Questions
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/02/Array-Questions/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Array Questions&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Xiufeng Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

@@ -1,4 +1,98 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Thinking in Comparing Two Objects · Xiufeng</title><meta name="description" content="Thinking in Comparing Two Objects - Xiufeng Chen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Thinking in Comparing Two Objects</h1><div class="post-info">Mar 16, 2016</div><div class="post-content"><h2 id="由比较两个Java对象引发的思考"><a href="#由比较两个Java对象引发的思考" class="headerlink" title="由比较两个Java对象引发的思考"></a>由比较两个Java对象引发的思考</h2><p>本文灵感来自于研究Java搜索算法，既然是搜索当然是基于多个不同值之间的搜索。但是Java怎样区分两个对象是相同还是不同的。本文总结了之中的来龙去脉，大部分内容来源于网络。</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Thinking in Comparing Two Objects - Xiufeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="由比较两个Java对象引发的思考本文灵感来自于研究Java搜索算法，既然是搜索当然是基于多个不同值之间的搜索。但是Java怎样区分两个对象是相同还是不同的。本文总结了之中的来龙去脉，大部分内容来源于网络。
+Java中参数的传递方式来源于 java参数传递Java中的参数传递机制一直以来大家都争论不休，究竟是“传值”还是“传址（传引用）”，争论的双方各执一词，互不相让。不但“菜鸟”们一头雾水，一些“">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Thinking in Comparing Two Objects">
+<meta property="og:url" content="http://yoursite.com/2016/03/16/Thinking-in-Comparing-Two-Objects/index.html">
+<meta property="og:site_name" content="Xiufeng">
+<meta property="og:description" content="由比较两个Java对象引发的思考本文灵感来自于研究Java搜索算法，既然是搜索当然是基于多个不同值之间的搜索。但是Java怎样区分两个对象是相同还是不同的。本文总结了之中的来龙去脉，大部分内容来源于网络。
+Java中参数的传递方式来源于 java参数传递Java中的参数传递机制一直以来大家都争论不休，究竟是“传值”还是“传址（传引用）”，争论的双方各执一词，互不相让。不但“菜鸟”们一头雾水，一些“">
+<meta property="og:image" content="http://7xrk1c.com1.z0.glb.clouddn.com/java-transfer-value-1.jpg">
+<meta property="og:image" content="http://7xrk1c.com1.z0.glb.clouddn.com/java-transfer-value-2.jpg">
+<meta property="og:image" content="http://7xrk1c.com1.z0.glb.clouddn.com/java-transfer-value-3.jpg">
+<meta property="og:image" content="http://7xrk1c.com1.z0.glb.clouddn.com/java-transfer-value-4.jpg">
+<meta property="og:image" content="http://7xrk1c.com1.z0.glb.clouddn.com/java-transfer-value-5.jpg">
+<meta property="og:updated_time" content="2016-09-02T20:35:37.849Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Thinking in Comparing Two Objects">
+<meta name="twitter:description" content="由比较两个Java对象引发的思考本文灵感来自于研究Java搜索算法，既然是搜索当然是基于多个不同值之间的搜索。但是Java怎样区分两个对象是相同还是不同的。本文总结了之中的来龙去脉，大部分内容来源于网络。
+Java中参数的传递方式来源于 java参数传递Java中的参数传递机制一直以来大家都争论不休，究竟是“传值”还是“传址（传引用）”，争论的双方各执一词，互不相让。不但“菜鸟”们一头雾水，一些“">
+<meta name="twitter:image" content="http://7xrk1c.com1.z0.glb.clouddn.com/java-transfer-value-1.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Thinking-in-Comparing-Two-Objects" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Thinking in Comparing Two Objects
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/16/Thinking-in-Comparing-Two-Objects/" class="article-date">
+  <time datetime="2016-03-17T01:52:05.000Z" itemprop="datePublished">2016-03-16</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Summary/">Summary</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="由比较两个Java对象引发的思考"><a href="#由比较两个Java对象引发的思考" class="headerlink" title="由比较两个Java对象引发的思考"></a>由比较两个Java对象引发的思考</h2><p>本文灵感来自于研究Java搜索算法，既然是搜索当然是基于多个不同值之间的搜索。但是Java怎样区分两个对象是相同还是不同的。本文总结了之中的来龙去脉，大部分内容来源于网络。</p>
 <h3 id="Java中参数的传递方式"><a href="#Java中参数的传递方式" class="headerlink" title="Java中参数的传递方式"></a>Java中参数的传递方式</h3><p>来源于 <a href="http://blog.sina.com.cn/s/blog_4b622a8e0100c1bo.html" target="_blank" rel="external">java参数传递</a><br>Java中的参数传递机制一直以来大家都争论不休，究竟是“传值”还是“传址（传引用）”，争论的双方各执一词，互不相让。不但“菜鸟”们一头雾水，一些“老鸟”也只知道结果却说不出所以然来。我相信看过下面的内容后，你就会明白一些。<br>先看基本类型作为参数传递的例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test1</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> n = <span class="number">3</span>;</div><div class="line">		System.out.println(<span class="string">"Before change, n = "</span> + n);</div><div class="line">		changeData(n);</div><div class="line">		System.out.println(<span class="string">"After changeData(n), n = "</span> + n);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">changeData</span><span class="params">(<span class="keyword">int</span> nn)</span> </span>&#123;</div><div class="line">		n = <span class="number">10</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>我想这个例子大家都明白，基本类型作为参数传递时，是传递值的拷贝，无论你怎么改变这个拷贝，原值是不会改变的，输出的结果证明了这一点：<br>Before change, n = 3<br>After changeData(n), n = 3<br>那么，我们现在来看看对象作为参数传递的例子，这也是大家争论的地方。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test2</span> </span>&#123;</div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		StringBuffer sb = <span class="keyword">new</span> StringBuffer(<span class="string">"Hello "</span>);</div><div class="line">		System.out.println(<span class="string">"Before change, sb = "</span> + sb);</div><div class="line">		changeData(sb);</div><div class="line">		System.out.println(<span class="string">"After changeData(n), sb = "</span> + sb);</div><div class="line">   	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">changeData</span><span class="params">(StringBuffer strBuf)</span> </span>&#123;</div><div class="line">		strBuf.append(<span class="string">"World!"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -14,4 +108,77 @@
 <p>毫无疑问，上面的程序将输出false，但是，事实上上面两个对象代表的是通过一个employee。真正的商业逻辑希望我们返回true。<br>为了达到这个目的，我们需要重写equals方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span>(o == <span class="keyword">null</span>)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (o == <span class="keyword">this</span>)</div><div class="line">	&#123;</div><div class="line">	   <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (getClass() != o.getClass())</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	Employee e = (Employee) o;</div><div class="line">	<span class="keyword">return</span> (<span class="keyword">this</span>.getId() == e.getId());</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>在上面的类中添加这个方法，EauqlsTest将会输出true。<br>So are we done?没有，让我们换一种测试方法来看看。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.HashSet;</div><div class="line"><span class="keyword">import</span> java.util.Set;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EqualsTest</span></span></div><div class="line">&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line">	&#123;</div><div class="line">		Employee e1 = <span class="keyword">new</span> Employee();</div><div class="line">		Employee e2 = <span class="keyword">new</span> Employee();</div><div class="line"></div><div class="line">		e1.setId(<span class="number">100</span>);</div><div class="line">		e2.setId(<span class="number">100</span>);</div><div class="line"></div><div class="line">		<span class="comment">//Prints 'true'</span></div><div class="line">		System.out.println(e1.equals(e2));</div><div class="line"></div><div class="line">		Set&lt;Employee&gt; employees = <span class="keyword">new</span> HashSet&lt;Employee&gt;();</div><div class="line">		employees.add(e1);</div><div class="line">		employees.add(e2);</div><div class="line">		<span class="comment">//Prints two objects</span></div><div class="line">		System.out.println(employees);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>上面的程序输出的结果是两个。如果两个employee对象equals返回true，Set中应该只存储一个对象才对，问题在哪里呢？<br>我们忘掉了第二个重要的方法hashCode()。就像JDK的Javadoc中所说的一样，如果重写equals()方法必须要重写hashCode()方法。我们加上下面这个方法，程序将执行正确。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">final</span> <span class="keyword">int</span> PRIME = <span class="number">31</span>;</div><div class="line">	<span class="keyword">int</span> result = <span class="number">1</span>;</div><div class="line">	result = PRIME * result + getId();</div><div class="line">	<span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/03/18/Database-Questions/" class="prev">PREV</a><a href="/2016/03/12/Java-Summary/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/18/Database-Questions/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Database Questions
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/12/Java-Summary/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java Summary&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Xiufeng Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

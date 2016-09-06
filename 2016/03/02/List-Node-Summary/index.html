@@ -1,4 +1,92 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> List Node Summary · Xiufeng</title><meta name="description" content="List Node Summary - Xiufeng Chen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">List Node Summary</h1><div class="post-info">Mar 2, 2016</div><div class="post-content"><p>These listnode questions come from leetcode, including basic kinds of listnode question and answers.</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>List Node Summary - Xiufeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="These listnode questions come from leetcode, including basic kinds of listnode question and answers.
+Remove nth Node from EndLinked List 有关的题目都要首先创建一个结点newHead作为返回值。可能返回newHead.next。首先将newHead.next指针指">
+<meta property="og:type" content="article">
+<meta property="og:title" content="List Node Summary">
+<meta property="og:url" content="http://yoursite.com/2016/03/02/List-Node-Summary/index.html">
+<meta property="og:site_name" content="Xiufeng">
+<meta property="og:description" content="These listnode questions come from leetcode, including basic kinds of listnode question and answers.
+Remove nth Node from EndLinked List 有关的题目都要首先创建一个结点newHead作为返回值。可能返回newHead.next。首先将newHead.next指针指">
+<meta property="og:updated_time" content="2016-09-02T20:30:00.633Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="List Node Summary">
+<meta name="twitter:description" content="These listnode questions come from leetcode, including basic kinds of listnode question and answers.
+Remove nth Node from EndLinked List 有关的题目都要首先创建一个结点newHead作为返回值。可能返回newHead.next。首先将newHead.next指针指">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-List-Node-Summary" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      List Node Summary
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/02/List-Node-Summary/" class="article-date">
+  <time datetime="2016-03-02T18:40:22.000Z" itemprop="datePublished">2016-03-02</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>These listnode questions come from leetcode, including basic kinds of listnode question and answers.</p>
 <h2 id="Remove-nth-Node-from-End"><a href="#Remove-nth-Node-from-End" class="headerlink" title="Remove nth Node from End"></a>Remove nth Node from End</h2><p>Linked List 有关的题目都要首先创建一个结点newHead作为返回值。可能返回newHead.next。<br>首先将newHead.next指针指向head，便于以后遍历。<br>当选择==快慢指针方法==时，将快慢指针初始化到head结点的前一个结点。<br>快慢指针同时移动时，注意while判定条件为fast.next!=null，表示指针走到最后一个结点就停止了。<br>删除第n个结点与fast指针无关，只需要slow.next = slow.next.next。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">removeNthFromEnd</span><span class="params">(ListNode head, <span class="keyword">int</span> n)</span></span>&#123;</div><div class="line">    ListNode newHead = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</div><div class="line">    newHead.next = head;</div><div class="line">    ListNode fast, slow;</div><div class="line">    fast = newHead;</div><div class="line">    slow = newHead;</div><div class="line">    </div><div class="line">    <span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</div><div class="line">    	fast = fast.next;</div><div class="line">        n--;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">while</span>(fast.next != <span class="keyword">null</span>)&#123;</div><div class="line">    	fast = fast.next;</div><div class="line">        slow = slow.next;</div><div class="line">    &#125;</div><div class="line">    slow.next = slow.next.next;</div><div class="line">    <span class="keyword">return</span> newHead.next;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h2 id="Remove-Duplicates-from-Sorted-List"><a href="#Remove-Duplicates-from-Sorted-List" class="headerlink" title="Remove Duplicates from Sorted List"></a>Remove Duplicates from Sorted List</h2><p>从一个单链表里删除重复值，只需用一个指针就行。While中的if判断是否相等，若相等，下一node向前走一下，并不是现在的指针向下走一下。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">deleteDuplicates</span><span class="params">(ListNode head)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(head==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    ListNode newHead = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</div><div class="line">    newHead.next = head;</div><div class="line">    ListNode pointer;</div><div class="line">    pointer = newHead.next;</div><div class="line">    <span class="keyword">while</span>(pointer.next!=<span class="keyword">null</span>)&#123;</div><div class="line">    	<span class="keyword">if</span>(pointer.val==pointer.next.val)&#123;</div><div class="line">        	pointer.next = pointer.next.next;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">        	pointer = pointer.next;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> newHead.next;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -15,4 +103,73 @@
 <p>p1走的路径： a+b ＝ n；<br>p2走的路径： a+b+k<em>L = 2</em>n； p2 比 p1 多走了k圈环路，总路程是p1的2倍</p>
 <p>根据上述公式可以得到 k*L=a+b=n显然，如果从相遇点M开始，p1 再走 n 步的话，还可以再回到相遇点，同时p2从头开始走的话，经过n步，也会达到相遇点M。</p>
 <p>显然在这个步骤当中 p1 和 p2 只有前 a 步走的路径不同，所以当 p1 和 p2 再次重合的时候，必然是在链表的环路入口点上。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">detectCycle</span><span class="params">(ListNode head)</span> </span>&#123;  </div><div class="line">       <span class="keyword">if</span>(head==<span class="keyword">null</span>||head.next==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">       ListNode slow = head;</div><div class="line">       ListNode fast = head;</div><div class="line">       <span class="keyword">while</span>(fast!=<span class="keyword">null</span>&amp;&amp;fast.next!=<span class="keyword">null</span>)&#123;</div><div class="line">           slow = slow.next;</div><div class="line">           fast = fast.next.next;</div><div class="line">           <span class="keyword">if</span>(fast==slow)&#123;</div><div class="line">               <span class="keyword">break</span>;</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       <span class="keyword">if</span>(fast!=slow) <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">       fast = head;</div><div class="line">       <span class="keyword">while</span>(fast!=slow)&#123;</div><div class="line">           fast = fast.next;</div><div class="line">           slow = slow.next;</div><div class="line">       &#125;</div><div class="line">       <span class="keyword">return</span> fast;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/03/02/Basic-Algorithm-Questions-Updating-all-the-time/" class="prev">PREV</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ListNode/">ListNode</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/02/Basic-Algorithm-Questions-Updating-all-the-time/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Basic Algorithm Questions (Updating all the time)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Xiufeng Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

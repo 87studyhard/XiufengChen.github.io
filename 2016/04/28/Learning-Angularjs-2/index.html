@@ -1,4 +1,89 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Angualrjs学习笔记（二） · Xiufeng</title><meta name="description" content="Angualrjs学习笔记（二） - Xiufeng Chen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Angualrjs学习笔记（二）</h1><div class="post-info">Apr 28, 2016</div><div class="post-content"><h3 id="Providers"><a href="#Providers" class="headerlink" title="Providers"></a>Providers</h3><p>在我们创建web应用的时候，我们<strong>需要组合使用多个objects</strong>，每个object需要被实例化才能使用。在Angular应用中，这些<strong>objects被<a href="https://docs.angularjs.org/api/auto/service/$injector" target="_blank" rel="external">injector service</a>实例化</strong>的。<br>这个injector创建两种objects，services和specialized objects。<br>Services即开发者定义的业务逻辑。<br>Specialized Objects即 controllers, directives, filters 或者animations之一。<br><strong>injector</strong>怎样知道如何创建上面这两种objects呢，可以通过<strong>注册</strong>创建object对应的<strong>recipe</strong>来创建object。此处共有五种recipe，provider，value,factory,service,constant，其中provider是基础，其他四种是provider的语法糖。<br>下面说一下<strong>recipe的结构</strong>，每个recipe有一个<strong>identifier</strong>表示这个<strong>object</strong>的名字，以及<strong>description</strong>表示怎样<strong>创建这个object</strong>。<br>每个recipe属于Angular module。当一个angular module启动时，Angular自动创建一个injector实例，这个injector实例创建一个包含所有recipe注册情况的注册表，这些注册来自于核心ng模块，application module以及它的dependencies，当需要为应用创建一个object的时候，injector询问一下这个注册表就知道了。虽然我们的recipe有五种，但是这五种recipe都是为了创建运行时所需的objects用的，injector通过identifier查找object，通过description实例化object。所以注册recipe的时候使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myApp = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">myApp.recipe();</div></pre></td></tr></table></figure></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angualrjs学习笔记（二） - Xiufeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Providers在我们创建web应用的时候，我们需要组合使用多个objects，每个object需要被实例化才能使用。在Angular应用中，这些objects被injector service实例化的。这个injector创建两种objects，services和specialized objects。Services即开发者定义的业务逻辑。Specialized Objects即 contr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angualrjs学习笔记（二）">
+<meta property="og:url" content="http://yoursite.com/2016/04/28/Learning-Angularjs-2/index.html">
+<meta property="og:site_name" content="Xiufeng">
+<meta property="og:description" content="Providers在我们创建web应用的时候，我们需要组合使用多个objects，每个object需要被实例化才能使用。在Angular应用中，这些objects被injector service实例化的。这个injector创建两种objects，services和specialized objects。Services即开发者定义的业务逻辑。Specialized Objects即 contr">
+<meta property="og:updated_time" content="2016-07-20T12:34:40.195Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angualrjs学习笔记（二）">
+<meta name="twitter:description" content="Providers在我们创建web应用的时候，我们需要组合使用多个objects，每个object需要被实例化才能使用。在Angular应用中，这些objects被injector service实例化的。这个injector创建两种objects，services和specialized objects。Services即开发者定义的业务逻辑。Specialized Objects即 contr">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Learning-Angularjs-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Angualrjs学习笔记（二）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/28/Learning-Angularjs-2/" class="article-date">
+  <time datetime="2016-04-29T02:52:32.000Z" itemprop="datePublished">2016-04-28</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Front-End/">Front End</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Providers"><a href="#Providers" class="headerlink" title="Providers"></a>Providers</h3><p>在我们创建web应用的时候，我们<strong>需要组合使用多个objects</strong>，每个object需要被实例化才能使用。在Angular应用中，这些<strong>objects被<a href="https://docs.angularjs.org/api/auto/service/$injector" target="_blank" rel="external">injector service</a>实例化</strong>的。<br>这个injector创建两种objects，services和specialized objects。<br>Services即开发者定义的业务逻辑。<br>Specialized Objects即 controllers, directives, filters 或者animations之一。<br><strong>injector</strong>怎样知道如何创建上面这两种objects呢，可以通过<strong>注册</strong>创建object对应的<strong>recipe</strong>来创建object。此处共有五种recipe，provider，value,factory,service,constant，其中provider是基础，其他四种是provider的语法糖。<br>下面说一下<strong>recipe的结构</strong>，每个recipe有一个<strong>identifier</strong>表示这个<strong>object</strong>的名字，以及<strong>description</strong>表示怎样<strong>创建这个object</strong>。<br>每个recipe属于Angular module。当一个angular module启动时，Angular自动创建一个injector实例，这个injector实例创建一个包含所有recipe注册情况的注册表，这些注册来自于核心ng模块，application module以及它的dependencies，当需要为应用创建一个object的时候，injector询问一下这个注册表就知道了。虽然我们的recipe有五种，但是这五种recipe都是为了创建运行时所需的objects用的，injector通过identifier查找object，通过description实例化object。所以注册recipe的时候使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myApp = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">myApp.recipe();</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h4 id="Value-Recipe"><a href="#Value-Recipe" class="headerlink" title="Value Recipe"></a>Value Recipe</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myApp = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">myApp.value(<span class="string">'clientId'</span>, <span class="string">'a12345654321x'</span>);</div></pre></td></tr></table></figure>
 <h4 id="Factory-Recipe"><a href="#Factory-Recipe" class="headerlink" title="Factory Recipe"></a>Factory Recipe</h4><p>factory recipe和value recipe类似，但是添加了一些功能：</p>
@@ -26,4 +111,77 @@ provider recipe是这五种recipe的核心，其他四种是provider recipe的�
 provider recipe是其中最复杂的recipe，当需要配置config的时候再用
 所以special purpose object都是由factory recipe创建的，controller除外
 </code></pre><h4 id="Angular-Snippet"><a href="#Angular-Snippet" class="headerlink" title="Angular Snippet"></a>Angular Snippet</h4><p>代码取自<a href="https://github.com/angular/angular.js/blob/master/src/auto/injector.js" target="_blank" rel="external">Angualrjs github</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">provider</span>(<span class="params">name, provider_</span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span> (isFunction(provider_)) &#123;</div><div class="line">		provider_ = providerInjector.instantiate(provider_);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (!provider_.$get) &#123;</div><div class="line">		<span class="keyword">throw</span> <span class="built_in">Error</span>(<span class="string">'Provider '</span> + name + <span class="string">' must define $get factory method.'</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> providerCache[name + providerSuffix] = provider_;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factory</span>(<span class="params">name, factoryFn</span>) </span>&#123; <span class="keyword">return</span> provider(name, &#123; $get: factoryFn &#125;); &#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">service</span>(<span class="params">name, constructor</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> factory(name, [<span class="string">'$injector'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$injector</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> $injector.instantiate(<span class="keyword">constructor</span>);</div><div class="line">	&#125;]);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function value(name, value) &#123; <span class="keyword">return</span> factory(name, valueFn(value)); &#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">constant</span>(<span class="params">name, value</span>) </span>&#123;</div><div class="line">	providerCache[name] = value;</div><div class="line">	instanceCache[name] = value;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">decorator</span>(<span class="params">serviceName, decorFn</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> origProvider = providerInjector.get(serviceName + providerSuffix),</div><div class="line">		orig$get = origProvider.$get;</div><div class="line"></div><div class="line">	origProvider.$get = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> origInstance = instanceInjector.invoke(orig$get, origProvider);</div><div class="line">		<span class="keyword">return</span> instanceInjector.invoke(decorFn, <span class="literal">null</span>, &#123;$delegate: origInstance&#125;);</div><div class="line">	&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/04/29/Learning-Angularjs-3/" class="prev">PREV</a><a href="/2016/04/26/Prototype-in-JavaScript/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angularjs/">Angularjs</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/29/Learning-Angularjs-3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Angularjs学习笔记（三）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/26/Prototype-in-JavaScript/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Prototype in JavaScript&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Xiufeng Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

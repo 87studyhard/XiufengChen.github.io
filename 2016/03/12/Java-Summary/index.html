@@ -1,4 +1,95 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Java Summary · Xiufeng</title><meta name="description" content="Java Summary - Xiufeng Chen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Java Summary</h1><div class="post-info">Mar 12, 2016</div><div class="post-content"><p>Java总结来自于<br><a href="http://blog.csdn.net/jackfrued/article/details/44921941" target="_blank" rel="external">Java面试题全集（上）</a><br>基本数据类型<br><img src="http://7xrk1c.com1.z0.glb.clouddn.com/java-primitives.jpg" alt="基本数据类型"><br>当把一个表数范围较小的数值或变量赋给另一个表数范围较大的变量的时候，系统可以进行自动类型转换。Java支持自动类型转换的类型如图。<br><img src="http://7xrk1c.com1.z0.glb.clouddn.com/auto%20cast.png" alt="自动转换"></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Java Summary - Xiufeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java总结来自于Java面试题全集（上）基本数据类型当把一个表数范围较小的数值或变量赋给另一个表数范围较大的变量的时候，系统可以进行自动类型转换。Java支持自动类型转换的类型如图。
+short s1 = 1; s1 = s1 + 1;有错吗?short s1 = 1; s1 += 1;有错吗？答：对于short s1 = 1; s1 = s1 + 1;由于1是int类型，因此s1+1运算结果也">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Summary">
+<meta property="og:url" content="http://yoursite.com/2016/03/12/Java-Summary/index.html">
+<meta property="og:site_name" content="Xiufeng">
+<meta property="og:description" content="Java总结来自于Java面试题全集（上）基本数据类型当把一个表数范围较小的数值或变量赋给另一个表数范围较大的变量的时候，系统可以进行自动类型转换。Java支持自动类型转换的类型如图。
+short s1 = 1; s1 = s1 + 1;有错吗?short s1 = 1; s1 += 1;有错吗？答：对于short s1 = 1; s1 = s1 + 1;由于1是int类型，因此s1+1运算结果也">
+<meta property="og:image" content="http://7xrk1c.com1.z0.glb.clouddn.com/java-primitives.jpg">
+<meta property="og:image" content="http://7xrk1c.com1.z0.glb.clouddn.com/auto%20cast.png">
+<meta property="og:updated_time" content="2016-09-02T20:27:08.753Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java Summary">
+<meta name="twitter:description" content="Java总结来自于Java面试题全集（上）基本数据类型当把一个表数范围较小的数值或变量赋给另一个表数范围较大的变量的时候，系统可以进行自动类型转换。Java支持自动类型转换的类型如图。
+short s1 = 1; s1 = s1 + 1;有错吗?short s1 = 1; s1 += 1;有错吗？答：对于short s1 = 1; s1 = s1 + 1;由于1是int类型，因此s1+1运算结果也">
+<meta name="twitter:image" content="http://7xrk1c.com1.z0.glb.clouddn.com/java-primitives.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Java-Summary" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java Summary
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/12/Java-Summary/" class="article-date">
+  <time datetime="2016-03-12T17:35:17.000Z" itemprop="datePublished">2016-03-12</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Summary/">Summary</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Java总结来自于<br><a href="http://blog.csdn.net/jackfrued/article/details/44921941" target="_blank" rel="external">Java面试题全集（上）</a><br>基本数据类型<br><img src="http://7xrk1c.com1.z0.glb.clouddn.com/java-primitives.jpg" alt="基本数据类型"><br>当把一个表数范围较小的数值或变量赋给另一个表数范围较大的变量的时候，系统可以进行自动类型转换。Java支持自动类型转换的类型如图。<br><img src="http://7xrk1c.com1.z0.glb.clouddn.com/auto%20cast.png" alt="自动转换"></p>
 <h3 id="short-s1-1-s1-s1-1-有错吗-short-s1-1-s1-1-有错吗？"><a href="#short-s1-1-s1-s1-1-有错吗-short-s1-1-s1-1-有错吗？" class="headerlink" title="short s1 = 1; s1 = s1 + 1;有错吗?short s1 = 1; s1 += 1;有错吗？"></a>short s1 = 1; s1 = s1 + 1;有错吗?short s1 = 1; s1 += 1;有错吗？</h3><p>答：对于short s1 = 1; s1 = s1 + 1;由于1是int类型，因此s1+1运算结果也是int 型，需要强制转换类型才能赋值给short型。而short s1 = 1; s1 += 1;可以正确编译，因为s1+= 1;相当于s1 = (short)(s1 + 1);其中有隐含的强制类型转换。<br><a id="more"></a></p>
 <h3 id="静态嵌套类-Static-Nested-Class-和内部类（Inner-Class）的不同？"><a href="#静态嵌套类-Static-Nested-Class-和内部类（Inner-Class）的不同？" class="headerlink" title="静态嵌套类(Static Nested Class)和内部类（Inner Class）的不同？"></a>静态嵌套类(Static Nested Class)和内部类（Inner Class）的不同？</h3><p>答：Static Nested Class是被声明为静态（static）的内部类，它可以不依赖于外部类实例被实例化。而通常的内部类需要在外部类实例化后才能实例化，其语法看起来挺诡异的，如下所示。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line">	<span class="comment">/**</span></div><div class="line"> * 扑克类（一副扑克）</div><div class="line"> * <span class="doctag">@author</span> 骆昊</div><div class="line"> *</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Poker</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String[] suites = &#123;<span class="string">"黑桃"</span>, <span class="string">"红桃"</span>, <span class="string">"草花"</span>, <span class="string">"方块"</span>&#125;;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span>[] faces = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>&#125;;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Card[] cards;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 构造器</div><div class="line">     * </div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Poker</span><span class="params">()</span> </span>&#123;</div><div class="line">        cards = <span class="keyword">new</span> Card[<span class="number">52</span>];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; suites.length; i++) &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; faces.length; j++) &#123;</div><div class="line">                cards[i * <span class="number">13</span> + j] = <span class="keyword">new</span> Card(suites[i], faces[j]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 洗牌 （随机乱序）</div><div class="line">     * </div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shuffle</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, len = cards.length; i &lt; len; i++) &#123;</div><div class="line">            <span class="keyword">int</span> index = (<span class="keyword">int</span>) (Math.random() * len);</div><div class="line">            Card temp = cards[index];</div><div class="line">            cards[index] = cards[i];</div><div class="line">            cards[i] = temp;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 发牌</div><div class="line">     * <span class="doctag">@param</span> index 发牌的位置</div><div class="line">     * </div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> Card <span class="title">deal</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> cards[index];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 卡片类（一张扑克）</div><div class="line">     * [内部类]</div><div class="line">     * <span class="doctag">@author</span> 骆昊</div><div class="line">     *</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Card</span> </span>&#123;</div><div class="line">        <span class="keyword">private</span> String suite;   <span class="comment">// 花色</span></div><div class="line">        <span class="keyword">private</span> <span class="keyword">int</span> face;       <span class="comment">// 点数</span></div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Card</span><span class="params">(String suite, <span class="keyword">int</span> face)</span> </span>&#123;</div><div class="line">            <span class="keyword">this</span>.suite = suite;</div><div class="line">            <span class="keyword">this</span>.face = face;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</div><div class="line">            String faceStr = <span class="string">""</span>;</div><div class="line">            <span class="keyword">switch</span>(face) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>: faceStr = <span class="string">"A"</span>; <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">11</span>: faceStr = <span class="string">"J"</span>; <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">12</span>: faceStr = <span class="string">"Q"</span>; <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">13</span>: faceStr = <span class="string">"K"</span>; <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">default</span>: faceStr = String.valueOf(face);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> suite + faceStr;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>测试代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PokerTest</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Poker poker = <span class="keyword">new</span> Poker();</div><div class="line">		poker.shuffle();                <span class="comment">// 洗牌</span></div><div class="line">		Poker.Card c1 = poker.deal(<span class="number">0</span>);  <span class="comment">// 发第一张牌</span></div><div class="line">		<span class="comment">// 对于非静态内部类Card</span></div><div class="line">		<span class="comment">// 只有通过其外部类Poker对象才能创建Card对象</span></div><div class="line">		Poker.Card c2 = poker.new Card(<span class="string">"红心"</span>, <span class="number">1</span>);    <span class="comment">// 自己创建一张牌</span></div><div class="line"></div><div class="line">		System.out.println(c1);     <span class="comment">// 洗牌后的第一张</span></div><div class="line">		System.out.println(c2);     <span class="comment">// 打印: 红心A</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -7,4 +98,77 @@
 <p>懒汉式单例<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">if</span> (instance == <span class="keyword">null</span>) instance ＝ <span class="keyword">new</span> Singleton();</div><div class="line">		<span class="keyword">return</span> instance;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="创建匿名内部类及简化形式"><a href="#创建匿名内部类及简化形式" class="headerlink" title="创建匿名内部类及简化形式"></a>创建匿名内部类及简化形式</h3><p>如果基类需要一个有参constructor，直接加上参数就行。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//: innerclasses/Contents.java</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Contents</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">value</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//:innerclasses/Parcel7.java</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Parcel7</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> Contents <span class="title">contents</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Contents()&#123;</div><div class="line">			<span class="keyword">private</span> <span class="keyword">int</span> i = <span class="number">11</span>;</div><div class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">value</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> i;&#125;</div><div class="line">		&#125;;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">		Parcel7 p = <span class="keyword">new</span> Parcel7();</div><div class="line">		Contents c = p.contents();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>上述匿名内部类的语法是下述形式的化简形式：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Parcel7b</span></span>&#123;</div><div class="line">	<span class="class"><span class="keyword">class</span> <span class="title">MyContents</span> <span class="keyword">implements</span> <span class="title">Contents</span></span>&#123;</div><div class="line">		<span class="keyword">private</span> <span class="keyword">int</span> i = <span class="number">11</span>;</div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">value</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> i;&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> Contents <span class="title">contents</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="keyword">new</span> MyContents();&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">		Parcel7b p = <span class="keyword">new</span> Parcel7b();</div><div class="line">		Contents c = p.contents();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/03/16/Thinking-in-Comparing-Two-Objects/" class="prev">PREV</a><a href="/2016/03/11/String-Summary/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/16/Thinking-in-Comparing-Two-Objects/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Thinking in Comparing Two Objects
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/11/String-Summary/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SubString Summay&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Xiufeng Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

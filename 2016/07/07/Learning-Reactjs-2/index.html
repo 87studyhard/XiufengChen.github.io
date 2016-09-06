@@ -1,4 +1,85 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Reactjs学习笔记（二） · Xiufeng</title><meta name="description" content="Reactjs学习笔记（二） - Xiufeng Chen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Reactjs学习笔记（二）</h1><div class="post-info">Jul 7, 2016</div><div class="post-content"><h1 id="START-UP-A-REACT-PROJECT"><a href="#START-UP-A-REACT-PROJECT" class="headerlink" title="START UP A REACT PROJECT"></a>START UP A REACT PROJECT</h1><h2 id="Setting-up-package-json"><a href="#Setting-up-package-json" class="headerlink" title="Setting up package.json"></a>Setting up package.json</h2><p>Create a new one using npm init command, selecting defaults where uncertain.<br><strong>/package.json</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="string">"name"</span>: <span class="string">"react-speed-coding-code"</span>,</div><div class="line">	<span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">	<span class="string">"description"</span>: <span class="string">"Companion code for React Speed Coding book"</span>,</div><div class="line">	<span class="string">"main"</span>: <span class="string">"index.js"</span>,</div><div class="line">	<span class="string">"private"</span>: <span class="literal">true</span>,</div><div class="line">	<span class="string">"scripts"</span>: &#123;</div><div class="line">		<span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></div><div class="line">	&#125;,</div><div class="line">	<span class="string">"author"</span>: <span class="string">"Manav Sehgal"</span>,</div><div class="line">	<span class="string">"license"</span>: <span class="string">"MIT"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Reactjs学习笔记（二） - Xiufeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="START UP A REACT PROJECTSetting up package.jsonCreate a new one using npm init command, selecting defaults where uncertain./package.json123456789101112&amp;#123;	&quot;name&quot;: &quot;react-speed-coding-code&quot;,	&quot;versio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reactjs学习笔记（二）">
+<meta property="og:url" content="http://yoursite.com/2016/07/07/Learning-Reactjs-2/index.html">
+<meta property="og:site_name" content="Xiufeng">
+<meta property="og:description" content="START UP A REACT PROJECTSetting up package.jsonCreate a new one using npm init command, selecting defaults where uncertain./package.json123456789101112&amp;#123;	&quot;name&quot;: &quot;react-speed-coding-code&quot;,	&quot;versio">
+<meta property="og:updated_time" content="2016-07-20T12:44:02.360Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Reactjs学习笔记（二）">
+<meta name="twitter:description" content="START UP A REACT PROJECTSetting up package.jsonCreate a new one using npm init command, selecting defaults where uncertain./package.json123456789101112&amp;#123;	&quot;name&quot;: &quot;react-speed-coding-code&quot;,	&quot;versio">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Learning-Reactjs-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Reactjs学习笔记（二）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/07/07/Learning-Reactjs-2/" class="article-date">
+  <time datetime="2016-07-07T23:01:59.000Z" itemprop="datePublished">2016-07-07</time>
+</a>
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="START-UP-A-REACT-PROJECT"><a href="#START-UP-A-REACT-PROJECT" class="headerlink" title="START UP A REACT PROJECT"></a>START UP A REACT PROJECT</h1><h2 id="Setting-up-package-json"><a href="#Setting-up-package-json" class="headerlink" title="Setting up package.json"></a>Setting up package.json</h2><p>Create a new one using npm init command, selecting defaults where uncertain.<br><strong>/package.json</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="string">"name"</span>: <span class="string">"react-speed-coding-code"</span>,</div><div class="line">	<span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">	<span class="string">"description"</span>: <span class="string">"Companion code for React Speed Coding book"</span>,</div><div class="line">	<span class="string">"main"</span>: <span class="string">"index.js"</span>,</div><div class="line">	<span class="string">"private"</span>: <span class="literal">true</span>,</div><div class="line">	<span class="string">"scripts"</span>: &#123;</div><div class="line">		<span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></div><div class="line">	&#125;,</div><div class="line">	<span class="string">"author"</span>: <span class="string">"Manav Sehgal"</span>,</div><div class="line">	<span class="string">"license"</span>: <span class="string">"MIT"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h2 id="Installing-Starter-Dependencies"><a href="#Installing-Starter-Dependencies" class="headerlink" title="Installing Starter Dependencies"></a>Installing Starter Dependencies</h2><p><strong>Install React dependencies</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install --save react</div><div class="line">npm install --save react-dom</div></pre></td></tr></table></figure></p>
 <p><strong>Install Webpack dependencies</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev webpack</div><div class="line">npm install --save-dev webpack-dev-server</div></pre></td></tr></table></figure></p>
@@ -222,4 +303,75 @@
 <p><strong>.babelrc config adds airbnb preset during test</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="string">"presets"</span>: [<span class="string">"react"</span>, <span class="string">"es2015"</span>, <span class="string">"airbnb"</span>],</div><div class="line">	<span class="string">"env"</span>: &#123;</div><div class="line">		<span class="string">"development"</span>: &#123;</div><div class="line">			<span class="string">"presets"</span>: [<span class="string">"react-hmre"</span>]</div><div class="line">		&#125;</div><div class="line">	&#125;,</div><div class="line">	<span class="string">"plugins"</span>: [</div><div class="line">		<span class="string">"transform-class-properties"</span></div><div class="line">	]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>For using JSDOM, Enzyme recommends loading a document into the global scope before requiring React for the first time.<br>It is very important that the below script gets run before React’s code is run.<br><strong>test/helpers/browser.js</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> jsdom = <span class="built_in">require</span>(<span class="string">'jsdom'</span>).jsdom;</div><div class="line"></div><div class="line"><span class="keyword">const</span> exposedProperties = [<span class="string">'window'</span>, <span class="string">'navigator'</span>, <span class="string">'document'</span>];</div><div class="line"></div><div class="line">global.document = jsdom(<span class="string">''</span>);</div><div class="line">global.window = <span class="built_in">document</span>.defaultView;</div><div class="line"><span class="built_in">Object</span>.keys(<span class="built_in">document</span>.defaultView).forEach((property) =&gt; &#123;</div><div class="line">	<span class="keyword">if</span> (<span class="keyword">typeof</span> global[property] === <span class="string">'undefined'</span>) &#123;</div><div class="line">		exposedProperties.push(property);</div><div class="line">		global[property] = <span class="built_in">document</span>.defaultView[property];</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">global.navigator = &#123;</div><div class="line">	userAgent: <span class="string">'node.js'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p><strong>package.json test script</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"test"</span>: <span class="string">"NODE_ENV=test mocha test/helpers/browser.js test/**/*.spec.js --compilers js:babel-core/register --recursive || true"</span></div></pre></td></tr></table></figure></p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/" class="prev">PREV</a><a href="/2016/06/15/How-to-use-this-in-JavaScript/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Working with Google Map API on Reactjs
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/15/How-to-use-this-in-JavaScript/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">How to use this in JavaScript&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Xiufeng Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

@@ -1,7 +1,165 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Angularjs学习笔记（三） · Xiufeng</title><meta name="description" content="Angularjs学习笔记（三） - Xiufeng Chen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Angularjs学习笔记（三）</h1><div class="post-info">Apr 29, 2016</div><div class="post-content"><h2 id="Angularjs中的路由"><a href="#Angularjs中的路由" class="headerlink" title="Angularjs中的路由"></a>Angularjs中的路由</h2><p>Angularjs的路由策略属于前端路由，前端路由和后端路由的区别在于，Angularjs前端路由属于锚点路由，锚点路由和后端路由的区别就像点击html中设置的锚点和点击html中设置的超链接之间的不同。首先来看怎样设置锚点：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;a id = "top"&gt;这里是一段文字&lt;/a&gt;</div><div class="line">&lt;div&gt;</div><div class="line">	&lt;!-- 此处有若干行代码 --&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;a href = "#top"&gt;点击&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angularjs学习笔记（三） - Xiufeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Angularjs中的路由Angularjs的路由策略属于前端路由，前端路由和后端路由的区别在于，Angularjs前端路由属于锚点路由，锚点路由和后端路由的区别就像点击html中设置的锚点和点击html中设置的超链接之间的不同。首先来看怎样设置锚点：12345&amp;lt;a id = &quot;top&quot;&amp;gt;这里是一段文字&amp;lt;/a&amp;gt;&amp;lt;div&amp;gt;	&amp;lt;!-- 此处有若干行代码 --&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angularjs学习笔记（三）">
+<meta property="og:url" content="http://yoursite.com/2016/04/29/Learning-Angularjs-3/index.html">
+<meta property="og:site_name" content="Xiufeng">
+<meta property="og:description" content="Angularjs中的路由Angularjs的路由策略属于前端路由，前端路由和后端路由的区别在于，Angularjs前端路由属于锚点路由，锚点路由和后端路由的区别就像点击html中设置的锚点和点击html中设置的超链接之间的不同。首先来看怎样设置锚点：12345&amp;lt;a id = &quot;top&quot;&amp;gt;这里是一段文字&amp;lt;/a&amp;gt;&amp;lt;div&amp;gt;	&amp;lt;!-- 此处有若干行代码 --&amp;">
+<meta property="og:updated_time" content="2016-07-20T13:04:03.469Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angularjs学习笔记（三）">
+<meta name="twitter:description" content="Angularjs中的路由Angularjs的路由策略属于前端路由，前端路由和后端路由的区别在于，Angularjs前端路由属于锚点路由，锚点路由和后端路由的区别就像点击html中设置的锚点和点击html中设置的超链接之间的不同。首先来看怎样设置锚点：12345&amp;lt;a id = &quot;top&quot;&amp;gt;这里是一段文字&amp;lt;/a&amp;gt;&amp;lt;div&amp;gt;	&amp;lt;!-- 此处有若干行代码 --&amp;">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Learning-Angularjs-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Angularjs学习笔记（三）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/29/Learning-Angularjs-3/" class="article-date">
+  <time datetime="2016-04-29T19:09:20.000Z" itemprop="datePublished">2016-04-29</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Front-End/">Front End</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Angularjs中的路由"><a href="#Angularjs中的路由" class="headerlink" title="Angularjs中的路由"></a>Angularjs中的路由</h2><p>Angularjs的路由策略属于前端路由，前端路由和后端路由的区别在于，Angularjs前端路由属于锚点路由，锚点路由和后端路由的区别就像点击html中设置的锚点和点击html中设置的超链接之间的不同。首先来看怎样设置锚点：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;a id = "top"&gt;这里是一段文字&lt;/a&gt;</div><div class="line">&lt;div&gt;</div><div class="line">	&lt;!-- 此处有若干行代码 --&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;a href = "#top"&gt;点击&lt;/a&gt;</div></pre></td></tr></table></figure></p>
 <p>设置锚点由两部分组成，锚点和点击链接，因为锚点标签的href属性值以“#”开头，并且锚点目标在本页中，所以点击链接不会带来页面的刷新。<br>锚点路由原理与之类似，如果当前页面处于<a href="http://localhost:9000/#/" target="_blank" rel="external">http://localhost:9000/#/</a> ，当点击锚点时触发<strong>hashchange事件</strong>，锚点部分的值变为 <a href="http://localhost:9000/#/about" target="_blank" rel="external">http://localhost:9000/#/about</a>, 之后根据Angularjs的routeProvider设置的路由策略去取得相应的页面部分，当前页面不刷新，并不是去后端重新取回页面。</p>
 <a id="more"></a>
 <p>和锚点与超链接一样，在URL中加入“#”是区分Angularjs管理路径还是WebServer管理路径的方法。默认情况下，是Angularjs管理路径，如果这时在锚点标签中不加入“#”开头，会引起“Cannot get /..”错误，因为当前连接以为是发给后端的请求，但是后端没有对应的后端路由。因此Angularjs的URL会出现#参与前端路由。<br>但是有#参与的URL使得用户体验不太友好，也使得业务逻辑直接暴露出来，其他开发者能直接看出来哪些部分是前端，哪些部分是后端。所以，Angularjs提供了HTML5的路由模式，可以去掉#并且实现前端路由。<br>具体如何处理可以参见一片博客<a href="http://blog.fens.me/angularjs-url/" target="_blank" rel="external">AngularJS去掉的URL里的#号</a><br>该博客中提出了一个问题，如果直接访问<a href="http://localhost:9000/about，会出现“Cannot" target="_blank" rel="external">http://localhost:9000/about，会出现“Cannot</a> get /about”错误。原因就是因为浏览器直接解析URL路径，没有进入Angularjs的业务逻辑，之前设置的HTML5路由策略一概忽略，后端没有设置/about的路由，当然请求无法得到。解决方法就是在后端路由添加代码，转发给Angularjs进行路由管理。</p>
 <p>前面文章中提到过provider实现的方法与过程，通过Angular源码可以看出当使用provider recipe创建一个provider时，实例化了一个它name对应的service，返回了一个name+Provider对应的provider，以便在config函数里使用。除了config函数以外，都使用name对应的service。因此，Angularjs提供的$route服务和$routeProvider的使用区别一目了然。</p>
 <h2 id="routeProvider"><a href="#routeProvider" class="headerlink" title="$routeProvider"></a>$routeProvider</h2><h2 id="route"><a href="#route" class="headerlink" title="$route"></a>$route</h2><p>$route 服务依赖$location和$routeParams<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Given:</span></div><div class="line"><span class="comment">// URL: http://server.com/index.html#/Chapter/1/Section/2?search=moby</span></div><div class="line"><span class="comment">// Route: /Chapter/:chapterId/Section/:sectionId</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">// Then</span></div><div class="line">$routeParams ==&gt; &#123;chapterId:<span class="string">'1'</span>, sectionId:<span class="string">'2'</span>, search:<span class="string">'moby'</span>&#125;</div></pre></td></tr></table></figure></p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/05/05/Learning-Angularjs-4/" class="prev">PREV</a><a href="/2016/04/28/Learning-Angularjs-2/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angularjs/">Angularjs</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/05/Learning-Angularjs-4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Angularjs学习笔记（四）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/28/Learning-Angularjs-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Angualrjs学习笔记（二）&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Xiufeng Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

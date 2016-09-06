@@ -1,3 +1,155 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Working with Google Map API on Reactjs · Xiufeng</title><meta name="description" content="Working with Google Map API on Reactjs - Xiufeng Chen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Working with Google Map API on Reactjs</h1><div class="post-info">Jul 15, 2016</div><div class="post-content"><p>When we develop a component using 3rd party APIs like Google, Github, we must use their API or load their javascript libraries to get instances they made. There are multiple ways to load 3rd API libraries: one is including libraries with <code>&lt;script&gt;</code>  on the original markup for the page, another is lazily-loading the libraries.</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Working with Google Map API on Reactjs - Xiufeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="When we develop a component using 3rd party APIs like Google, Github, we must use their API or load their javascript libraries to get instances they made. There are multiple ways to load 3rd API libra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Working with Google Map API on Reactjs">
+<meta property="og:url" content="http://yoursite.com/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/index.html">
+<meta property="og:site_name" content="Xiufeng">
+<meta property="og:description" content="When we develop a component using 3rd party APIs like Google, Github, we must use their API or load their javascript libraries to get instances they made. There are multiple ways to load 3rd API libra">
+<meta property="og:updated_time" content="2016-07-20T12:44:45.918Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Working with Google Map API on Reactjs">
+<meta name="twitter:description" content="When we develop a component using 3rd party APIs like Google, Github, we must use their API or load their javascript libraries to get instances they made. There are multiple ways to load 3rd API libra">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Working-with-Google-Map-API-on-Reactjs-C" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Working with Google Map API on Reactjs
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/" class="article-date">
+  <time datetime="2016-07-15T16:01:38.000Z" itemprop="datePublished">2016-07-15</time>
+</a>
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>When we develop a component using 3rd party APIs like Google, Github, we must use their API or load their javascript libraries to get instances they made. There are multiple ways to load 3rd API libraries: one is including libraries with <code>&lt;script&gt;</code>  on the original markup for the page, another is lazily-loading the libraries.</p>
 <p>We can get the purpose and tutorial of Lazy Loading Asyncronous Javascript <a href="https://friendlybit.com/js/lazy-loading-asyncronous-javascript/" target="_blank" rel="external">here</a>. </p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/08/15/Async-Actions/" class="prev">PREV</a><a href="/2016/07/07/Learning-Reactjs-2/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/15/Async-Actions/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Async Actions
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/07/Learning-Reactjs-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Reactjs学习笔记（二）&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Xiufeng Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

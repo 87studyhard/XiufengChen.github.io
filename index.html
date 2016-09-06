@@ -1,10 +1,653 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Xiufeng</title><meta name="description" content="A Blog Powered By Hexo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link active">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><ul class="home post-list"><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/09/02/Bit-Manipulation/" class="post-title-link"></a></h2><div class="post-info">Sep 2, 2016</div><div class="post-content"><p>title: Bit Manipulation<br>date: 2016-03-02 20:41:06<br>tags:</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Xiufeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Xiufeng">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Xiufeng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Xiufeng">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer">
+      <article id="post-Bit-Manipulation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    <div class="article-meta">
+      <a href="/2016/09/02/Bit-Manipulation/" class="article-date">
+  <time datetime="2016-09-02T20:21:39.989Z" itemprop="datePublished">2016-09-02</time>
+</a>
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: Bit Manipulation<br>date: 2016-03-02 20:41:06<br>tags:</p>
 <pre><code>- Bit Manipulation
 </code></pre><p>categories:</p>
 <pre><code>- Algorithm
 </code></pre><p>This artical comes from a solution disscus from Leetcode.</p>
 <p>In this problem, we are asked to divide two integers. However, we are not allowed to use division, multiplication and mod operations. So, what else can we use? Yeah, bit manipulations.</p>
-<p>Let’s do an example and see how bit manipulations work.</p></div><a href="/2016/09/02/Bit-Manipulation/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/08/15/Async-Actions/" class="post-title-link">Async Actions</a></h2><div class="post-info">Aug 15, 2016</div><div class="post-content"></div><a href="/2016/08/15/Async-Actions/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/" class="post-title-link">Working with Google Map API on Reactjs</a></h2><div class="post-info">Jul 15, 2016</div><div class="post-content"></div><a href="/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/07/07/Learning-Reactjs-2/" class="post-title-link">Reactjs学习笔记（二）</a></h2><div class="post-info">Jul 7, 2016</div><div class="post-content"><h1 id="START-UP-A-REACT-PROJECT"><a href="#START-UP-A-REACT-PROJECT" class="headerlink" title="START UP A REACT PROJECT"></a>START UP A REACT PROJECT</h1><h2 id="Setting-up-package-json"><a href="#Setting-up-package-json" class="headerlink" title="Setting up package.json"></a>Setting up package.json</h2><p>Create a new one using npm init command, selecting defaults where uncertain.<br><strong>/package.json</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="string">"name"</span>: <span class="string">"react-speed-coding-code"</span>,</div><div class="line">	<span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">	<span class="string">"description"</span>: <span class="string">"Companion code for React Speed Coding book"</span>,</div><div class="line">	<span class="string">"main"</span>: <span class="string">"index.js"</span>,</div><div class="line">	<span class="string">"private"</span>: <span class="literal">true</span>,</div><div class="line">	<span class="string">"scripts"</span>: &#123;</div><div class="line">		<span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></div><div class="line">	&#125;,</div><div class="line">	<span class="string">"author"</span>: <span class="string">"Manav Sehgal"</span>,</div><div class="line">	<span class="string">"license"</span>: <span class="string">"MIT"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p></div><a href="/2016/07/07/Learning-Reactjs-2/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/06/15/How-to-use-this-in-JavaScript/" class="post-title-link">How to use this in JavaScript</a></h2><div class="post-info">Jun 15, 2016</div><div class="post-content"></div><a href="/2016/06/15/How-to-use-this-in-JavaScript/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/06/14/Learning-Reactjs-1/" class="post-title-link">Reactjs学习笔记（一）</a></h2><div class="post-info">Jun 14, 2016</div><div class="post-content"><h1 id="Cheatsheet-for-props-state-events"><a href="#Cheatsheet-for-props-state-events" class="headerlink" title="Cheatsheet for props, state, events"></a>Cheatsheet for props, state, events</h1><p><strong>Properties:</strong> Passing input data from Root/Owner component to Child. Owner defines a property=value which is used within rendered component. The “Owner-ownee” relationship can exist without property passing, as in owner simply rendering a component.<br>Owner component passing property:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Hello greet=&#123; <span class="keyword">this</span>.state.currentGreeting &#125; message=<span class="string">"World!"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<p><strong>State:</strong> Defined within component whose state changes. State change updates rendered markup. Components can be stateless. Treat this.state as immutable. Do not change its value directly. Use setState method instead.<br>Default state:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.state = &#123;</div><div class="line">	currentGreeting: props.greet</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p></div><a href="/2016/06/14/Learning-Reactjs-1/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/05/05/Learning-Angularjs-4/" class="post-title-link">Angularjs学习笔记（四）</a></h2><div class="post-info">May 5, 2016</div><div class="post-content"><h2 id="HTML-Compiler"><a href="#HTML-Compiler" class="headerlink" title="HTML Compiler"></a>HTML Compiler</h2><p>每一个网页元素都对应着一个对象object</p></div><a href="/2016/05/05/Learning-Angularjs-4/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/04/29/Learning-Angularjs-3/" class="post-title-link">Angularjs学习笔记（三）</a></h2><div class="post-info">Apr 29, 2016</div><div class="post-content"><h2 id="Angularjs中的路由"><a href="#Angularjs中的路由" class="headerlink" title="Angularjs中的路由"></a>Angularjs中的路由</h2><p>Angularjs的路由策略属于前端路由，前端路由和后端路由的区别在于，Angularjs前端路由属于锚点路由，锚点路由和后端路由的区别就像点击html中设置的锚点和点击html中设置的超链接之间的不同。首先来看怎样设置锚点：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;a id = "top"&gt;这里是一段文字&lt;/a&gt;</div><div class="line">&lt;div&gt;</div><div class="line">	&lt;!-- 此处有若干行代码 --&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;a href = "#top"&gt;点击&lt;/a&gt;</div></pre></td></tr></table></figure></p>
-<p>设置锚点由两部分组成，锚点和点击链接，因为锚点标签的href属性值以“#”开头，并且锚点目标在本页中，所以点击链接不会带来页面的刷新。<br>锚点路由原理与之类似，如果当前页面处于<a href="http://localhost:9000/#/">http://localhost:9000/#/</a> ，当点击锚点时触发<strong>hashchange事件</strong>，锚点部分的值变为 <a href="http://localhost:9000/#/about">http://localhost:9000/#/about</a>, 之后根据Angularjs的routeProvider设置的路由策略去取得相应的页面部分，当前页面不刷新，并不是去后端重新取回页面。</p></div><a href="/2016/04/29/Learning-Angularjs-3/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/04/28/Learning-Angularjs-2/" class="post-title-link">Angualrjs学习笔记（二）</a></h2><div class="post-info">Apr 28, 2016</div><div class="post-content"><h3 id="Providers"><a href="#Providers" class="headerlink" title="Providers"></a>Providers</h3><p>在我们创建web应用的时候，我们<strong>需要组合使用多个objects</strong>，每个object需要被实例化才能使用。在Angular应用中，这些<strong>objects被<a href="https://docs.angularjs.org/api/auto/service/$injector">injector service</a>实例化</strong>的。<br>这个injector创建两种objects，services和specialized objects。<br>Services即开发者定义的业务逻辑。<br>Specialized Objects即 controllers, directives, filters 或者animations之一。<br><strong>injector</strong>怎样知道如何创建上面这两种objects呢，可以通过<strong>注册</strong>创建object对应的<strong>recipe</strong>来创建object。此处共有五种recipe，provider，value,factory,service,constant，其中provider是基础，其他四种是provider的语法糖。<br>下面说一下<strong>recipe的结构</strong>，每个recipe有一个<strong>identifier</strong>表示这个<strong>object</strong>的名字，以及<strong>description</strong>表示怎样<strong>创建这个object</strong>。<br>每个recipe属于Angular module。当一个angular module启动时，Angular自动创建一个injector实例，这个injector实例创建一个包含所有recipe注册情况的注册表，这些注册来自于核心ng模块，application module以及它的dependencies，当需要为应用创建一个object的时候，injector询问一下这个注册表就知道了。虽然我们的recipe有五种，但是这五种recipe都是为了创建运行时所需的objects用的，injector通过identifier查找object，通过description实例化object。所以注册recipe的时候使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myApp = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">myApp.recipe();</div></pre></td></tr></table></figure></p></div><a href="/2016/04/28/Learning-Angularjs-2/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/04/26/Prototype-in-JavaScript/" class="post-title-link">Prototype in JavaScript</a></h2><div class="post-info">Apr 26, 2016</div><div class="post-content"><h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><h4 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h4><p>我们穿件的每个函数都有一个prototype（原型）属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以有特定类型的<strong>所有实例共享的属性和方法</strong>。意思是，不管创建实例1还是实例2，他们访问的都是同一组属性和方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Person.prototype.name = <span class="string">"Tom"</span>;</div><div class="line"><span class="built_in">console</span>.log(Person.name);            <span class="comment">//Person </span></div><div class="line">                                     <span class="comment">//这个例子不好，通过function创建的Function对象含有一系列默认属性</span></div><div class="line">                                        <span class="comment">//[ 'length', 'name', 'arguments', 'caller', 'prototype' ]其中含有name属性</span></div><div class="line">Person.prototype.na = <span class="string">"sad"</span>;</div><div class="line"><span class="built_in">console</span>.log(Person.na);              <span class="comment">//undefined</span></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div><div class="line"><span class="built_in">console</span>.log(p.name);                 <span class="comment">//Tom</span></div></pre></td></tr></table></figure></p>
-<p>无论什么时候，只要创建了一个新函数，就会根据一组特定的规则为该函数创建一个<strong>prototype属性</strong>，这个属性指向函数的<strong>原型对象</strong>。而原型对象包含一个<strong>constructor属性</strong>，指向原函数。<br>当调用构造函数创建一个<strong>新实例</strong>后，该实例的内部将包含一个指针<strong>[[Prototype]]</strong>（内部属性），<strong>指向构造函数的原型对象</strong>。<br></div><a href="/2016/04/26/Prototype-in-JavaScript/" class="read-more">...more</a></article></li></ul></section><footer><div class="paginator"><a href="/page/2/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+<p>Let’s do an example and see how bit manipulations work.</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/02/Bit-Manipulation/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-Async-Actions" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/15/Async-Actions/">Async Actions</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/08/15/Async-Actions/" class="article-date">
+  <time datetime="2016-08-16T01:55:13.000Z" itemprop="datePublished">2016-08-15</time>
+</a>
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This article is based on <a href="http://redux.js.org/docs/advanced/AsyncActions.html" target="_blank" rel="external">Async Actions tutorial</a> and a <a href="http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559#35415559" target="_blank" rel="external">solution from stackoverflow</a> about how to dispatch a Redux action with a timeout or any other asynchronous request.</p>
+<h1 id="Why-Using-Thunk"><a href="#Why-Using-Thunk" class="headerlink" title="Why Using Thunk?"></a>Why Using Thunk?</h1><p>本文的第一部分我想先借用Redux作者Dan Abramov在stackoverflow上的回答来阐述一下使用thunk的原理。</p>
+<p><a href="http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout" target="_blank" rel="external">How to dispatch a Redux action with a timeout?</a></p>
+<h2 id="dispatch-action"><a href="#dispatch-action" class="headerlink" title="dispatch(action)"></a>dispatch(action)</h2><p>首先来看一下dipatch(action)的API。dispatch 一个action是触发state改变的唯一方法。store的reducer方法将会同时调用getState()的结果和action。reducer方法的返回值就是新的state，一旦状态改变就会通知listener。</p>
+<h3 id="Arguments"><a href="#Arguments" class="headerlink" title="Arguments"></a>Arguments</h3><p>action是向store添加数据的唯一方法，无论该数据是通过UI事件，调用外部回调函数，还是通过WebSockets 得到的。</p>
+<h3 id="Returns"><a href="#Returns" class="headerlink" title="Returns"></a>Returns</h3><p>被调度了的action，一般情况下该返回值是Object。</p>
+<h2 id="Writing-Async-Code-Inline"><a href="#Writing-Async-Code-Inline" class="headerlink" title="Writing Async Code Inline"></a>Writing Async Code Inline</h2><p>这是使用redux实现setTimeout最简单的方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">store.dispatch(&#123; type: <span class="string">'SHOW_NOTIFICATION'</span>, text: <span class="string">'You logged in.'</span> &#125;)</div><div class="line">setTimeout(() =&gt; &#123;</div><div class="line">  store.dispatch(&#123; type: <span class="string">'HIDE_NOTIFICATION'</span> &#125;)</div><div class="line">&#125;, <span class="number">5000</span>)</div></pre></td></tr></table></figure>
+<p>类似的，从一个connected组件内部使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.props.dispatch(&#123; type: <span class="string">'SHOW_NOTIFICATION'</span>, text: <span class="string">'You logged in.'</span> &#125;)</div><div class="line">setTimeout(() =&gt; &#123;</div><div class="line">  <span class="keyword">this</span>.props.dispatch(&#123; type: <span class="string">'HIDE_NOTIFICATION'</span> &#125;)</div><div class="line">&#125;, <span class="number">5000</span>)</div></pre></td></tr></table></figure>
+<p>这两者唯一的区别就是，在一个connected组件中，我们无法得到store本身，只能通过dispatch()方法或者当做组件props来用的action creator函数，其实上面两者没有太大区别。</p>
+<p>Writing async code inline当然也有缺点，如果在不同组件dispatch同一action的时候，你不希望发生拼写错误，你可能会将同一个action提取到action creator中，以后再dispatch中调用这个action creator就可以了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// actions.js</span></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">showNotification</span>(<span class="params">text</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123; type: <span class="string">'SHOW_NOTIFICATION'</span>, text &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">hideNotification</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123; type: <span class="string">'HIDE_NOTIFICATION'</span> &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// component.js</span></div><div class="line"><span class="keyword">import</span> &#123; showNotification, hideNotification &#125; <span class="keyword">from</span> <span class="string">'../actions'</span></div><div class="line"></div><div class="line"><span class="keyword">this</span>.props.dispatch(showNotification(<span class="string">'You just logged in.'</span>))</div><div class="line">setTimeout(() =&gt; &#123;</div><div class="line">  <span class="keyword">this</span>.props.dispatch(hideNotification())</div><div class="line">&#125;, <span class="number">5000</span>)</div></pre></td></tr></table></figure>
+<p>当然，如果你已经提前将他们绑定（connect）到了组件上，你还可以使用这种方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.props.showNotification(<span class="string">'You just logged in.'</span>)</div><div class="line">setTimeout(() =&gt; &#123;</div><div class="line">  <span class="keyword">this</span>.props.hideNotification()</div><div class="line">&#125;, <span class="number">5000</span>)</div></pre></td></tr></table></figure>
+<p>以上我们尚未使用到任何middleware或者其他高级概念。</p>
+<h2 id="Extracting-Async-Action-Creator"><a href="#Extracting-Async-Action-Creator" class="headerlink" title="Extracting Async Action Creator"></a>Extracting Async Action Creator</h2><p>上面的方法在应对简单问题是或许还可以，但是也存在一些问题：</p>
+<ol>
+<li>当你想show a notification时，它迫使你使用这种逻辑</li>
+<li>每个notification没有ID识别，所以当你显示两个很快的notifications时会出现紊乱情况。当第一个timeout完成，它将dispatch HIDE_NOTIFICATION，但是可能错误的隐藏了第二个比timeout快的notification。简单地说想显示两个notification，经历一个timeout隐藏第一个notification，但是隐藏了第二个notification。</li>
+</ol>
+<p>为了解决这些问题，我们需要将timeout逻辑和dispatch show和hide action提取到一个函数里面，并给一个ID变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// actions.js</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showNotification</span>(<span class="params">id, text</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123; type: <span class="string">'SHOW_NOTIFICATION'</span>, id, text &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hideNotification</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123; type: <span class="string">'HIDE_NOTIFICATION'</span>, id &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> nextNotificationId = <span class="number">0</span></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">showNotificationWithTimeout</span>(<span class="params">dispatch, text</span>) </span>&#123;</div><div class="line">  <span class="comment">// Assigning IDs to notifications lets reducer ignore HIDE_NOTIFICATION</span></div><div class="line">  <span class="comment">// for the notification that is not currently visible.</span></div><div class="line">  <span class="comment">// Alternatively, we could store the interval ID and call</span></div><div class="line">  <span class="comment">// clearInterval(), but we’d still want to do it in a single place.</span></div><div class="line">  <span class="keyword">const</span> id = nextNotificationId++</div><div class="line">  dispatch(showNotification(id, text))</div><div class="line"></div><div class="line">  setTimeout(() =&gt; &#123;</div><div class="line">    dispatch(hideNotification(id))</div><div class="line">  &#125;, <span class="number">5000</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意，他们此时都在actions 文件里。现在组件中就可以调用showNotificationWithTimeout来克服上面两点缺陷了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// component.js</span></div><div class="line">showNotificationWithTimeout(<span class="keyword">this</span>.props.dispatch, <span class="string">'You just logged in.'</span>)</div><div class="line"></div><div class="line"><span class="comment">// otherComponent.js</span></div><div class="line">showNotificationWithTimeout(<span class="keyword">this</span>.props.dispatch, <span class="string">'You just logged out.'</span>)</div></pre></td></tr></table></figure>
+<p>为什么showNotificationWithTimeout()接受dispatch作为第一个参数？因为它需要向store里面dispatch actions。正常情况下，一个组件可以使用dispatch，但现在我们希望一个外部的函数接管dispatch行为，我们就要将dispatch赋予这个函数。</p>
+<p>如果在actions.js文件中，你有一个singleton store导入到里面，你可以直接使用store.dispatch()：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// store.js</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> createStore(reducer)</div><div class="line"></div><div class="line"><span class="comment">// actions.js</span></div><div class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span></div><div class="line"></div><div class="line"><span class="comment">// ...</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> nextNotificationId = <span class="number">0</span></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">showNotificationWithTimeout</span>(<span class="params">text</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> id = nextNotificationId++</div><div class="line">  store.dispatch(showNotification(id, text))</div><div class="line"></div><div class="line">  setTimeout(() =&gt; &#123;</div><div class="line">    store.dispatch(hideNotification(id))</div><div class="line">  &#125;, <span class="number">5000</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// component.js</span></div><div class="line">showNotificationWithTimeout(<span class="string">'You just logged in.'</span>)</div><div class="line"></div><div class="line"><span class="comment">// otherComponent.js</span></div><div class="line">showNotificationWithTimeout(<span class="string">'You just logged out.'</span>)</div></pre></td></tr></table></figure>
+<p>上面的代码看起来简洁，但是我们并不推荐这种做法。主要原因在于它强制性的让store成为一个singleton。这一点在实现server rendering的时候会变得非常困难。在服务器中，你希望每个请求有它自己的store，每个用户因此可以得到不同的preloaded data。一个singleton store使得测试也变得困难，因为你不能在测试action creators时模拟一个store，singleton store会从某个特定的module中引用一个真正的store。并且我们也无法在外部重置state了。所以除非你清楚你的应用不会server rendering，我们不会推荐你用这种方法。</p>
+<h2 id="Thunk-Middleware"><a href="#Thunk-Middleware" class="headerlink" title="Thunk Middleware"></a>Thunk Middleware</h2><p>接下来就到正题了。</p>
+<p>对于简单的应用来说，上面的方法足够用了。但是当应用规模增加，这种方法有些不方便使用。举例来说，我们想将 container 和 component 分离，这种方法就不太适合。因为任何想要使用以上方法dispatch async actions的组件必须接受 dispatch 作为他的 prop，该组件才能将 dispatch 传递到函数中。但是我们并不能使用 connect() 绑定 showNotificationWithTimeout()，因为它根本不是一个action creator，<strong>它没有返回一个Redux action</strong>。并且，在写代码的过程中不容易记忆和区分哪个代码是像 showNotification() 那样的sync代码，哪些代码是像 showNotificationWithTimeout() 那样的 async 代码。</p>
+<p>上面这些问题使得我们寻找一个合适的方法来规范这种<strong>将dispatch参数提供给helper function</strong>的模式，来帮助 Redux 认清那样的async action creator只是正常action creator的一种特殊形式，而非完全不同的方法。</p>
+<p>Redux thunk 可以帮助 Redux 识别一些函数形式的actions。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'redux'</span></div><div class="line"><span class="keyword">import</span> thunk <span class="keyword">from</span> <span class="string">'redux-thunk'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> store = createStore(</div><div class="line">  reducer,</div><div class="line">  applyMiddleware(thunk)</div><div class="line">)</div><div class="line"></div><div class="line"><span class="comment">// It still recognizes plain object actions</span></div><div class="line">store.dispatch(&#123; type: <span class="string">'INCREMENT'</span> &#125;)</div><div class="line"></div><div class="line"><span class="comment">// But with thunk middleware, it also recognizes functions</span></div><div class="line">store.dispatch(<span class="function"><span class="keyword">function</span> (<span class="params">dispatch</span>) </span>&#123;</div><div class="line">  <span class="comment">// ... which themselves may dispatch many times</span></div><div class="line">  dispatch(&#123; type: <span class="string">'INCREMENT'</span> &#125;)</div><div class="line">  dispatch(&#123; type: <span class="string">'INCREMENT'</span> &#125;)</div><div class="line">  dispatch(&#123; type: <span class="string">'INCREMENT'</span> &#125;)</div><div class="line"></div><div class="line">  setTimeout(() =&gt; &#123;</div><div class="line">    <span class="comment">// ... even asynchronously!</span></div><div class="line">    dispatch(&#123; type: <span class="string">'DECREMENT'</span> &#125;)</div><div class="line">  &#125;, <span class="number">1000</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>当这个middleware启动时，如果你想 dispatch 一个function，Redux thunk middleware会给这个函数传递一个dispatch 参数。它同样包含actions，你不必担心你的reducers不识别function参数，因为你的reducer还是只接收到object action，可能来源于直接object传递，也可能来源于这个函数传递的。</p>
+<p>目前来看这个功能好像不是很有用，不过它只是在这里用不到，让我们先来创建一个showNotificationWithTimeout() 的action creator看看：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// actions.js</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showNotification</span>(<span class="params">id, text</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123; type: <span class="string">'SHOW_NOTIFICATION'</span>, id, text &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hideNotification</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123; type: <span class="string">'HIDE_NOTIFICATION'</span>, id &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> nextNotificationId = <span class="number">0</span></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">showNotificationWithTimeout</span>(<span class="params">text</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">dispatch</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> id = nextNotificationId++</div><div class="line">    dispatch(showNotification(id, text))</div><div class="line"></div><div class="line">    setTimeout(() =&gt; &#123;</div><div class="line">      dispatch(hideNotification(id))</div><div class="line">    &#125;, <span class="number">5000</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们注意到这个函数和之前的的函数差不多，而且它并没有接受dispatch作为第一个参数，它返回了一个函数这个函数接受了dispatch作为它的第一个参数。那么我们在component中怎么使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// component.js</span></div><div class="line">showNotificationWithTimeout(<span class="string">'You just logged in.'</span>)(<span class="keyword">this</span>.props.dispatch)</div></pre></td></tr></table></figure>
+<p>如果Redux Thunk middleware启动的情况下，每次你希望 dispatch 一个 function 而不是 action object的时候，这个middleware就会调用那个带dispatch方法作为第一个参数的函数。</p>
+<p>因此我们可以用以下方法代替：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// component.js</span></div><div class="line"><span class="keyword">this</span>.props.dispatch(showNotificationWithTimeout(<span class="string">'You just logged in.'</span>))</div><div class="line"></div><div class="line">等价于</div><div class="line"><span class="keyword">this</span>.props.dispatch(</div><div class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">dispatch</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> id = nextNotificationId++</div><div class="line">    dispatch(showNotification(id, <span class="string">'You just logged in.'</span>))</div><div class="line">    setTimeout(() =&gt; &#123;</div><div class="line">      dispatch(hideNotification(id))</div><div class="line">    &#125;, <span class="number">5000</span>)</div><div class="line">  &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>这样，dispatch一个 async action 就和 dispatch 一个 sync action 在写法上看起来一样了。因为component不应该在意一个事情的发生是同步的还是异步的。既然我们 已经让 Redux 知道怎样识别一个thunk action creator了，那么我们应该可以在任何可以使用一般action creator的地方使用 thunk action creator，例如我们将它配合connect()使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// actions.js</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showNotification</span>(<span class="params">id, text</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123; type: <span class="string">'SHOW_NOTIFICATION'</span>, id, text &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hideNotification</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123; type: <span class="string">'HIDE_NOTIFICATION'</span>, id &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> nextNotificationId = <span class="number">0</span></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">showNotificationWithTimeout</span>(<span class="params">text</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">dispatch</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> id = nextNotificationId++</div><div class="line">    dispatch(showNotification(id, text))</div><div class="line"></div><div class="line">    setTimeout(() =&gt; &#123;</div><div class="line">      dispatch(hideNotification(id))</div><div class="line">    &#125;, <span class="number">5000</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// component.js</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"></div><div class="line"><span class="comment">// ...</span></div><div class="line"></div><div class="line"><span class="keyword">this</span>.props.showNotificationWithTimeout(<span class="string">'You just logged in.'</span>)</div><div class="line"></div><div class="line"><span class="comment">// ...</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(</div><div class="line">  mapStateToProps,</div><div class="line">  &#123; showNotificationWithTimeout &#125;</div><div class="line">)(MyComponent)</div></pre></td></tr></table></figure>
+<h2 id="Reading-State-in-Thunks"><a href="#Reading-State-in-Thunks" class="headerlink" title="Reading State in Thunks"></a>Reading State in Thunks</h2><p>通常情况下，你的reducer包含了下个state的业务逻辑。然而，只有在action被dispatched以后reducer才开始工作。如果此时你的thunk action creator有其他的副作用违背这一规则，例如调用远程API，你应该怎样做？或者说你怎样希望避免action 被dispatched以后reducer才开始工作这一规则？</p>
+<p>在没有使用thunk的情况下，你会在component内部检查：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// component.js</span></div><div class="line"><span class="keyword">if</span> (<span class="keyword">this</span>.props.areNotificationsEnabled) &#123;</div><div class="line">  showNotificationWithTimeout(<span class="keyword">this</span>.props.dispatch, <span class="string">'You just logged in.'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是这样做就违背了将重复逻辑提取成一个函数供不同component复用的原则。庆幸的是，Redux Thunk提供了一个方法来read the current state of the Redux store。除了dispatch以外，它还传递了一个 getState 作为thunk action creator 返回函数的第二个参数。这样就使得thunk能够读取store的当前 state了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> nextNotificationId = <span class="number">0</span></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">showNotificationWithTimeout</span>(<span class="params">text</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">dispatch, getState</span>) </span>&#123;</div><div class="line">    <span class="comment">// Unlike in a regular action creator, we can exit early in a thunk</span></div><div class="line">    <span class="comment">// Redux doesn’t care about its return value (or lack of it)</span></div><div class="line">    <span class="keyword">if</span> (!getState().areNotificationsEnabled) &#123;</div><div class="line">      <span class="keyword">return</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">const</span> id = nextNotificationId++</div><div class="line">    dispatch(showNotification(id, text))</div><div class="line"></div><div class="line">    setTimeout(() =&gt; &#123;</div><div class="line">      dispatch(hideNotification(id))</div><div class="line">    &#125;, <span class="number">5000</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Don’t abuse this pattern. It is good for bailing out of API calls when there is cached data available, but it is not a very good foundation to build your business logic upon. If you use <code>getState()</code> only to conditionally dispatch different actions, consider putting the business logic into the reducers instead.</p>
+<h1 id="Async-Tutorial"><a href="#Async-Tutorial" class="headerlink" title="Async Tutorial"></a>Async Tutorial</h1><h2 id="Actions"><a href="#Actions" class="headerlink" title="Actions"></a>Actions</h2><p>当我们调用一个异步请求时，有两个重要时间点：一是开始调用的时间，二是收到应答的时间或者timeout时间。这两个时间点都需要应用状态的改变，为了改变应用状态，我们需要调度（dispatch） reducer同步处理的actions，一般情况下，任何API请求我们需要调度至少三个不同的actions。</p>
+<ol>
+<li>一个action通知reducer请求开始了。</li>
+<li>一个action通知reducer请求成功了。</li>
+<li>一个action通知reducer请求失败了。</li>
+</ol>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; type: <span class="string">'FETCH_POSTS'</span> &#125;</div><div class="line">&#123; type: <span class="string">'FETCH_POSTS'</span>, status: <span class="string">'error'</span>, error: <span class="string">'Oops'</span> &#125;</div><div class="line">&#123; type: <span class="string">'FETCH_POSTS'</span>, status: <span class="string">'success'</span>, response: &#123; ... &#125; &#125;</div></pre></td></tr></table></figure>
+<h2 id="Synchronous-Action-Creators"><a href="#Synchronous-Action-Creators" class="headerlink" title="Synchronous Action Creators"></a>Synchronous Action Creators</h2><p>让我们使用创建同步action creators的方法调用reddit的API举个例子。</p>
+<p>选择reddit的subreddit功能和目前调用API联系不大，所以暂时省略，完整的action流程是先选择subreddit，再调用API。让我们直接来看REQUEST_POSTS action：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> REQUEST_POSTS = <span class="string">'REQUEST_POSTS'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">requestPosts</span>(<span class="params">subreddit</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    type: REQUEST_POSTS,</div><div class="line">    subreddit</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当响应到来时：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> RECEIVE_POSTS = <span class="string">'RECEIVE_POSTS'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">receivePosts</span>(<span class="params">subreddit, json</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    type: RECEIVE_POSTS,</div><div class="line">    subreddit,</div><div class="line">    posts: json.data.children.map(child =&gt; child.data),</div><div class="line">    receivedAt: <span class="built_in">Date</span>.now()</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>由此可见同步调用API的action creator需要创建一系列相关的actions。目前代码中省略了错误处理。</p>
+<h2 id="Handling-Actions"><a href="#Handling-Actions" class="headerlink" title="Handling Actions"></a>Handling Actions</h2><p>下面是每个Actions的reducer实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; combineReducers &#125; <span class="keyword">from</span> <span class="string">'redux'</span></div><div class="line"><span class="keyword">import</span> &#123;</div><div class="line">  SELECT_SUBREDDIT, INVALIDATE_SUBREDDIT,</div><div class="line">  REQUEST_POSTS, RECEIVE_POSTS</div><div class="line">&#125; <span class="keyword">from</span> <span class="string">'../actions'</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectedSubreddit</span>(<span class="params">state = 'reactjs', action</span>) </span>&#123;</div><div class="line">  <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">    <span class="keyword">case</span> SELECT_SUBREDDIT:</div><div class="line">      <span class="keyword">return</span> action.subreddit</div><div class="line">    <span class="keyword">default</span>:</div><div class="line">      <span class="keyword">return</span> state</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">posts</span>(<span class="params">state = &#123;</span></span></div><div class="line">  isFetching: false,</div><div class="line">  didInvalidate: false,</div><div class="line">  items: []</div><div class="line">&#125;, action) &#123;</div><div class="line">  <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">    <span class="keyword">case</span> INVALIDATE_SUBREDDIT:</div><div class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</div><div class="line">        didInvalidate: <span class="literal">true</span></div><div class="line">      &#125;)</div><div class="line">    <span class="keyword">case</span> REQUEST_POSTS:</div><div class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</div><div class="line">        isFetching: <span class="literal">true</span>,</div><div class="line">        didInvalidate: <span class="literal">false</span></div><div class="line">      &#125;)</div><div class="line">    <span class="keyword">case</span> RECEIVE_POSTS:</div><div class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</div><div class="line">        isFetching: <span class="literal">false</span>,</div><div class="line">        didInvalidate: <span class="literal">false</span>,</div><div class="line">        items: action.posts,</div><div class="line">        lastUpdated: action.receivedAt</div><div class="line">      &#125;)</div><div class="line">    <span class="keyword">default</span>:</div><div class="line">      <span class="keyword">return</span> state</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">postsBySubreddit</span>(<span class="params">state = &#123;&#125;, action</span>) </span>&#123;</div><div class="line">  <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">    <span class="keyword">case</span> INVALIDATE_SUBREDDIT:</div><div class="line">    <span class="keyword">case</span> RECEIVE_POSTS:</div><div class="line">    <span class="keyword">case</span> REQUEST_POSTS:</div><div class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</div><div class="line">        [action.subreddit]: posts(state[action.subreddit], action)</div><div class="line">      &#125;)</div><div class="line">    <span class="keyword">default</span>:</div><div class="line">      <span class="keyword">return</span> state</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> rootReducer = combineReducers(&#123;</div><div class="line">  postsBySubreddit,</div><div class="line">  selectedSubreddit</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> rootReducer</div></pre></td></tr></table></figure>
+<h2 id="Async-Action-Creators"><a href="#Async-Action-Creators" class="headerlink" title="Async Action Creators"></a>Async Action Creators</h2><p>那么我们怎样使用同步action creators 来实现网络请求？通常情况下我们使用Redux Thunk middleware。使用这个middleware，一个action creator能够返回一个function而非一个action object，这样，action creator就变成了thunk。当一个action creator返回一个function， 这个function将会被Redux Thunk middleware执行。</p>
+<p>下面我们就来定义这些特殊的thunk action creators：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> fetch <span class="keyword">from</span> <span class="string">'isomorphic-fetch'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> REQUEST_POSTS = <span class="string">'REQUEST_POSTS'</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">requestPosts</span>(<span class="params">subreddit</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    type: REQUEST_POSTS,</div><div class="line">    subreddit</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> RECEIVE_POSTS = <span class="string">'RECEIVE_POSTS'</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">receivePosts</span>(<span class="params">subreddit, json</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    type: RECEIVE_POSTS,</div><div class="line">    subreddit,</div><div class="line">    posts: json.data.children.map(child =&gt; child.data),</div><div class="line">    receivedAt: <span class="built_in">Date</span>.now()</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Meet our first thunk action creator!</span></div><div class="line"><span class="comment">// Though its insides are different, you would use it just like any other action creator:</span></div><div class="line"><span class="comment">// store.dispatch(fetchPosts('reactjs'))</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">fetchPosts</span>(<span class="params">subreddit</span>) </span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">// Thunk middleware knows how to handle functions.</span></div><div class="line">  <span class="comment">// It passes the dispatch method as an argument to the function,</span></div><div class="line">  <span class="comment">// thus making it able to dispatch actions itself.</span></div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">dispatch</span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// First dispatch: the app state is updated to inform</span></div><div class="line">    <span class="comment">// that the API call is starting.</span></div><div class="line"></div><div class="line">    dispatch(requestPosts(subreddit))</div><div class="line"></div><div class="line">    <span class="comment">// The function called by the thunk middleware can return a value,</span></div><div class="line">    <span class="comment">// that is passed on as the return value of the dispatch method.</span></div><div class="line"></div><div class="line">    <span class="comment">// In this case, we return a promise to wait for.</span></div><div class="line">    <span class="comment">// This is not required by thunk middleware, but it is convenient for us.</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> fetch(<span class="string">`http://www.reddit.com/r/<span class="subst">$&#123;subreddit&#125;</span>.json`</span>)</div><div class="line">      .then(response =&gt; response.json())</div><div class="line">      .then(json =&gt;</div><div class="line"></div><div class="line">        <span class="comment">// We can dispatch many times!</span></div><div class="line">        <span class="comment">// Here, we update the app state with the results of the API call.</span></div><div class="line"></div><div class="line">        dispatch(receivePosts(subreddit, json))</div><div class="line">      )</div><div class="line"></div><div class="line">      <span class="comment">// In a real world app, you also want to</span></div><div class="line">      <span class="comment">// catch any error in the network call.</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>此处使用了fetch API，替换大多数人使用的XMLHttpRequest，因为一般浏览器中，XMLHttpRequest并不是原生支持的，所以我们推荐使用isomorphic-fetch库。</p>
+<p>需要注意的是，任何fetch polfill 都假设应用中存在Promise polyfill，所以最简单确保你的应用中含有Promise polyfill的方法就是在任何代码执行之前，入口处enable Babel’s ES6 polyfill。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Do this once before any other code in your app</span></div><div class="line"><span class="keyword">import</span> <span class="string">'babel-polyfill'</span></div></pre></td></tr></table></figure>
+<p>我们怎样将thunk middleware加入到dispatch机制中来？答案是使用Redux中的applyMiddleware() store enhancer。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> thunkMiddleware <span class="keyword">from</span> <span class="string">'redux-thunk'</span></div><div class="line"><span class="keyword">import</span> createLogger <span class="keyword">from</span> <span class="string">'redux-logger'</span></div><div class="line"><span class="keyword">import</span> &#123; createStore, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'redux'</span></div><div class="line"><span class="keyword">import</span> &#123; selectSubreddit, fetchPosts &#125; <span class="keyword">from</span> <span class="string">'./actions'</span></div><div class="line"><span class="keyword">import</span> rootReducer <span class="keyword">from</span> <span class="string">'./reducers'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> loggerMiddleware = createLogger()</div><div class="line"></div><div class="line"><span class="keyword">const</span> store = createStore(</div><div class="line">  rootReducer,</div><div class="line">  applyMiddleware(</div><div class="line">    thunkMiddleware, <span class="comment">// lets us dispatch() functions</span></div><div class="line">    loggerMiddleware <span class="comment">// neat middleware that logs actions</span></div><div class="line">  )</div><div class="line">)</div><div class="line"></div><div class="line">store.dispatch(selectSubreddit(<span class="string">'reactjs'</span>))</div><div class="line">store.dispatch(fetchPosts(<span class="string">'reactjs'</span>)).then(() =&gt;</div><div class="line">  <span class="built_in">console</span>.log(store.getState())</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>Thunk的优点就在于它们能调度（dispatch）相互之间的结果。</p>
+
+      
+    </div>
+    
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-Working-with-Google-Map-API-on-Reactjs-C" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/">Working with Google Map API on Reactjs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/" class="article-date">
+  <time datetime="2016-07-15T16:01:38.000Z" itemprop="datePublished">2016-07-15</time>
+</a>
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>When we develop a component using 3rd party APIs like Google, Github, we must use their API or load their javascript libraries to get instances they made. There are multiple ways to load 3rd API libraries: one is including libraries with <code>&lt;script&gt;</code>  on the original markup for the page, another is lazily-loading the libraries.</p>
+<p>We can get the purpose and tutorial of Lazy Loading Asyncronous Javascript <a href="https://friendlybit.com/js/lazy-loading-asyncronous-javascript/" target="_blank" rel="external">here</a>. </p>
+
+      
+    </div>
+    
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-Learning-Reactjs-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/07/Learning-Reactjs-2/">Reactjs学习笔记（二）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/07/07/Learning-Reactjs-2/" class="article-date">
+  <time datetime="2016-07-07T23:01:59.000Z" itemprop="datePublished">2016-07-07</time>
+</a>
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="START-UP-A-REACT-PROJECT"><a href="#START-UP-A-REACT-PROJECT" class="headerlink" title="START UP A REACT PROJECT"></a>START UP A REACT PROJECT</h1><h2 id="Setting-up-package-json"><a href="#Setting-up-package-json" class="headerlink" title="Setting up package.json"></a>Setting up package.json</h2><p>Create a new one using npm init command, selecting defaults where uncertain.<br><strong>/package.json</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="string">"name"</span>: <span class="string">"react-speed-coding-code"</span>,</div><div class="line">	<span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">	<span class="string">"description"</span>: <span class="string">"Companion code for React Speed Coding book"</span>,</div><div class="line">	<span class="string">"main"</span>: <span class="string">"index.js"</span>,</div><div class="line">	<span class="string">"private"</span>: <span class="literal">true</span>,</div><div class="line">	<span class="string">"scripts"</span>: &#123;</div><div class="line">		<span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></div><div class="line">	&#125;,</div><div class="line">	<span class="string">"author"</span>: <span class="string">"Manav Sehgal"</span>,</div><div class="line">	<span class="string">"license"</span>: <span class="string">"MIT"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/07/07/Learning-Reactjs-2/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-How-to-use-this-in-JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/15/How-to-use-this-in-JavaScript/">How to use this in JavaScript</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/06/15/How-to-use-this-in-JavaScript/" class="article-date">
+  <time datetime="2016-06-16T00:30:59.000Z" itemprop="datePublished">2016-06-15</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Front-End/">Front End</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文来源于<a href="https://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/" target="_blank" rel="external">深入浅出 JavaScript 中的 this</a><br>结合最近在学习的React框架，记录一些this使用的方法。</p>
+<p>由于其运行期绑定的特性，JavaScript 中的 this 含义要丰富得多，它可以是全局对象、当前对象或者任意对象，这完全取决于函数的调用方式。JavaScript 中函数的调用有以下几种方式：作为对象方法调用，作为函数调用，作为构造函数调用，和使用 apply 或 call 调用。下面我们将按照调用方式的不同，分别讨论 this 的含义。</p>
+<h3 id="1-函数作为对象方法调用时的this"><a href="#1-函数作为对象方法调用时的this" class="headerlink" title="1. 函数作为对象方法调用时的this"></a>1. 函数作为对象方法调用时的this</h3><p>在 JavaScript 中，函数也是对象，函数可以作为一个对象的属性，此时该函数被称为该对象的方法，在使用这种调用方式时，this 被自然绑定到该对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> point = &#123; </div><div class="line"> x : <span class="number">0</span>, </div><div class="line"> y : <span class="number">0</span>, </div><div class="line"> moveTo : <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123; </div><div class="line">	 <span class="keyword">this</span>.x = <span class="keyword">this</span>.x + x; </div><div class="line">	 <span class="keyword">this</span>.y = <span class="keyword">this</span>.y + y; </div><div class="line">	 &#125; </div><div class="line"> &#125;; </div><div class="line"></div><div class="line"> point.moveTo(<span class="number">1</span>, <span class="number">1</span>)<span class="comment">//this 绑定到当前对象，即 point 对象</span></div></pre></td></tr></table></figure></p>
+<p>在React中经常出现的情形是：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> TestClickComponent = React.createClass(</div><div class="line">	handleClick: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> tipE = React.findDOMNode(<span class="keyword">this</span>.refs.tip);                              <span class="comment">//拿到真实DOM节点</span></div><div class="line">		<span class="keyword">if</span>(tipE.style.display === <span class="string">'none'</span>)&#123;</div><div class="line">			tipE.style.display === <span class="string">'inline'</span></div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			tipE.style.display === <span class="string">'none'</span></div><div class="line">		&#125;</div><div class="line">		event.stopPropagation();</div><div class="line">		event.preventDefault();</div><div class="line">	&#125;,</div><div class="line">	render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			&lt;div&gt;</div><div class="line">				&lt;button onClick=&#123;this.handleClick&#125;&gt;SHOW|HIDE&lt;/button&gt;&lt;span ref="tip"&gt;test&lt;/span&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">		);</div><div class="line">	&#125;</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<h3 id="2-函数在直接调用时的this"><a href="#2-函数在直接调用时的this" class="headerlink" title="2.函数在直接调用时的this"></a>2.函数在直接调用时的this</h3><p>函数也可以直接被调用，此时 this 绑定到全局对象。在浏览器中，window 就是该全局对象。比如下面的例子：函数被调用时，this 被绑定到全局对象，接下来执行赋值语句，相当于隐式的声明了一个全局变量，这显然不是调用者希望的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeNoSense</span>(<span class="params">x</span>) </span>&#123; </div><div class="line"><span class="keyword">this</span>.x = x; </div><div class="line">&#125; </div><div class="line"></div><div class="line">makeNoSense(<span class="number">5</span>); </div><div class="line">x;<span class="comment">// x 已经成为一个值为 5 的全局变量</span></div></pre></td></tr></table></figure></p>
+<p>对于内部函数，即声明在另外一个函数体内的函数，这种绑定到全局对象的方式会产生另外一个问题。我们仍然以前面提到的 point 对象为例，这次我们希望在 moveTo 方法内定义两个函数，分别将 x，y 坐标进行平移。结果可能出乎大家意料，不仅 point 对象没有移动，反而多出两个全局变量 x，y。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> point = &#123; </div><div class="line">	x : <span class="number">0</span>, </div><div class="line">	y : <span class="number">0</span>, </div><div class="line">	moveTo : <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123; </div><div class="line">	 <span class="comment">// 内部函数</span></div><div class="line">	 <span class="keyword">var</span> moveX = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123; </div><div class="line">	 <span class="keyword">this</span>.x = x;<span class="comment">//this 绑定到了哪里？</span></div><div class="line">	&#125;; </div><div class="line">	<span class="comment">// 内部函数</span></div><div class="line">	<span class="keyword">var</span> moveY = <span class="function"><span class="keyword">function</span>(<span class="params">y</span>) </span>&#123; </div><div class="line">	<span class="keyword">this</span>.y = y;<span class="comment">//this 绑定到了哪里？</span></div><div class="line">	&#125;; </div><div class="line"></div><div class="line">	moveX(x); </div><div class="line">	moveY(y); </div><div class="line">	&#125; </div><div class="line">	&#125;; </div><div class="line">	point.moveTo(<span class="number">1</span>, <span class="number">1</span>); </div><div class="line">	point.x; <span class="comment">//==&gt;0 </span></div><div class="line">	point.y; <span class="comment">//==&gt;0 </span></div><div class="line">	x; <span class="comment">//==&gt;1 </span></div><div class="line">	y; <span class="comment">//==&gt;1</span></div></pre></td></tr></table></figure></p>
+<p>这属于 JavaScript 的设计缺陷，正确的设计方式是内部函数的 this 应该绑定到其外层函数对应的对象上，为了规避这一设计缺陷，聪明的 JavaScript 程序员想出了变量替代的方法，约定俗成，该变量一般被命名为 that。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> point = &#123; </div><div class="line">	x : <span class="number">0</span>, </div><div class="line">	y : <span class="number">0</span>, </div><div class="line">	moveTo : <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123; </div><div class="line">	  <span class="keyword">var</span> that = <span class="keyword">this</span>; </div><div class="line">	 <span class="comment">// 内部函数</span></div><div class="line">	 <span class="keyword">var</span> moveX = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123; </div><div class="line">	 that.x = x; </div><div class="line">	 &#125;; </div><div class="line">	 <span class="comment">// 内部函数</span></div><div class="line">	 <span class="keyword">var</span> moveY = <span class="function"><span class="keyword">function</span>(<span class="params">y</span>) </span>&#123; </div><div class="line">	 that.y = y; </div><div class="line">	 &#125; </div><div class="line">	 moveX(x); </div><div class="line">	 moveY(y); </div><div class="line">	 &#125; </div><div class="line">	&#125;; </div><div class="line">	point.moveTo(<span class="number">1</span>, <span class="number">1</span>); </div><div class="line">	point.x; <span class="comment">//==&gt;1 </span></div><div class="line">	point.y; <span class="comment">//==&gt;1</span></div></pre></td></tr></table></figure></p>
+<p>在React中经常出现的情形是：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> TestInputComponent = React.createClass(</div><div class="line">	...</div><div class="line">	componentDidMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> _self = <span class="keyword">this</span>;</div><div class="line">		<span class="built_in">window</span>.setTimeOut(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			_self.setState(&#123;</div><div class="line">				opacity:<span class="number">0.5</span>,</div><div class="line">				fontSize:<span class="string">'44px'</span></div><div class="line">			&#125;);</div><div class="line">		&#125;,<span class="number">1000</span>);</div><div class="line">	&#125;</div><div class="line">	...</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>this本身代表在函数运行时自动生成的内部对象，只能在函数内部使用。随着函数使用场合的不同，this会发生不同变化。但是this一直表示调用函数的对象。setTimeOut中的this，由于setTimeOut中的第一个变量是一个函数调用，并不隶属于哪个对象，所以当前的this指代全局对象global,想要改变state时，不能直接使用this.setState()函数，需要先保存this到_self，再使用。<br>除了这种写法，还可以使用另外一种写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> TestInputComponent = React.createClass(</div><div class="line">	...</div><div class="line">	componentDidMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">window</span>.setTimeOut(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="keyword">this</span>.setState(&#123;</div><div class="line">				opacity:<span class="number">0.5</span>,</div><div class="line">				fontSize:<span class="string">'44px'</span></div><div class="line">			&#125;);</div><div class="line">		&#125;.bind(<span class="keyword">this</span>),<span class="number">1000</span>);</div><div class="line">	&#125;</div><div class="line">	...</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>bind函数可以将函数里面的this指向函数外面的this。</p>
+<h3 id="3-函数作为构造函数调用时的this"><a href="#3-函数作为构造函数调用时的this" class="headerlink" title="3.函数作为构造函数调用时的this"></a>3.函数作为构造函数调用时的this</h3><p>JavaScript 支持面向对象式编程，与主流的面向对象式编程语言不同，JavaScript 并没有类（class）的概念，而是使用基于原型（prototype）的继承方式。相应的，JavaScript 中的构造函数也很特殊，如果不使用 new 调用，则和普通函数一样。作为又一项约定俗成的准则，构造函数以大写字母开头，提醒调用者使用正确的方式调用。如果调用正确，this 绑定到新创建的对象上。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>)</span>&#123; </div><div class="line">		<span class="keyword">this</span>.x = x; </div><div class="line">		<span class="keyword">this</span>.y = y; </div><div class="line"> 	&#125;</div><div class="line">​<span class="string">``</span><span class="string">`javascript</span></div><div class="line"></div><div class="line">### 4.函数在使用 apply 或 call 调用时的this</div><div class="line">让我们再一次重申，在 JavaScript 中函数也是对象，对象则有方法，apply 和 call 就是函数对象的方法。这两个方法异常强大，他们允许切换函数执行的上下文环境（context），即 this 绑定的对象。很多 JavaScript 中的技巧以及类库都用到了该方法。让我们看一个具体的例子：</div><div class="line">​`<span class="string">``</span>JavaScript</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>)</span>&#123; </div><div class="line">		<span class="keyword">this</span>.x = x; </div><div class="line">		<span class="keyword">this</span>.y = y; </div><div class="line">		<span class="keyword">this</span>.moveTo = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>)</span>&#123; </div><div class="line">			<span class="keyword">this</span>.x = x; </div><div class="line">			<span class="keyword">this</span>.y = y; </div><div class="line">		&#125; </div><div class="line">	 &#125; </div><div class="line"></div><div class="line">	 <span class="keyword">var</span> p1 = <span class="keyword">new</span> Point(<span class="number">0</span>, <span class="number">0</span>); </div><div class="line">	 <span class="keyword">var</span> p2 = &#123;x: <span class="number">0</span>, y: <span class="number">0</span>&#125;; </div><div class="line">	 p1.moveTo(<span class="number">1</span>, <span class="number">1</span>); </div><div class="line">	 p1.moveTo.apply(p2, [<span class="number">10</span>, <span class="number">10</span>]);</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-Learning-Reactjs-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/14/Learning-Reactjs-1/">Reactjs学习笔记（一）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/06/14/Learning-Reactjs-1/" class="article-date">
+  <time datetime="2016-06-14T20:19:34.000Z" itemprop="datePublished">2016-06-14</time>
+</a>
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Cheatsheet-for-props-state-events"><a href="#Cheatsheet-for-props-state-events" class="headerlink" title="Cheatsheet for props, state, events"></a>Cheatsheet for props, state, events</h1><p><strong>Properties:</strong> Passing input data from Root/Owner component to Child. Owner defines a property=value which is used within rendered component. The “Owner-ownee” relationship can exist without property passing, as in owner simply rendering a component.<br>Owner component passing property:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Hello greet=&#123; <span class="keyword">this</span>.state.currentGreeting &#125; message=<span class="string">"World!"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>State:</strong> Defined within component whose state changes. State change updates rendered markup. Components can be stateless. Treat this.state as immutable. Do not change its value directly. Use setState method instead.<br>Default state:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.state = &#123;</div><div class="line">	currentGreeting: props.greet</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/14/Learning-Reactjs-1/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-Learning-Angularjs-4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/05/Learning-Angularjs-4/">Angularjs学习笔记（四）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/05/05/Learning-Angularjs-4/" class="article-date">
+  <time datetime="2016-05-05T21:39:41.000Z" itemprop="datePublished">2016-05-05</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Front-End/">Front End</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="HTML-Compiler"><a href="#HTML-Compiler" class="headerlink" title="HTML Compiler"></a>HTML Compiler</h2><p>每一个网页元素都对应着一个对象object</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/05/Learning-Angularjs-4/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angularjs/">Angularjs</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-Learning-Angularjs-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/29/Learning-Angularjs-3/">Angularjs学习笔记（三）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/29/Learning-Angularjs-3/" class="article-date">
+  <time datetime="2016-04-29T19:09:20.000Z" itemprop="datePublished">2016-04-29</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Front-End/">Front End</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Angularjs中的路由"><a href="#Angularjs中的路由" class="headerlink" title="Angularjs中的路由"></a>Angularjs中的路由</h2><p>Angularjs的路由策略属于前端路由，前端路由和后端路由的区别在于，Angularjs前端路由属于锚点路由，锚点路由和后端路由的区别就像点击html中设置的锚点和点击html中设置的超链接之间的不同。首先来看怎样设置锚点：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;a id = "top"&gt;这里是一段文字&lt;/a&gt;</div><div class="line">&lt;div&gt;</div><div class="line">	&lt;!-- 此处有若干行代码 --&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;a href = "#top"&gt;点击&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+<p>设置锚点由两部分组成，锚点和点击链接，因为锚点标签的href属性值以“#”开头，并且锚点目标在本页中，所以点击链接不会带来页面的刷新。<br>锚点路由原理与之类似，如果当前页面处于<a href="http://localhost:9000/#/">http://localhost:9000/#/</a> ，当点击锚点时触发<strong>hashchange事件</strong>，锚点部分的值变为 <a href="http://localhost:9000/#/about">http://localhost:9000/#/about</a>, 之后根据Angularjs的routeProvider设置的路由策略去取得相应的页面部分，当前页面不刷新，并不是去后端重新取回页面。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/29/Learning-Angularjs-3/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angularjs/">Angularjs</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-Learning-Angularjs-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/28/Learning-Angularjs-2/">Angualrjs学习笔记（二）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/28/Learning-Angularjs-2/" class="article-date">
+  <time datetime="2016-04-29T02:52:32.000Z" itemprop="datePublished">2016-04-28</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Front-End/">Front End</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Providers"><a href="#Providers" class="headerlink" title="Providers"></a>Providers</h3><p>在我们创建web应用的时候，我们<strong>需要组合使用多个objects</strong>，每个object需要被实例化才能使用。在Angular应用中，这些<strong>objects被<a href="https://docs.angularjs.org/api/auto/service/$injector">injector service</a>实例化</strong>的。<br>这个injector创建两种objects，services和specialized objects。<br>Services即开发者定义的业务逻辑。<br>Specialized Objects即 controllers, directives, filters 或者animations之一。<br><strong>injector</strong>怎样知道如何创建上面这两种objects呢，可以通过<strong>注册</strong>创建object对应的<strong>recipe</strong>来创建object。此处共有五种recipe，provider，value,factory,service,constant，其中provider是基础，其他四种是provider的语法糖。<br>下面说一下<strong>recipe的结构</strong>，每个recipe有一个<strong>identifier</strong>表示这个<strong>object</strong>的名字，以及<strong>description</strong>表示怎样<strong>创建这个object</strong>。<br>每个recipe属于Angular module。当一个angular module启动时，Angular自动创建一个injector实例，这个injector实例创建一个包含所有recipe注册情况的注册表，这些注册来自于核心ng模块，application module以及它的dependencies，当需要为应用创建一个object的时候，injector询问一下这个注册表就知道了。虽然我们的recipe有五种，但是这五种recipe都是为了创建运行时所需的objects用的，injector通过identifier查找object，通过description实例化object。所以注册recipe的时候使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myApp = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">myApp.recipe();</div></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/28/Learning-Angularjs-2/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angularjs/">Angularjs</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-Prototype-in-JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/26/Prototype-in-JavaScript/">Prototype in JavaScript</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/26/Prototype-in-JavaScript/" class="article-date">
+  <time datetime="2016-04-26T19:41:05.000Z" itemprop="datePublished">2016-04-26</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Front-End/">Front End</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><h4 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h4><p>我们穿件的每个函数都有一个prototype（原型）属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以有特定类型的<strong>所有实例共享的属性和方法</strong>。意思是，不管创建实例1还是实例2，他们访问的都是同一组属性和方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Person.prototype.name = <span class="string">"Tom"</span>;</div><div class="line"><span class="built_in">console</span>.log(Person.name);            <span class="comment">//Person </span></div><div class="line">                                     <span class="comment">//这个例子不好，通过function创建的Function对象含有一系列默认属性</span></div><div class="line">                                        <span class="comment">//[ 'length', 'name', 'arguments', 'caller', 'prototype' ]其中含有name属性</span></div><div class="line">Person.prototype.na = <span class="string">"sad"</span>;</div><div class="line"><span class="built_in">console</span>.log(Person.na);              <span class="comment">//undefined</span></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div><div class="line"><span class="built_in">console</span>.log(p.name);                 <span class="comment">//Tom</span></div></pre></td></tr></table></figure></p>
+<p>无论什么时候，只要创建了一个新函数，就会根据一组特定的规则为该函数创建一个<strong>prototype属性</strong>，这个属性指向函数的<strong>原型对象</strong>。而原型对象包含一个<strong>constructor属性</strong>，指向原函数。<br>当调用构造函数创建一个<strong>新实例</strong>后，该实例的内部将包含一个指针<strong>[[Prototype]]</strong>（内部属性），<strong>指向构造函数的原型对象</strong>。<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/26/Prototype-in-JavaScript/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/prototype/">prototype</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <nav id="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      </nav>
+    </section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Xiufeng Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

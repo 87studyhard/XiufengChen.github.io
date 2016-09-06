@@ -1,4 +1,92 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> SubString Summay · Xiufeng</title><meta name="description" content="SubString Summay - Xiufeng Chen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">SubString Summay</h1><div class="post-info">Mar 11, 2016</div><div class="post-content"><p>This articale comes from a solution of LeetCode. <a href="https://leetcode.com/discuss/72701/here-10-line-template-that-can-solve-most-substring-problems" target="_blank" rel="external">Here is a 10-line template that can solve most ‘substring’ problems</a></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SubString Summay - Xiufeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This articale comes from a solution of LeetCode. Here is a 10-line template that can solve most ‘substring’ problems
+I will first give the solution then show you the magic template.The code of solving">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SubString Summay">
+<meta property="og:url" content="http://yoursite.com/2016/03/11/String-Summary/index.html">
+<meta property="og:site_name" content="Xiufeng">
+<meta property="og:description" content="This articale comes from a solution of LeetCode. Here is a 10-line template that can solve most ‘substring’ problems
+I will first give the solution then show you the magic template.The code of solving">
+<meta property="og:updated_time" content="2016-09-02T20:34:48.851Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SubString Summay">
+<meta name="twitter:description" content="This articale comes from a solution of LeetCode. Here is a 10-line template that can solve most ‘substring’ problems
+I will first give the solution then show you the magic template.The code of solving">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-String-Summary" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SubString Summay
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/11/String-Summary/" class="article-date">
+  <time datetime="2016-03-11T17:53:58.000Z" itemprop="datePublished">2016-03-11</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This articale comes from a solution of LeetCode. <a href="https://leetcode.com/discuss/72701/here-10-line-template-that-can-solve-most-substring-problems" target="_blank" rel="external">Here is a 10-line template that can solve most ‘substring’ problems</a></p>
 <p>I will first give the solution then show you the magic template.<br>The code of solving this problem is below. It might be the shortest among all solutions provided in Discuss.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function">string <span class="title">minWindow</span><span class="params">(string s, string t)</span> </span>&#123;</div><div class="line">       <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">map</span><span class="params">(<span class="number">128</span>,<span class="number">0</span>)</span></span>;</div><div class="line">       <span class="keyword">for</span>(auto c: t) map[c]++;</div><div class="line">       <span class="keyword">int</span> counter=t.size(), begin=<span class="number">0</span>, end=<span class="number">0</span>, d=INT_MAX, head=<span class="number">0</span>;</div><div class="line">       <span class="keyword">while</span>(end&lt;s.size())&#123;</div><div class="line">           <span class="keyword">if</span>(map[s[end++]]--&gt;<span class="number">0</span>) counter--; <span class="comment">//in t</span></div><div class="line">           <span class="keyword">while</span>(counter==<span class="number">0</span>)&#123; <span class="comment">//valid</span></div><div class="line">               <span class="keyword">if</span>(end-begin&lt;d)  d=end-(head=begin);</div><div class="line">               <span class="keyword">if</span>(map[s[begin++]]++==<span class="number">0</span>) counter++;  <span class="comment">//make it invalid</span></div><div class="line">           &#125;  </div><div class="line">       &#125;</div><div class="line">       <span class="keyword">return</span> d==INT_MAX? <span class="string">""</span>:s.substr(head, d);</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
 <p>Here comes the template.<br><a id="more"></a></p>
 <p>For most substring problem, we are given a string and need to find a substring of it which satisfy some restrictions. A general way is to use a hashmap assisted with two pointers. The template is given below.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">findSubstring</span><span class="params">(string s)</span></span>&#123;</div><div class="line">       <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">map</span><span class="params">(<span class="number">128</span>,<span class="number">0</span>)</span></span>;</div><div class="line">       <span class="keyword">int</span> counter; <span class="comment">// check whether the substring is valid</span></div><div class="line">       <span class="keyword">int</span> begin=<span class="number">0</span>, end=<span class="number">0</span>; <span class="comment">//two pointers, one point to tail and one  head</span></div><div class="line">       <span class="keyword">int</span> d; <span class="comment">//the length of substring</span></div><div class="line"></div><div class="line">       <span class="keyword">for</span>() &#123; <span class="comment">/* initialize the hash map here */</span> &#125;</div><div class="line"></div><div class="line">       <span class="keyword">while</span>(end&lt;s.size())&#123;</div><div class="line"></div><div class="line">           <span class="keyword">if</span>(map[s[end++]]-- ?)&#123;  <span class="comment">/* modify counter here */</span> &#125;</div><div class="line"></div><div class="line">           <span class="keyword">while</span>(<span class="comment">/* counter condition */</span>)&#123; </div><div class="line"></div><div class="line">                <span class="comment">/* update d here if finding minimum*/</span></div><div class="line"></div><div class="line">               <span class="comment">//increase begin to make it invalid/valid again</span></div><div class="line"></div><div class="line">               <span class="keyword">if</span>(map[s[begin++]]++ ?)&#123; <span class="comment">/*modify counter here*/</span> &#125;</div><div class="line">           &#125;  </div><div class="line"></div><div class="line">           <span class="comment">/* update d here if finding maximum*/</span></div><div class="line">       &#125;</div><div class="line">       <span class="keyword">return</span> d;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -13,4 +101,77 @@
 <p>The code of solving Longest Substring with At Most Two Distinct Characters is below:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstringTwoDistinct</span><span class="params">(string s)</span> </span>&#123;</div><div class="line">       <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">map</span><span class="params">(<span class="number">128</span>, <span class="number">0</span>)</span></span>;</div><div class="line">       <span class="keyword">int</span> counter=<span class="number">0</span>, begin=<span class="number">0</span>, end=<span class="number">0</span>, d=<span class="number">0</span>; </div><div class="line">       <span class="keyword">while</span>(end&lt;s.size())&#123;</div><div class="line">           <span class="keyword">if</span>(map[s[end++]]++==<span class="number">0</span>) counter++;</div><div class="line">           <span class="keyword">while</span>(counter&gt;<span class="number">2</span>) <span class="keyword">if</span>(map[s[begin++]]--==<span class="number">1</span>) counter--;</div><div class="line">           d=max(d, end-begin);</div><div class="line">       &#125;</div><div class="line">       <span class="keyword">return</span> d;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
 <p>The code of solving Longest Substring Without Repeating Characters is below:</p>
 <p>Update 01.04.2016, thanks @weiyi3 for advise.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(string s)</span> </span>&#123;</div><div class="line">       <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">map</span><span class="params">(<span class="number">128</span>,<span class="number">0</span>)</span></span>;</div><div class="line">       <span class="keyword">int</span> counter=<span class="number">0</span>, begin=<span class="number">0</span>, end=<span class="number">0</span>, d=<span class="number">0</span>; </div><div class="line">       <span class="keyword">while</span>(end&lt;s.size())&#123;</div><div class="line">           <span class="keyword">if</span>(map[s[end++]]++&gt;<span class="number">0</span>) counter++; </div><div class="line">           <span class="keyword">while</span>(counter&gt;<span class="number">0</span>) <span class="keyword">if</span>(map[s[begin++]]--&gt;<span class="number">1</span>) counter--;</div><div class="line">           d=max(d, end-begin); <span class="comment">//while valid, update d</span></div><div class="line">       &#125;</div><div class="line">       <span class="keyword">return</span> d;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/03/12/Java-Summary/" class="prev">PREV</a><a href="/2016/03/04/jQuery-Questions/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SubString/">SubString</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/12/Java-Summary/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Java Summary
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/04/jQuery-Questions/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jQuery Questions&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Xiufeng Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

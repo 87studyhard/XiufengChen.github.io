@@ -1,4 +1,95 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Dynamic Programming · Xiufeng</title><meta name="description" content="Dynamic Programming - Xiufeng Chen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Dynamic Programming</h1><div class="post-info">Mar 24, 2016</div><div class="post-content"><p>本文来自于算法导论第十五章动态规划的学习。</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Dynamic Programming - Xiufeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本文来自于算法导论第十五章动态规划的学习。
+
+分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，丘处原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为跟小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dynamic Programming">
+<meta property="og:url" content="http://yoursite.com/2016/03/24/Dynamic-Programming/index.html">
+<meta property="og:site_name" content="Xiufeng">
+<meta property="og:description" content="本文来自于算法导论第十五章动态规划的学习。
+
+分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，丘处原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为跟小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，">
+<meta property="og:updated_time" content="2016-09-02T20:24:37.982Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dynamic Programming">
+<meta name="twitter:description" content="本文来自于算法导论第十五章动态规划的学习。
+
+分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，丘处原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为跟小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Dynamic-Programming" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Dynamic Programming
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/24/Dynamic-Programming/" class="article-date">
+  <time datetime="2016-03-24T22:45:47.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文来自于算法导论第十五章动态规划的学习。</p>
 <blockquote>
 <p>分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，丘处原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为跟小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，避免了这种不必要的计算工作。</p>
 </blockquote>
@@ -231,4 +322,77 @@ isMatch(&quot;aab&quot;, &quot;c*a*b&quot;) → true
 </code></pre><p>解法来自leetcode的<a href="https://leetcode.com/discuss/8648/my-ac-dp-solution-for-this-problem-asking-for-improvements" target="_blank" rel="external">solution</a></p>
 <p>Basically, the OPT[i][j] means preceding substring of length i of s and length j of p. For any two substrings, the value of OPT[i][j] can be from one of following four cases:<br>case 1: OPT[i-1][j-1] is true, and ith character of s is equal to j th character of p. Or j th character of p is ‘.’<br>case 2: OPT[i-1][j] is true, then my pattern now is ‘<em>‘ and preceding character is equal to incoming character of s<br>case 3: OPT[i][j-1] is true, then my pattern now is ‘</em>‘ which can match an empty string<br>case 4: OPT[i][j-2] is true, and the pattern like (a*) matches an empty string<br>base case is the OPT[0][0], OPT[i][0], OPT[0][j].</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMatch</span><span class="params">(String s, String p)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> m = s.length();</div><div class="line">		<span class="keyword">int</span> n = p.length();</div><div class="line"></div><div class="line">		<span class="keyword">if</span> (s == <span class="keyword">null</span> || p == <span class="keyword">null</span>) &#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">boolean</span>[][] OPT = <span class="keyword">new</span> <span class="keyword">boolean</span>[m+<span class="number">1</span>][n+<span class="number">1</span>];</div><div class="line">		OPT[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</div><div class="line">			OPT[i][<span class="number">0</span>] = <span class="keyword">false</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</div><div class="line">			OPT[<span class="number">0</span>][j] = (p.charAt(j-<span class="number">1</span>) == <span class="string">'*'</span>) &amp;&amp; (j-<span class="number">2</span> &gt;= <span class="number">0</span>) &amp;&amp; OPT[<span class="number">0</span>][j-<span class="number">2</span>];</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</div><div class="line">				OPT[i][j] = ((OPT[i-<span class="number">1</span>][j-<span class="number">1</span>]) &amp;&amp; equals(s, p, i-<span class="number">1</span>, j-<span class="number">1</span>))</div><div class="line">						||  ((OPT[i-<span class="number">1</span>][j] || OPT[i][j-<span class="number">1</span>]) </div><div class="line">							&amp;&amp; (p.charAt(j-<span class="number">1</span>) == <span class="string">'*'</span>) </div><div class="line">							&amp;&amp; equals(s, p, i-<span class="number">1</span>, j-<span class="number">2</span>))</div><div class="line">						||  ((p.charAt(j-<span class="number">1</span>) == <span class="string">'*'</span>) &amp;&amp; (j-<span class="number">2</span> &gt;= <span class="number">0</span>) &amp;&amp; OPT[i][j-<span class="number">2</span>]);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">return</span> OPT[m][n];</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(String s, String p, <span class="keyword">int</span> si, <span class="keyword">int</span> pi)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> (s.charAt(si) == p.charAt(pi) || p.charAt(pi) == <span class="string">'.'</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/03/30/Learning-Angularjs-1/" class="prev">PREV</a><a href="/2016/03/23/Upload-Code-to-Github/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/30/Learning-Angularjs-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Angularjs 学习笔记（一）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/23/Upload-Code-to-Github/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Upload Code to Github&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Xiufeng Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

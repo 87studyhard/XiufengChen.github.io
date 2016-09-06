@@ -1,5 +1,413 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Xiufeng</title><meta name="description" content="A Blog Powered By Hexo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link active">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><ul class="home post-list"><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/03/03/Some-Common-Design-Patterns/" class="post-title-link">Some Common Design Patterns</a></h2><div class="post-info">Mar 3, 2016</div><div class="post-content"></div><a href="/2016/03/03/Some-Common-Design-Patterns/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/03/03/String-Questions/" class="post-title-link">String Questions</a></h2><div class="post-info">Mar 3, 2016</div><div class="post-content"><h2 id="String-Array-Permutation"><a href="#String-Array-Permutation" class="headerlink" title="String Array Permutation"></a>String Array Permutation</h2><p>解法参考自stack overflow的一个solution<br>递归方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printWords</span><span class="params">( Vector&lt;Vector&lt;String&gt;&gt; bigVector, String accumulator)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(bigVector.isEmpty())&#123;</div><div class="line">		System.out.println(accumulator);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span>&#123;</div><div class="line">		<span class="keyword">for</span>(String word : bigVector.get(<span class="number">0</span>))&#123;</div><div class="line">			Vector&lt;Vector&lt;String&gt;&gt; r = </div><div class="line">				<span class="keyword">new</span> Vector&lt;Vector&lt;String&gt;&gt;(bigVector.subList(<span class="number">1</span>, bigVector.size()));</div><div class="line">			printWords(r, accumulator + <span class="string">" "</span> + word);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>调用时使用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">printWords(l,<span class="string">""</span>);</div></pre></td></tr></table></figure></p></div><a href="/2016/03/03/String-Questions/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/03/02/Tree-Binary-Tree-and-Binary-Search-Tree/" class="post-title-link">Tree, Binary Tree and Binary Search Tree</a></h2><div class="post-info">Mar 2, 2016</div><div class="post-content"><h2 id="Balanced-Tree"><a href="#Balanced-Tree" class="headerlink" title="Balanced Tree"></a>Balanced Tree</h2><p>判断一个二叉树是否为平衡二叉树的方法：<br>根据定义：<br>A height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.<br>说明要分别计算二叉树的左右子树，如果差度大于1，则不是平衡二叉树。<br>计算二叉树深度：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getDepth</span><span class="params">(TreeNode r)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(r == <span class="keyword">null</span>)&#123;</div><div class="line">    	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span> + Math.max(getDepth(r.left), getDepth(r.right));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>如果差度小于1，则分别计算左右子节点。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isBalanced</span><span class="params">(TreeNode root)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    <span class="keyword">int</span> leftDepth = getDepth(root.left);</div><div class="line">    <span class="keyword">int</span> rightDepth = getDepth(root.right);</div><div class="line">    <span class="keyword">if</span>(Math.abs(leftDepth - rightDepth) &gt; <span class="number">1</span>)<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">return</span> isBalanced(root.left)&amp;&amp;isBalanced(root.right);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p></div><a href="/2016/03/02/Tree-Binary-Tree-and-Binary-Search-Tree/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/03/02/Array-Questions/" class="post-title-link">Array Questions</a></h2><div class="post-info">Mar 2, 2016</div><div class="post-content"><h2 id="Two-Pointers"><a href="#Two-Pointers" class="headerlink" title="Two Pointers"></a>Two Pointers</h2><p>首先要说的是双指针有两个我们非常熟悉的应用，一个是partition，一个是binary search；一个是一块一慢双指针同向扫描，保持双指针之间和慢之前的元素满足loop invariant，一个是双指针从俩边向中间夹，每次移动一个或俩个满足移动条件的指针。<br>使用双指针扫描的方法常常可以使算法在线性时间。<br>Check this <a href="http://www.lxway.com/446452411.htm">link</a>.</p></div><a href="/2016/03/02/Array-Questions/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/03/02/Basic-Algorithm-Questions-Updating-all-the-time/" class="post-title-link">Basic Algorithm Questions (Updating all the time)</a></h2><div class="post-info">Mar 2, 2016</div><div class="post-content"><p>These basic algorithm questions are updated all the time,  avoiding ignoring them.</p>
-<h2 id="Prime-Number"><a href="#Prime-Number" class="headerlink" title="Prime Number"></a>Prime Number</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(n &lt;= <span class="number">1</span>)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; Math.sqrt(n); i++)&#123;</div><div class="line">		<span class="keyword">if</span>(n % i == <span class="number">0</span>)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></div><a href="/2016/03/02/Basic-Algorithm-Questions-Updating-all-the-time/" class="read-more">...more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/03/02/List-Node-Summary/" class="post-title-link">List Node Summary</a></h2><div class="post-info">Mar 2, 2016</div><div class="post-content"><p>These listnode questions come from leetcode, including basic kinds of listnode question and answers.</p>
-<h2 id="Remove-nth-Node-from-End"><a href="#Remove-nth-Node-from-End" class="headerlink" title="Remove nth Node from End"></a>Remove nth Node from End</h2><p>Linked List 有关的题目都要首先创建一个结点newHead作为返回值。可能返回newHead.next。<br>首先将newHead.next指针指向head，便于以后遍历。<br>当选择==快慢指针方法==时，将快慢指针初始化到head结点的前一个结点。<br>快慢指针同时移动时，注意while判定条件为fast.next!=null，表示指针走到最后一个结点就停止了。<br>删除第n个结点与fast指针无关，只需要slow.next = slow.next.next。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">removeNthFromEnd</span><span class="params">(ListNode head, <span class="keyword">int</span> n)</span></span>&#123;</div><div class="line">    ListNode newHead = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</div><div class="line">    newHead.next = head;</div><div class="line">    ListNode fast, slow;</div><div class="line">    fast = newHead;</div><div class="line">    slow = newHead;</div><div class="line">    </div><div class="line">    <span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</div><div class="line">    	fast = fast.next;</div><div class="line">        n--;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">while</span>(fast.next != <span class="keyword">null</span>)&#123;</div><div class="line">    	fast = fast.next;</div><div class="line">        slow = slow.next;</div><div class="line">    &#125;</div><div class="line">    slow.next = slow.next.next;</div><div class="line">    <span class="keyword">return</span> newHead.next;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p></div><a href="/2016/03/02/List-Node-Summary/" class="read-more">...more</a></article></li></ul></section><footer><div class="paginator"><a href="/page/2/" class="prev">PREV</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Xiufeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Xiufeng">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="Xiufeng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Xiufeng">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer">
+      <article id="post-Some-Common-Design-Patterns" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/03/Some-Common-Design-Patterns/">Some Common Design Patterns</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/03/Some-Common-Design-Patterns/" class="article-date">
+  <time datetime="2016-03-03T18:09:25.000Z" itemprop="datePublished">2016-03-03</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Design-Pattern/">Design Pattern</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇文章总结几个常用的Design Patterns, 以便理解一些基于这些模式的Java，JavaScript设计框架和事件机制。在介绍设计模式之前首先要介绍一个软件开发中常用到的原则。</p>
+<h2 id="开闭原则"><a href="#开闭原则" class="headerlink" title="开闭原则"></a>开闭原则</h2><p>[在面向对象编程领域中，开闭原则规定“软件中的对象（类，模块，函数等等）应该对于扩展是开放的，但是对于修改是封闭的”，这意味着一个实体是允许在不改变它的源代码的前提下变更它的行为。该特性在产品化的环境中是特别有价值的，在这种环境中，改变源代码需要代码审查，单元测试以及诸如此类的用以确保产品使用质量的过程。遵循这种原则的代码在扩展时并不发生改变，因此无需上述的过程。][<a href="https://zh.wikipedia.org/wiki/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99</a>]</p>
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><p>本段文章来源于网络。<br><a href="http://blog.csdn.net/jason0539/article/details/23020989" target="_blank" rel="external">JAVA设计模式之工厂模式(简单工厂模式+工厂方法模式)</a></p>
+<h2 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h2>
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Factory/">Factory</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Observer/">Observer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Singleton/">Singleton</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-String-Questions" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/03/String-Questions/">String Questions</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/03/String-Questions/" class="article-date">
+  <time datetime="2016-03-03T17:54:56.000Z" itemprop="datePublished">2016-03-03</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="String-Array-Permutation"><a href="#String-Array-Permutation" class="headerlink" title="String Array Permutation"></a>String Array Permutation</h2><p>解法参考自stack overflow的一个solution<br>递归方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printWords</span><span class="params">( Vector&lt;Vector&lt;String&gt;&gt; bigVector, String accumulator)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(bigVector.isEmpty())&#123;</div><div class="line">		System.out.println(accumulator);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span>&#123;</div><div class="line">		<span class="keyword">for</span>(String word : bigVector.get(<span class="number">0</span>))&#123;</div><div class="line">			Vector&lt;Vector&lt;String&gt;&gt; r = </div><div class="line">				<span class="keyword">new</span> Vector&lt;Vector&lt;String&gt;&gt;(bigVector.subList(<span class="number">1</span>, bigVector.size()));</div><div class="line">			printWords(r, accumulator + <span class="string">" "</span> + word);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>调用时使用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">printWords(l,<span class="string">""</span>);</div></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/03/String-Questions/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-Tree-Binary-Tree-and-Binary-Search-Tree" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/02/Tree-Binary-Tree-and-Binary-Search-Tree/">Tree, Binary Tree and Binary Search Tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/02/Tree-Binary-Tree-and-Binary-Search-Tree/" class="article-date">
+  <time datetime="2016-03-03T04:58:15.000Z" itemprop="datePublished">2016-03-02</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Balanced-Tree"><a href="#Balanced-Tree" class="headerlink" title="Balanced Tree"></a>Balanced Tree</h2><p>判断一个二叉树是否为平衡二叉树的方法：<br>根据定义：<br>A height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.<br>说明要分别计算二叉树的左右子树，如果差度大于1，则不是平衡二叉树。<br>计算二叉树深度：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getDepth</span><span class="params">(TreeNode r)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(r == <span class="keyword">null</span>)&#123;</div><div class="line">    	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span> + Math.max(getDepth(r.left), getDepth(r.right));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果差度小于1，则分别计算左右子节点。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isBalanced</span><span class="params">(TreeNode root)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    <span class="keyword">int</span> leftDepth = getDepth(root.left);</div><div class="line">    <span class="keyword">int</span> rightDepth = getDepth(root.right);</div><div class="line">    <span class="keyword">if</span>(Math.abs(leftDepth - rightDepth) &gt; <span class="number">1</span>)<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">return</span> isBalanced(root.left)&amp;&amp;isBalanced(root.right);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/02/Tree-Binary-Tree-and-Binary-Search-Tree/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BST/">BST</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-Array-Questions" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/02/Array-Questions/">Array Questions</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/02/Array-Questions/" class="article-date">
+  <time datetime="2016-03-03T03:06:41.000Z" itemprop="datePublished">2016-03-02</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Two-Pointers"><a href="#Two-Pointers" class="headerlink" title="Two Pointers"></a>Two Pointers</h2><p>首先要说的是双指针有两个我们非常熟悉的应用，一个是partition，一个是binary search；一个是一块一慢双指针同向扫描，保持双指针之间和慢之前的元素满足loop invariant，一个是双指针从俩边向中间夹，每次移动一个或俩个满足移动条件的指针。<br>使用双指针扫描的方法常常可以使算法在线性时间。<br>Check this <a href="http://www.lxway.com/446452411.htm">link</a>.</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/02/Array-Questions/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MinHeap/">MinHeap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quick-Select/">Quick Select</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Two-Pointers/">Two Pointers</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-Basic-Algorithm-Questions-Updating-all-the-time" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/02/Basic-Algorithm-Questions-Updating-all-the-time/">Basic Algorithm Questions (Updating all the time)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/02/Basic-Algorithm-Questions-Updating-all-the-time/" class="article-date">
+  <time datetime="2016-03-02T22:48:43.000Z" itemprop="datePublished">2016-03-02</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Snippets/">Snippets</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>These basic algorithm questions are updated all the time,  avoiding ignoring them.</p>
+<h2 id="Prime-Number"><a href="#Prime-Number" class="headerlink" title="Prime Number"></a>Prime Number</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(n &lt;= <span class="number">1</span>)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; Math.sqrt(n); i++)&#123;</div><div class="line">		<span class="keyword">if</span>(n % i == <span class="number">0</span>)&#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/02/Basic-Algorithm-Questions-Updating-all-the-time/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Basic-Question/">Basic Question</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-List-Node-Summary" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/02/List-Node-Summary/">List Node Summary</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/02/List-Node-Summary/" class="article-date">
+  <time datetime="2016-03-02T18:40:22.000Z" itemprop="datePublished">2016-03-02</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>These listnode questions come from leetcode, including basic kinds of listnode question and answers.</p>
+<h2 id="Remove-nth-Node-from-End"><a href="#Remove-nth-Node-from-End" class="headerlink" title="Remove nth Node from End"></a>Remove nth Node from End</h2><p>Linked List 有关的题目都要首先创建一个结点newHead作为返回值。可能返回newHead.next。<br>首先将newHead.next指针指向head，便于以后遍历。<br>当选择==快慢指针方法==时，将快慢指针初始化到head结点的前一个结点。<br>快慢指针同时移动时，注意while判定条件为fast.next!=null，表示指针走到最后一个结点就停止了。<br>删除第n个结点与fast指针无关，只需要slow.next = slow.next.next。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">removeNthFromEnd</span><span class="params">(ListNode head, <span class="keyword">int</span> n)</span></span>&#123;</div><div class="line">    ListNode newHead = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</div><div class="line">    newHead.next = head;</div><div class="line">    ListNode fast, slow;</div><div class="line">    fast = newHead;</div><div class="line">    slow = newHead;</div><div class="line">    </div><div class="line">    <span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</div><div class="line">    	fast = fast.next;</div><div class="line">        n--;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">while</span>(fast.next != <span class="keyword">null</span>)&#123;</div><div class="line">    	fast = fast.next;</div><div class="line">        slow = slow.next;</div><div class="line">    &#125;</div><div class="line">    slow.next = slow.next.next;</div><div class="line">    <span class="keyword">return</span> newHead.next;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/02/List-Node-Summary/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ListNode/">ListNode</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <nav id="page-nav">
+        <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      </nav>
+    </section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Xiufeng Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

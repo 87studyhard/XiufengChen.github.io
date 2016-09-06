@@ -1,4 +1,88 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Async Actions · Xiufeng</title><meta name="description" content="Async Actions - Xiufeng Chen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sonnieme" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/XiufengChen" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Async Actions</h1><div class="post-info">Aug 15, 2016</div><div class="post-content"><p>This article is based on <a href="http://redux.js.org/docs/advanced/AsyncActions.html" target="_blank" rel="external">Async Actions tutorial</a> and a <a href="http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559#35415559" target="_blank" rel="external">solution from stackoverflow</a> about how to dispatch a Redux action with a timeout or any other asynchronous request.</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Async Actions - Xiufeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This article is based on Async Actions tutorial and a solution from stackoverflow about how to dispatch a Redux action with a timeout or any other asynchronous request.
+Why Using Thunk?本文的第一部分我想先借用Red">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Async Actions">
+<meta property="og:url" content="http://yoursite.com/2016/08/15/Async-Actions/index.html">
+<meta property="og:site_name" content="Xiufeng">
+<meta property="og:description" content="This article is based on Async Actions tutorial and a solution from stackoverflow about how to dispatch a Redux action with a timeout or any other asynchronous request.
+Why Using Thunk?本文的第一部分我想先借用Red">
+<meta property="og:updated_time" content="2016-08-17T04:07:23.107Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Async Actions">
+<meta name="twitter:description" content="This article is based on Async Actions tutorial and a solution from stackoverflow about how to dispatch a Redux action with a timeout or any other asynchronous request.
+Why Using Thunk?本文的第一部分我想先借用Red">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Async-Actions" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Async Actions
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/08/15/Async-Actions/" class="article-date">
+  <time datetime="2016-08-16T01:55:13.000Z" itemprop="datePublished">2016-08-15</time>
+</a>
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This article is based on <a href="http://redux.js.org/docs/advanced/AsyncActions.html" target="_blank" rel="external">Async Actions tutorial</a> and a <a href="http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559#35415559" target="_blank" rel="external">solution from stackoverflow</a> about how to dispatch a Redux action with a timeout or any other asynchronous request.</p>
 <h1 id="Why-Using-Thunk"><a href="#Why-Using-Thunk" class="headerlink" title="Why Using Thunk?"></a>Why Using Thunk?</h1><p>本文的第一部分我想先借用Redux作者Dan Abramov在stackoverflow上的回答来阐述一下使用thunk的原理。</p>
 <p><a href="http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout" target="_blank" rel="external">How to dispatch a Redux action with a timeout?</a></p>
 <h2 id="dispatch-action"><a href="#dispatch-action" class="headerlink" title="dispatch(action)"></a>dispatch(action)</h2><p>首先来看一下dipatch(action)的API。dispatch 一个action是触发state改变的唯一方法。store的reducer方法将会同时调用getState()的结果和action。reducer方法的返回值就是新的state，一旦状态改变就会通知listener。</p>
@@ -73,4 +157,75 @@
 <p>我们怎样将thunk middleware加入到dispatch机制中来？答案是使用Redux中的applyMiddleware() store enhancer。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> thunkMiddleware <span class="keyword">from</span> <span class="string">'redux-thunk'</span></div><div class="line"><span class="keyword">import</span> createLogger <span class="keyword">from</span> <span class="string">'redux-logger'</span></div><div class="line"><span class="keyword">import</span> &#123; createStore, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'redux'</span></div><div class="line"><span class="keyword">import</span> &#123; selectSubreddit, fetchPosts &#125; <span class="keyword">from</span> <span class="string">'./actions'</span></div><div class="line"><span class="keyword">import</span> rootReducer <span class="keyword">from</span> <span class="string">'./reducers'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> loggerMiddleware = createLogger()</div><div class="line"></div><div class="line"><span class="keyword">const</span> store = createStore(</div><div class="line">  rootReducer,</div><div class="line">  applyMiddleware(</div><div class="line">    thunkMiddleware, <span class="comment">// lets us dispatch() functions</span></div><div class="line">    loggerMiddleware <span class="comment">// neat middleware that logs actions</span></div><div class="line">  )</div><div class="line">)</div><div class="line"></div><div class="line">store.dispatch(selectSubreddit(<span class="string">'reactjs'</span>))</div><div class="line">store.dispatch(fetchPosts(<span class="string">'reactjs'</span>)).then(() =&gt;</div><div class="line">  <span class="built_in">console</span>.log(store.getState())</div><div class="line">)</div></pre></td></tr></table></figure>
 <p>Thunk的优点就在于它们能调度（dispatch）相互之间的结果。</p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/09/02/Bit-Manipulation/" class="prev">PREV</a><a href="/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">Xiufeng Chen</a>, unless otherwise noted.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/02/Bit-Manipulation/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Working with Google Map API on Reactjs&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Xiufeng Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>
