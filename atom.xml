@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://xiufengchen.github.io/"/>
   <updated>2016-09-02T20:22:25.052Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://xiufengchen.github.io/</id>
   
   <author>
     <name>Xiufeng Chen</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title></title>
-    <link href="http://yoursite.com/2016/09/02/Bit-Manipulation/"/>
-    <id>http://yoursite.com/2016/09/02/Bit-Manipulation/</id>
+    <link href="http://xiufengchen.github.io/2016/09/02/Bit-Manipulation/"/>
+    <id>http://xiufengchen.github.io/2016/09/02/Bit-Manipulation/</id>
     <published>2016-09-02T20:21:39.989Z</published>
     <updated>2016-09-02T20:22:25.052Z</updated>
     
@@ -79,8 +79,8 @@
   
   <entry>
     <title>Async Actions</title>
-    <link href="http://yoursite.com/2016/08/15/Async-Actions/"/>
-    <id>http://yoursite.com/2016/08/15/Async-Actions/</id>
+    <link href="http://xiufengchen.github.io/2016/08/15/Async-Actions/"/>
+    <id>http://xiufengchen.github.io/2016/08/15/Async-Actions/</id>
     <published>2016-08-16T01:55:13.000Z</published>
     <updated>2016-08-17T04:07:23.107Z</updated>
     
@@ -172,8 +172,8 @@
   
   <entry>
     <title>Working with Google Map API on Reactjs</title>
-    <link href="http://yoursite.com/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/"/>
-    <id>http://yoursite.com/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/</id>
+    <link href="http://xiufengchen.github.io/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/"/>
+    <id>http://xiufengchen.github.io/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/</id>
     <published>2016-07-15T16:01:38.000Z</published>
     <updated>2016-07-20T12:44:45.918Z</updated>
     
@@ -192,8 +192,8 @@
   
   <entry>
     <title>Reactjs学习笔记（二）</title>
-    <link href="http://yoursite.com/2016/07/07/Learning-Reactjs-2/"/>
-    <id>http://yoursite.com/2016/07/07/Learning-Reactjs-2/</id>
+    <link href="http://xiufengchen.github.io/2016/07/07/Learning-Reactjs-2/"/>
+    <id>http://xiufengchen.github.io/2016/07/07/Learning-Reactjs-2/</id>
     <published>2016-07-07T23:01:59.000Z</published>
     <updated>2016-07-20T12:44:02.360Z</updated>
     
@@ -434,8 +434,8 @@
   
   <entry>
     <title>How to use this in JavaScript</title>
-    <link href="http://yoursite.com/2016/06/15/How-to-use-this-in-JavaScript/"/>
-    <id>http://yoursite.com/2016/06/15/How-to-use-this-in-JavaScript/</id>
+    <link href="http://xiufengchen.github.io/2016/06/15/How-to-use-this-in-JavaScript/"/>
+    <id>http://xiufengchen.github.io/2016/06/15/How-to-use-this-in-JavaScript/</id>
     <published>2016-06-16T00:30:59.000Z</published>
     <updated>2016-09-02T20:26:06.159Z</updated>
     
@@ -458,17 +458,17 @@
     
     </summary>
     
-      <category term="Front End" scheme="http://yoursite.com/categories/Front-End/"/>
+      <category term="Front End" scheme="http://xiufengchen.github.io/categories/Front-End/"/>
     
     
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://xiufengchen.github.io/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>Reactjs学习笔记（一）</title>
-    <link href="http://yoursite.com/2016/06/14/Learning-Reactjs-1/"/>
-    <id>http://yoursite.com/2016/06/14/Learning-Reactjs-1/</id>
+    <link href="http://xiufengchen.github.io/2016/06/14/Learning-Reactjs-1/"/>
+    <id>http://xiufengchen.github.io/2016/06/14/Learning-Reactjs-1/</id>
     <published>2016-06-14T20:19:34.000Z</published>
     <updated>2016-07-20T13:03:27.507Z</updated>
     
@@ -504,8 +504,8 @@
   
   <entry>
     <title>Angularjs学习笔记（四）</title>
-    <link href="http://yoursite.com/2016/05/05/Learning-Angularjs-4/"/>
-    <id>http://yoursite.com/2016/05/05/Learning-Angularjs-4/</id>
+    <link href="http://xiufengchen.github.io/2016/05/05/Learning-Angularjs-4/"/>
+    <id>http://xiufengchen.github.io/2016/05/05/Learning-Angularjs-4/</id>
     <published>2016-05-05T21:39:41.000Z</published>
     <updated>2016-07-20T12:42:35.134Z</updated>
     
@@ -518,17 +518,17 @@
     
     </summary>
     
-      <category term="Front End" scheme="http://yoursite.com/categories/Front-End/"/>
+      <category term="Front End" scheme="http://xiufengchen.github.io/categories/Front-End/"/>
     
     
-      <category term="Angularjs" scheme="http://yoursite.com/tags/Angularjs/"/>
+      <category term="Angularjs" scheme="http://xiufengchen.github.io/tags/Angularjs/"/>
     
   </entry>
   
   <entry>
     <title>Angularjs学习笔记（三）</title>
-    <link href="http://yoursite.com/2016/04/29/Learning-Angularjs-3/"/>
-    <id>http://yoursite.com/2016/04/29/Learning-Angularjs-3/</id>
+    <link href="http://xiufengchen.github.io/2016/04/29/Learning-Angularjs-3/"/>
+    <id>http://xiufengchen.github.io/2016/04/29/Learning-Angularjs-3/</id>
     <published>2016-04-29T19:09:20.000Z</published>
     <updated>2016-07-20T13:04:03.469Z</updated>
     
@@ -547,17 +547,17 @@
     
     </summary>
     
-      <category term="Front End" scheme="http://yoursite.com/categories/Front-End/"/>
+      <category term="Front End" scheme="http://xiufengchen.github.io/categories/Front-End/"/>
     
     
-      <category term="Angularjs" scheme="http://yoursite.com/tags/Angularjs/"/>
+      <category term="Angularjs" scheme="http://xiufengchen.github.io/tags/Angularjs/"/>
     
   </entry>
   
   <entry>
     <title>Angualrjs学习笔记（二）</title>
-    <link href="http://yoursite.com/2016/04/28/Learning-Angularjs-2/"/>
-    <id>http://yoursite.com/2016/04/28/Learning-Angularjs-2/</id>
+    <link href="http://xiufengchen.github.io/2016/04/28/Learning-Angularjs-2/"/>
+    <id>http://xiufengchen.github.io/2016/04/28/Learning-Angularjs-2/</id>
     <published>2016-04-29T02:52:32.000Z</published>
     <updated>2016-07-20T12:34:40.195Z</updated>
     
@@ -597,17 +597,17 @@ provider recipe是其中最复杂的recipe，当需要配置config的时候再�
     
     </summary>
     
-      <category term="Front End" scheme="http://yoursite.com/categories/Front-End/"/>
+      <category term="Front End" scheme="http://xiufengchen.github.io/categories/Front-End/"/>
     
     
-      <category term="Angularjs" scheme="http://yoursite.com/tags/Angularjs/"/>
+      <category term="Angularjs" scheme="http://xiufengchen.github.io/tags/Angularjs/"/>
     
   </entry>
   
   <entry>
     <title>Prototype in JavaScript</title>
-    <link href="http://yoursite.com/2016/04/26/Prototype-in-JavaScript/"/>
-    <id>http://yoursite.com/2016/04/26/Prototype-in-JavaScript/</id>
+    <link href="http://xiufengchen.github.io/2016/04/26/Prototype-in-JavaScript/"/>
+    <id>http://xiufengchen.github.io/2016/04/26/Prototype-in-JavaScript/</id>
     <published>2016-04-26T19:41:05.000Z</published>
     <updated>2016-09-02T20:31:56.216Z</updated>
     
@@ -628,19 +628,19 @@ XXX.prototype.yyy =
     
     </summary>
     
-      <category term="Front End" scheme="http://yoursite.com/categories/Front-End/"/>
+      <category term="Front End" scheme="http://xiufengchen.github.io/categories/Front-End/"/>
     
     
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://xiufengchen.github.io/tags/JavaScript/"/>
     
-      <category term="prototype" scheme="http://yoursite.com/tags/prototype/"/>
+      <category term="prototype" scheme="http://xiufengchen.github.io/tags/prototype/"/>
     
   </entry>
   
   <entry>
     <title>K Sum in Leetcode</title>
-    <link href="http://yoursite.com/2016/04/22/K-sum-in-Leetcode/"/>
-    <id>http://yoursite.com/2016/04/22/K-sum-in-Leetcode/</id>
+    <link href="http://xiufengchen.github.io/2016/04/22/K-sum-in-Leetcode/"/>
+    <id>http://xiufengchen.github.io/2016/04/22/K-sum-in-Leetcode/</id>
     <published>2016-04-22T14:23:14.000Z</published>
     <updated>2016-09-02T20:29:07.629Z</updated>
     
@@ -655,17 +655,17 @@ XXX.prototype.yyy =
     
     </summary>
     
-      <category term="Algorithm" scheme="http://yoursite.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="http://xiufengchen.github.io/categories/Algorithm/"/>
     
     
-      <category term="K Sum" scheme="http://yoursite.com/tags/K-Sum/"/>
+      <category term="K Sum" scheme="http://xiufengchen.github.io/tags/K-Sum/"/>
     
   </entry>
   
   <entry>
     <title>Angularjs 学习笔记（一）</title>
-    <link href="http://yoursite.com/2016/03/30/Learning-Angularjs-1/"/>
-    <id>http://yoursite.com/2016/03/30/Learning-Angularjs-1/</id>
+    <link href="http://xiufengchen.github.io/2016/03/30/Learning-Angularjs-1/"/>
+    <id>http://xiufengchen.github.io/2016/03/30/Learning-Angularjs-1/</id>
     <published>2016-03-30T22:34:23.000Z</published>
     <updated>2016-07-20T12:33:06.756Z</updated>
     
@@ -726,17 +726,17 @@ The browser re-renders the view with the updated text.
     
     </summary>
     
-      <category term="Front End" scheme="http://yoursite.com/categories/Front-End/"/>
+      <category term="Front End" scheme="http://xiufengchen.github.io/categories/Front-End/"/>
     
     
-      <category term="Angularjs" scheme="http://yoursite.com/tags/Angularjs/"/>
+      <category term="Angularjs" scheme="http://xiufengchen.github.io/tags/Angularjs/"/>
     
   </entry>
   
   <entry>
     <title>Dynamic Programming</title>
-    <link href="http://yoursite.com/2016/03/24/Dynamic-Programming/"/>
-    <id>http://yoursite.com/2016/03/24/Dynamic-Programming/</id>
+    <link href="http://xiufengchen.github.io/2016/03/24/Dynamic-Programming/"/>
+    <id>http://xiufengchen.github.io/2016/03/24/Dynamic-Programming/</id>
     <published>2016-03-24T22:45:47.000Z</published>
     <updated>2016-09-02T20:24:37.982Z</updated>
     
@@ -985,19 +985,19 @@ isMatch(&amp;quot;aab&amp;quot;, &amp;quot;c*a*b&amp;quot;) → true
     
     </summary>
     
-      <category term="Algorithm" scheme="http://yoursite.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="http://xiufengchen.github.io/categories/Algorithm/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="http://xiufengchen.github.io/tags/Java/"/>
     
-      <category term="Dynamic Programming" scheme="http://yoursite.com/tags/Dynamic-Programming/"/>
+      <category term="Dynamic Programming" scheme="http://xiufengchen.github.io/tags/Dynamic-Programming/"/>
     
   </entry>
   
   <entry>
     <title>Upload Code to Github</title>
-    <link href="http://yoursite.com/2016/03/23/Upload-Code-to-Github/"/>
-    <id>http://yoursite.com/2016/03/23/Upload-Code-to-Github/</id>
+    <link href="http://xiufengchen.github.io/2016/03/23/Upload-Code-to-Github/"/>
+    <id>http://xiufengchen.github.io/2016/03/23/Upload-Code-to-Github/</id>
     <published>2016-03-23T20:21:01.000Z</published>
     <updated>2016-09-02T20:37:56.512Z</updated>
     
@@ -1030,17 +1030,17 @@ isMatch(&amp;quot;aab&amp;quot;, &amp;quot;c*a*b&amp;quot;) → true
     
     </summary>
     
-      <category term="Github" scheme="http://yoursite.com/categories/Github/"/>
+      <category term="Github" scheme="http://xiufengchen.github.io/categories/Github/"/>
     
     
-      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
+      <category term="Git" scheme="http://xiufengchen.github.io/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>Module in Nodejs</title>
-    <link href="http://yoursite.com/2016/03/22/Module-in-Nodejs/"/>
-    <id>http://yoursite.com/2016/03/22/Module-in-Nodejs/</id>
+    <link href="http://xiufengchen.github.io/2016/03/22/Module-in-Nodejs/"/>
+    <id>http://xiufengchen.github.io/2016/03/22/Module-in-Nodejs/</id>
     <published>2016-03-23T01:11:53.000Z</published>
     <updated>2016-09-02T20:30:56.112Z</updated>
     
@@ -1069,19 +1069,19 @@ isMatch(&amp;quot;aab&amp;quot;, &amp;quot;c*a*b&amp;quot;) → true
     
     </summary>
     
-      <category term="Front End" scheme="http://yoursite.com/categories/Front-End/"/>
+      <category term="Front End" scheme="http://xiufengchen.github.io/categories/Front-End/"/>
     
     
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://xiufengchen.github.io/tags/JavaScript/"/>
     
-      <category term="Nodejs" scheme="http://yoursite.com/tags/Nodejs/"/>
+      <category term="Nodejs" scheme="http://xiufengchen.github.io/tags/Nodejs/"/>
     
   </entry>
   
   <entry>
     <title>Database Questions</title>
-    <link href="http://yoursite.com/2016/03/18/Database-Questions/"/>
-    <id>http://yoursite.com/2016/03/18/Database-Questions/</id>
+    <link href="http://xiufengchen.github.io/2016/03/18/Database-Questions/"/>
+    <id>http://xiufengchen.github.io/2016/03/18/Database-Questions/</id>
     <published>2016-03-18T14:41:02.000Z</published>
     <updated>2016-09-02T20:23:29.233Z</updated>
     
@@ -1160,17 +1160,17 @@ isMatch(&amp;quot;aab&amp;quot;, &amp;quot;c*a*b&amp;quot;) → true
     
     </summary>
     
-      <category term="Database" scheme="http://yoursite.com/categories/Database/"/>
+      <category term="Database" scheme="http://xiufengchen.github.io/categories/Database/"/>
     
     
-      <category term="Interview" scheme="http://yoursite.com/tags/Interview/"/>
+      <category term="Interview" scheme="http://xiufengchen.github.io/tags/Interview/"/>
     
   </entry>
   
   <entry>
     <title>Thinking in Comparing Two Objects</title>
-    <link href="http://yoursite.com/2016/03/16/Thinking-in-Comparing-Two-Objects/"/>
-    <id>http://yoursite.com/2016/03/16/Thinking-in-Comparing-Two-Objects/</id>
+    <link href="http://xiufengchen.github.io/2016/03/16/Thinking-in-Comparing-Two-Objects/"/>
+    <id>http://xiufengchen.github.io/2016/03/16/Thinking-in-Comparing-Two-Objects/</id>
     <published>2016-03-17T01:52:05.000Z</published>
     <updated>2016-09-02T20:35:37.849Z</updated>
     
@@ -1199,17 +1199,17 @@ isMatch(&amp;quot;aab&amp;quot;, &amp;quot;c*a*b&amp;quot;) → true
     
     </summary>
     
-      <category term="Summary" scheme="http://yoursite.com/categories/Summary/"/>
+      <category term="Summary" scheme="http://xiufengchen.github.io/categories/Summary/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="http://xiufengchen.github.io/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java Summary</title>
-    <link href="http://yoursite.com/2016/03/12/Java-Summary/"/>
-    <id>http://yoursite.com/2016/03/12/Java-Summary/</id>
+    <link href="http://xiufengchen.github.io/2016/03/12/Java-Summary/"/>
+    <id>http://xiufengchen.github.io/2016/03/12/Java-Summary/</id>
     <published>2016-03-12T17:35:17.000Z</published>
     <updated>2016-09-02T20:27:08.753Z</updated>
     
@@ -1231,17 +1231,17 @@ isMatch(&amp;quot;aab&amp;quot;, &amp;quot;c*a*b&amp;quot;) → true
     
     </summary>
     
-      <category term="Summary" scheme="http://yoursite.com/categories/Summary/"/>
+      <category term="Summary" scheme="http://xiufengchen.github.io/categories/Summary/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="http://xiufengchen.github.io/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>SubString Summay</title>
-    <link href="http://yoursite.com/2016/03/11/String-Summary/"/>
-    <id>http://yoursite.com/2016/03/11/String-Summary/</id>
+    <link href="http://xiufengchen.github.io/2016/03/11/String-Summary/"/>
+    <id>http://xiufengchen.github.io/2016/03/11/String-Summary/</id>
     <published>2016-03-11T17:53:58.000Z</published>
     <updated>2016-09-02T20:34:48.851Z</updated>
     
@@ -1270,19 +1270,19 @@ isMatch(&amp;quot;aab&amp;quot;, &amp;quot;c*a*b&amp;quot;) → true
     
     </summary>
     
-      <category term="Algorithm" scheme="http://yoursite.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="http://xiufengchen.github.io/categories/Algorithm/"/>
     
     
-      <category term="String" scheme="http://yoursite.com/tags/String/"/>
+      <category term="String" scheme="http://xiufengchen.github.io/tags/String/"/>
     
-      <category term="SubString" scheme="http://yoursite.com/tags/SubString/"/>
+      <category term="SubString" scheme="http://xiufengchen.github.io/tags/SubString/"/>
     
   </entry>
   
   <entry>
     <title>jQuery Questions</title>
-    <link href="http://yoursite.com/2016/03/04/jQuery-Questions/"/>
-    <id>http://yoursite.com/2016/03/04/jQuery-Questions/</id>
+    <link href="http://xiufengchen.github.io/2016/03/04/jQuery-Questions/"/>
+    <id>http://xiufengchen.github.io/2016/03/04/jQuery-Questions/</id>
     <published>2016-03-04T15:24:48.000Z</published>
     <updated>2016-09-02T20:28:12.946Z</updated>
     
@@ -1321,12 +1321,12 @@ isMatch(&amp;quot;aab&amp;quot;, &amp;quot;c*a*b&amp;quot;) → true
     
     </summary>
     
-      <category term="Interview" scheme="http://yoursite.com/categories/Interview/"/>
+      <category term="Interview" scheme="http://xiufengchen.github.io/categories/Interview/"/>
     
     
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://xiufengchen.github.io/tags/JavaScript/"/>
     
-      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
+      <category term="jQuery" scheme="http://xiufengchen.github.io/tags/jQuery/"/>
     
   </entry>
   

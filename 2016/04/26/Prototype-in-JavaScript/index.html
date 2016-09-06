@@ -8,7 +8,7 @@
   <meta name="description" content="原型原型对象我们穿件的每个函数都有一个prototype（原型）属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以有特定类型的所有实例共享的属性和方法。意思是，不管创建实例1还是实例2，他们访问的都是同一组属性和方法。123456789function Person()&amp;#123;&amp;#125;;Person.prototype.name = &quot;Tom&quot;;console.log(Pe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Prototype in JavaScript">
-<meta property="og:url" content="http://yoursite.com/2016/04/26/Prototype-in-JavaScript/index.html">
+<meta property="og:url" content="http://xiufengchen.github.io/2016/04/26/Prototype-in-JavaScript/index.html">
 <meta property="og:site_name" content="Xiufeng">
 <meta property="og:description" content="原型原型对象我们穿件的每个函数都有一个prototype（原型）属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以有特定类型的所有实例共享的属性和方法。意思是，不管创建实例1还是实例2，他们访问的都是同一组属性和方法。123456789function Person()&amp;#123;&amp;#125;;Person.prototype.name = &quot;Tom&quot;;console.log(Pe">
 <meta property="og:image" content="http://7xrk1c.com1.z0.glb.clouddn.com/javascript-prototype-01.jpg">
@@ -25,6 +25,19 @@
   <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css">
   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65933410-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
 
 </head>
 
@@ -34,7 +47,7 @@
   <div id="header-outer" class="outer">
     <div id="header-inner" class="inner">
       <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng</a>
       <nav id="main-nav">
         
           <a class="main-nav-link" href="/">Home</a>
@@ -52,7 +65,7 @@
       </nav>
       <nav id="sub-nav">
         <div id="search-form-wrap">
-          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xiufengchen.github.io"></form>
         </div>
       </nav>
     </div>

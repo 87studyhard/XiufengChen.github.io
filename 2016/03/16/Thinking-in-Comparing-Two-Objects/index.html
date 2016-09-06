@@ -9,7 +9,7 @@
 Java中参数的传递方式来源于 java参数传递Java中的参数传递机制一直以来大家都争论不休，究竟是“传值”还是“传址（传引用）”，争论的双方各执一词，互不相让。不但“菜鸟”们一头雾水，一些“">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Thinking in Comparing Two Objects">
-<meta property="og:url" content="http://yoursite.com/2016/03/16/Thinking-in-Comparing-Two-Objects/index.html">
+<meta property="og:url" content="http://xiufengchen.github.io/2016/03/16/Thinking-in-Comparing-Two-Objects/index.html">
 <meta property="og:site_name" content="Xiufeng">
 <meta property="og:description" content="由比较两个Java对象引发的思考本文灵感来自于研究Java搜索算法，既然是搜索当然是基于多个不同值之间的搜索。但是Java怎样区分两个对象是相同还是不同的。本文总结了之中的来龙去脉，大部分内容来源于网络。
 Java中参数的传递方式来源于 java参数传递Java中的参数传递机制一直以来大家都争论不休，究竟是“传值”还是“传址（传引用）”，争论的双方各执一词，互不相让。不但“菜鸟”们一头雾水，一些“">
@@ -32,6 +32,19 @@ Java中参数的传递方式来源于 java参数传递Java中的参数传递机�
   <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css">
   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65933410-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
 
 </head>
 
@@ -41,7 +54,7 @@ Java中参数的传递方式来源于 java参数传递Java中的参数传递机�
   <div id="header-outer" class="outer">
     <div id="header-inner" class="inner">
       <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-      <a id="logo" class="logo logo-text" href="/">Xiufeng&#39;s Blog</a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng</a>
       <nav id="main-nav">
         
           <a class="main-nav-link" href="/">Home</a>
@@ -59,7 +72,7 @@ Java中参数的传递方式来源于 java参数传递Java中的参数传递机�
       </nav>
       <nav id="sub-nav">
         <div id="search-form-wrap">
-          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xiufengchen.github.io"></form>
         </div>
       </nav>
     </div>
