@@ -5,16 +5,18 @@
   
   <title>Angualrjs学习笔记（二） - Xiufeng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Providers在我们创建web应用的时候，我们需要组合使用多个objects，每个object需要被实例化才能使用。在Angular应用中，这些objects被injector service实例化的。这个injector创建两种objects，services和specialized objects。Services即开发者定义的业务逻辑。Specialized Objects即 contr">
+  <meta name="description" content="Providers在我们创建web应用的时候，我们需要组合使用多个objects，每个object需要被实例化才能使用。在Angular应用中，这些objects被injector service实例化的。这个injector创建两种objects，services和specialized objects。Services即开发者定义的业务逻辑。Specialized Objects即 cont">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angualrjs学习笔记（二）">
 <meta property="og:url" content="http://xiufengchen.github.io/2016/04/28/Learning-Angularjs-2/index.html">
 <meta property="og:site_name" content="Xiufeng">
-<meta property="og:description" content="Providers在我们创建web应用的时候，我们需要组合使用多个objects，每个object需要被实例化才能使用。在Angular应用中，这些objects被injector service实例化的。这个injector创建两种objects，services和specialized objects。Services即开发者定义的业务逻辑。Specialized Objects即 contr">
-<meta property="og:updated_time" content="2016-07-20T12:34:40.195Z">
+<meta property="og:description" content="Providers在我们创建web应用的时候，我们需要组合使用多个objects，每个object需要被实例化才能使用。在Angular应用中，这些objects被injector service实例化的。这个injector创建两种objects，services和specialized objects。Services即开发者定义的业务逻辑。Specialized Objects即 cont">
+<meta property="og:image" content="http://i.imgur.com/c5I5FLE.jpg?1">
+<meta property="og:updated_time" content="2016-09-06T17:20:15.333Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angualrjs学习笔记（二）">
-<meta name="twitter:description" content="Providers在我们创建web应用的时候，我们需要组合使用多个objects，每个object需要被实例化才能使用。在Angular应用中，这些objects被injector service实例化的。这个injector创建两种objects，services和specialized objects。Services即开发者定义的业务逻辑。Specialized Objects即 contr">
+<meta name="twitter:description" content="Providers在我们创建web应用的时候，我们需要组合使用多个objects，每个object需要被实例化才能使用。在Angular应用中，这些objects被injector service实例化的。这个injector创建两种objects，services和specialized objects。Services即开发者定义的业务逻辑。Specialized Objects即 cont">
+<meta name="twitter:image" content="http://i.imgur.com/c5I5FLE.jpg?1">
   
   
     <link rel="icon" href="/favicon.png">
@@ -96,7 +98,8 @@ ga('send', 'pageview');
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Providers"><a href="#Providers" class="headerlink" title="Providers"></a>Providers</h3><p>在我们创建web应用的时候，我们<strong>需要组合使用多个objects</strong>，每个object需要被实例化才能使用。在Angular应用中，这些<strong>objects被<a href="https://docs.angularjs.org/api/auto/service/$injector" target="_blank" rel="external">injector service</a>实例化</strong>的。<br>这个injector创建两种objects，services和specialized objects。<br>Services即开发者定义的业务逻辑。<br>Specialized Objects即 controllers, directives, filters 或者animations之一。<br><strong>injector</strong>怎样知道如何创建上面这两种objects呢，可以通过<strong>注册</strong>创建object对应的<strong>recipe</strong>来创建object。此处共有五种recipe，provider，value,factory,service,constant，其中provider是基础，其他四种是provider的语法糖。<br>下面说一下<strong>recipe的结构</strong>，每个recipe有一个<strong>identifier</strong>表示这个<strong>object</strong>的名字，以及<strong>description</strong>表示怎样<strong>创建这个object</strong>。<br>每个recipe属于Angular module。当一个angular module启动时，Angular自动创建一个injector实例，这个injector实例创建一个包含所有recipe注册情况的注册表，这些注册来自于核心ng模块，application module以及它的dependencies，当需要为应用创建一个object的时候，injector询问一下这个注册表就知道了。虽然我们的recipe有五种，但是这五种recipe都是为了创建运行时所需的objects用的，injector通过identifier查找object，通过description实例化object。所以注册recipe的时候使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myApp = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">myApp.recipe();</div></pre></td></tr></table></figure></p>
+        <p><img src="http://i.imgur.com/c5I5FLE.jpg?1" alt="Learning Angularjs 2"></p>
+<h3 id="Providers"><a href="#Providers" class="headerlink" title="Providers"></a>Providers</h3><p>在我们创建web应用的时候，我们<strong>需要组合使用多个objects</strong>，每个object需要被实例化才能使用。在Angular应用中，这些<strong>objects被<a href="https://docs.angularjs.org/api/auto/service/$injector" target="_blank" rel="external">injector service</a>实例化</strong>的。<br>这个injector创建两种objects，services和specialized objects。<br>Services即开发者定义的业务逻辑。<br>Specialized Objects即 controllers, directives, filters 或者animations之一。<br><strong>injector</strong>怎样知道如何创建上面这两种objects呢，可以通过<strong>注册</strong>创建object对应的<strong>recipe</strong>来创建object。此处共有五种recipe，provider，value,factory,service,constant，其中provider是基础，其他四种是provider的语法糖。<br>下面说一下<strong>recipe的结构</strong>，每个recipe有一个<strong>identifier</strong>表示这个<strong>object</strong>的名字，以及<strong>description</strong>表示怎样<strong>创建这个object</strong>。<br>每个recipe属于Angular module。当一个angular module启动时，Angular自动创建一个injector实例，这个injector实例创建一个包含所有recipe注册情况的注册表，这些注册来自于核心ng模块，application module以及它的dependencies，当需要为应用创建一个object的时候，injector询问一下这个注册表就知道了。虽然我们的recipe有五种，但是这五种recipe都是为了创建运行时所需的objects用的，injector通过identifier查找object，通过description实例化object。所以注册recipe的时候使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myApp = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">myApp.recipe();</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h4 id="Value-Recipe"><a href="#Value-Recipe" class="headerlink" title="Value Recipe"></a>Value Recipe</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myApp = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">myApp.value(<span class="string">'clientId'</span>, <span class="string">'a12345654321x'</span>);</div></pre></td></tr></table></figure>
 <h4 id="Factory-Recipe"><a href="#Factory-Recipe" class="headerlink" title="Factory Recipe"></a>Factory Recipe</h4><p>factory recipe和value recipe类似，但是添加了一些功能：</p>
