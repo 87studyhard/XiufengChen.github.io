@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiufengchen.github.io/"/>
-  <updated>2016-08-17T04:07:23.107Z</updated>
+  <updated>2016-09-06T15:44:20.375Z</updated>
   <id>http://xiufengchen.github.io/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://xiufengchen.github.io/2016/08/15/Async-Actions/"/>
     <id>http://xiufengchen.github.io/2016/08/15/Async-Actions/</id>
     <published>2016-08-16T01:55:13.000Z</published>
-    <updated>2016-08-17T04:07:23.107Z</updated>
+    <updated>2016-09-06T15:44:20.375Z</updated>
     
-    <content type="html">&lt;p&gt;This article is based on &lt;a href=&quot;http://redux.js.org/docs/advanced/AsyncActions.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Async Actions tutorial&lt;/a&gt; and a &lt;a href=&quot;http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559#35415559&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;solution from stackoverflow&lt;/a&gt; about how to dispatch a Redux action with a timeout or any other asynchronous request.&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/hCkhsjq.png&quot; alt=&quot;Async!&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This article is based on &lt;a href=&quot;http://redux.js.org/docs/advanced/AsyncActions.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Async Actions tutorial&lt;/a&gt; and a &lt;a href=&quot;http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559#35415559&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;solution from stackoverflow&lt;/a&gt; about how to dispatch a Redux action with a timeout or any other asynchronous request.&lt;/p&gt;
 &lt;h1 id=&quot;Why-Using-Thunk&quot;&gt;&lt;a href=&quot;#Why-Using-Thunk&quot; class=&quot;headerlink&quot; title=&quot;Why Using Thunk?&quot;&gt;&lt;/a&gt;Why Using Thunk?&lt;/h1&gt;&lt;p&gt;本文的第一部分我想先借用Redux作者Dan Abramov在stackoverflow上的回答来阐述一下使用thunk的原理。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;How to dispatch a Redux action with a timeout?&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;dispatch-action&quot;&gt;&lt;a href=&quot;#dispatch-action&quot; class=&quot;headerlink&quot; title=&quot;dispatch(action)&quot;&gt;&lt;/a&gt;dispatch(action)&lt;/h2&gt;&lt;p&gt;首先来看一下dipatch(action)的API。dispatch 一个action是触发state改变的唯一方法。store的reducer方法将会同时调用getState()的结果和action。reducer方法的返回值就是新的state，一旦状态改变就会通知listener。&lt;/p&gt;
@@ -101,7 +102,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;This article is based on &lt;a href=&quot;http://redux.js.org/docs/advanced/AsyncActions.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Async Actions tutor
+      &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/hCkhsjq.png&quot; alt=&quot;Async!&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This article is based on &lt;a href=&quot;http://redux.js.org/docs/advanced/AsyncA
     
     </summary>
     

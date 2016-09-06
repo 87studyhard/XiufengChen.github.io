@@ -6,18 +6,20 @@
   <title>Async Actions - Xiufeng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="This article is based on Async Actions tutorial and a solution from stackoverflow about how to dispatch a Redux action with a timeout or any other asynchronous request.
-Why Using Thunk?本文的第一部分我想先借用Red">
+Why Using Thunk?本文的第一部分我想先借用Re">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Async Actions">
 <meta property="og:url" content="http://xiufengchen.github.io/2016/08/15/Async-Actions/index.html">
 <meta property="og:site_name" content="Xiufeng">
 <meta property="og:description" content="This article is based on Async Actions tutorial and a solution from stackoverflow about how to dispatch a Redux action with a timeout or any other asynchronous request.
-Why Using Thunk?本文的第一部分我想先借用Red">
-<meta property="og:updated_time" content="2016-08-17T04:07:23.107Z">
+Why Using Thunk?本文的第一部分我想先借用Re">
+<meta property="og:image" content="http://i.imgur.com/hCkhsjq.png">
+<meta property="og:updated_time" content="2016-09-06T15:44:20.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Async Actions">
 <meta name="twitter:description" content="This article is based on Async Actions tutorial and a solution from stackoverflow about how to dispatch a Redux action with a timeout or any other asynchronous request.
-Why Using Thunk?本文的第一部分我想先借用Red">
+Why Using Thunk?本文的第一部分我想先借用Re">
+<meta name="twitter:image" content="http://i.imgur.com/hCkhsjq.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -95,7 +97,8 @@ ga('send', 'pageview');
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>This article is based on <a href="http://redux.js.org/docs/advanced/AsyncActions.html" target="_blank" rel="external">Async Actions tutorial</a> and a <a href="http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559#35415559" target="_blank" rel="external">solution from stackoverflow</a> about how to dispatch a Redux action with a timeout or any other asynchronous request.</p>
+        <p><img src="http://i.imgur.com/hCkhsjq.png" alt="Async!"></p>
+<p>This article is based on <a href="http://redux.js.org/docs/advanced/AsyncActions.html" target="_blank" rel="external">Async Actions tutorial</a> and a <a href="http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559#35415559" target="_blank" rel="external">solution from stackoverflow</a> about how to dispatch a Redux action with a timeout or any other asynchronous request.</p>
 <h1 id="Why-Using-Thunk"><a href="#Why-Using-Thunk" class="headerlink" title="Why Using Thunk?"></a>Why Using Thunk?</h1><p>本文的第一部分我想先借用Redux作者Dan Abramov在stackoverflow上的回答来阐述一下使用thunk的原理。</p>
 <p><a href="http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout" target="_blank" rel="external">How to dispatch a Redux action with a timeout?</a></p>
 <h2 id="dispatch-action"><a href="#dispatch-action" class="headerlink" title="dispatch(action)"></a>dispatch(action)</h2><p>首先来看一下dipatch(action)的API。dispatch 一个action是触发state改变的唯一方法。store的reducer方法将会同时调用getState()的结果和action。reducer方法的返回值就是新的state，一旦状态改变就会通知listener。</p>
