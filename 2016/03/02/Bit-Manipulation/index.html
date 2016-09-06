@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Bit Manipulation - Xiufeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This artical comes from a solution disscus from Leetcode.
+In this problem, we are asked to divide two integers. However, we are not allowed to use division, multiplication and mod operations. So, what">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bit Manipulation">
+<meta property="og:url" content="http://xiufengchen.github.io/2016/03/02/Bit-Manipulation/index.html">
+<meta property="og:site_name" content="Xiufeng">
+<meta property="og:description" content="This artical comes from a solution disscus from Leetcode.
+In this problem, we are asked to divide two integers. However, we are not allowed to use division, multiplication and mod operations. So, what">
+<meta property="og:updated_time" content="2016-09-06T14:33:13.113Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bit Manipulation">
+<meta name="twitter:description" content="This artical comes from a solution disscus from Leetcode.
+In this problem, we are asked to divide two integers. However, we are not allowed to use division, multiplication and mod operations. So, what">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65933410-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo logo-text" href="/">Xiufeng</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/atom.xml">Rss</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xiufengchen.github.io"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-Bit-Manipulation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Bit Manipulation
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/02/Bit-Manipulation/" class="article-date">
+  <time datetime="2016-03-03T01:41:06.000Z" itemprop="datePublished">2016-03-02</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This artical comes from a solution disscus from Leetcode.</p>
+<p>In this problem, we are asked to divide two integers. However, we are not allowed to use division, multiplication and mod operations. So, what else can we use? Yeah, bit manipulations.<br>Let’s do an example and see how bit manipulations work.<br><a id="more"></a><br>Suppose we want to divide 15 by 3, so 15 is dividend and 3 is divisor. Well, division simply requires us to find how many times we can subtract the divisor from the the dividend without making the dividend negative.<br>Let’s get started. We subtract 3 from 15 and we get 12, which is positive. Let’s try to subtract more. Well, we shift 3 to the left by 1 bit and we get 6. Subtracting 6 from 15 still gives a positive result. Well, we shift again and get 12. We subtract 12 from 15 and it is still positive. We shift again, obtaining 24 and we know we can at most subtract 12. Well, since 12 is obtained by shifting 3 to left twice, we know it is 4 times of 3. How do we obtain this 4? Well, we start from 1 and shift it to left twice at the same time. We add 4 to an answer (initialized to be0). In fact, the above process is like 15 = 3 * 4 + 3. We now get part of the quotient (4), with a remainder 3.<br>Then we repeat the above process again. We subtract divisor = 3 from the remaining dividend = 3 and obtain 0. We know we are done. No shift happens, so we simply add 1 &lt;&lt; 0 to the answer.<br>Now we have the full algorithm to perform division.<br>According to the problem statement, we need to handle some exceptions, such as overflow.<br>Well, two cases may cause overflow:</p>
+<ol>
+<li>divisor = 0;<br>2.dividend = INT_MIN and divisor = -1 (because abs(INT_MIN) = INT_MAX + 1).<br>Of course, we also need to take the sign into considerations, which is relatively easy.<br>Putting all these together, we have the following code.<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> dividend, <span class="keyword">int</span> divisor)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (!divisor || (dividend == INT_MIN &amp;&amp; divisor == -<span class="number">1</span>))</div><div class="line">            <span class="keyword">return</span> INT_MAX;</div><div class="line">        <span class="keyword">int</span> sign = ((dividend &lt; <span class="number">0</span>) ^ (divisor &lt; <span class="number">0</span>)) ? -<span class="number">1</span> : <span class="number">1</span>;</div><div class="line">        <span class="keyword">long</span> <span class="keyword">long</span> dvd = labs(dividend);</div><div class="line">        <span class="keyword">long</span> <span class="keyword">long</span> dvs = labs(divisor);</div><div class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span> (dvd &gt;= dvs) &#123;</div><div class="line">            <span class="keyword">long</span> <span class="keyword">long</span> temp = dvs, multiple = <span class="number">1</span>;</div><div class="line">            <span class="keyword">while</span> (dvd &gt;= (temp &lt;&lt; <span class="number">1</span>)) &#123;</div><div class="line">                temp &lt;&lt;= <span class="number">1</span>;</div><div class="line">                multiple &lt;&lt;= <span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">            dvd -= temp;</div><div class="line">            res += multiple;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> sign == <span class="number">1</span> ? res : -res;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bit-Manipulation/">Bit Manipulation</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/02/Array-Questions/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          Array Questions
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/02/Basic-Algorithm-Questions-Updating-all-the-time/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Basic Algorithm Questions (Updating all the time)&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Xiufeng Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

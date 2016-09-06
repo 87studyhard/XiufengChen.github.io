@@ -66,47 +66,6 @@ ga('send', 'pageview');
   </div>
 </header>
     <section id="main" class="outer">
-      <article id="post-Bit-Manipulation" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    <div class="article-meta">
-      <a href="/2016/09/02/Bit-Manipulation/" class="article-date">
-  <time datetime="2016-09-02T20:21:39.989Z" itemprop="datePublished">2016-09-02</time>
-</a>
-      
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>title: Bit Manipulation<br>date: 2016-03-02 20:41:06<br>tags:</p>
-<pre><code>- Bit Manipulation
-</code></pre><p>categories:</p>
-<pre><code>- Algorithm
-</code></pre><p>This artical comes from a solution disscus from Leetcode.</p>
-<p>In this problem, we are asked to divide two integers. However, we are not allowed to use division, multiplication and mod operations. So, what else can we use? Yeah, bit manipulations.</p>
-<p>Let’s do an example and see how bit manipulations work.</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/09/02/Bit-Manipulation/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
       <article id="post-Async-Actions" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -638,8 +597,61 @@ ga('send', 'pageview');
 
 
     
+      <article id="post-K-sum-in-Leetcode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/22/K-sum-in-Leetcode/">K Sum in Leetcode</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/22/K-sum-in-Leetcode/" class="article-date">
+  <time datetime="2016-04-22T14:23:14.000Z" itemprop="datePublished">2016-04-22</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2-Sum"><a href="#2-Sum" class="headerlink" title="2 Sum"></a>2 Sum</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</div><div class="line">		<span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</div><div class="line">		Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</div><div class="line">			<span class="keyword">if</span> (map.containsKey(target - nums[i])) &#123;</div><div class="line">				result[<span class="number">1</span>] = i + <span class="number">1</span>;</div><div class="line">				result[<span class="number">0</span>] = map.get(target - nums[i]);</div><div class="line">				<span class="keyword">return</span> result;</div><div class="line">			&#125;</div><div class="line">			map.put(nums[i], i + <span class="number">1</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="3-Sum"><a href="#3-Sum" class="headerlink" title="3 Sum"></a>3 Sum</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; threeSum(<span class="keyword">int</span>[] nums) &#123;</div><div class="line">		Arrays.sort(nums);</div><div class="line">		List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;nums.length-<span class="number">2</span>;i++)&#123;</div><div class="line">			<span class="keyword">if</span> (i == <span class="number">0</span> || (i &gt; <span class="number">0</span> &amp;&amp; nums[i] != nums[i-<span class="number">1</span>])) &#123;</div><div class="line">				<span class="keyword">int</span> left = i + <span class="number">1</span>;</div><div class="line">				<span class="keyword">int</span> right = nums.length - <span class="number">1</span>;</div><div class="line">				<span class="keyword">int</span> differ = <span class="number">0</span> - nums[i];</div><div class="line">				<span class="keyword">while</span>(left &lt; right)&#123;</div><div class="line">					<span class="keyword">if</span>(nums[left] + nums[right] == differ)&#123;</div><div class="line">						result.add(Arrays.asList(nums[i],nums[left],nums[right]));</div><div class="line">						<span class="keyword">while</span>(left&lt;right&amp;&amp;nums[left]==nums[left+<span class="number">1</span>])left++;</div><div class="line">						<span class="keyword">while</span>(left&lt;right&amp;&amp;nums[right]==nums[right-<span class="number">1</span>])right--;</div><div class="line">						left++;</div><div class="line">						right--;</div><div class="line">					&#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[left]+nums[right]&gt;differ)&#123;</div><div class="line">						right--;</div><div class="line">					&#125;<span class="keyword">else</span>&#123;</div><div class="line">						left++;</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="4-Sum"><a href="#4-Sum" class="headerlink" title="4 Sum"></a>4 Sum</h2><p>Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; fourSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</div><div class="line">		List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">		<span class="keyword">if</span>(nums.length&lt;<span class="number">4</span>) <span class="keyword">return</span> result;</div><div class="line">		Arrays.sort(nums);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length-<span class="number">3</span>; i++)&#123;</div><div class="line">			<span class="keyword">if</span>(i&gt;<span class="number">0</span>&amp;&amp;nums[i]==nums[i-<span class="number">1</span>])<span class="keyword">continue</span>;                      <span class="comment">//去重</span></div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j&lt; nums.length-<span class="number">2</span>;j++)&#123;</div><div class="line">				<span class="keyword">if</span>(j&gt;i+<span class="number">1</span>&amp;&amp;nums[j]==nums[j-<span class="number">1</span>])<span class="keyword">continue</span>;</div><div class="line">				<span class="keyword">int</span> left = j+<span class="number">1</span>;</div><div class="line">				<span class="keyword">int</span> right = nums.length-<span class="number">1</span>;</div><div class="line">				<span class="keyword">while</span>(left&lt;right)&#123;</div><div class="line">					<span class="keyword">int</span> sum = nums[i] + nums[j] + nums[left] + nums[right];</div><div class="line">					<span class="keyword">if</span>(sum==target)&#123;</div><div class="line">						result.add(Arrays.asList(nums[i],nums[j],nums[left],nums[right]));</div><div class="line">						<span class="keyword">while</span>(left&lt;right&amp;&amp;nums[left]==nums[left+<span class="number">1</span>])left++;               <span class="comment">//去重</span></div><div class="line">						<span class="keyword">while</span>(left&lt;right&amp;&amp;nums[right]==nums[right-<span class="number">1</span>])right--;            <span class="comment">//去重</span></div><div class="line">						left++;</div><div class="line">						right--;</div><div class="line">					&#125;<span class="keyword">else</span> <span class="keyword">if</span>(sum&lt;target) left++;</div><div class="line">					<span class="keyword">else</span> right--;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/K-Sum/">K Sum</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
       <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Далее &raquo;</a>
       </nav>
     </section>
     <footer id="footer">

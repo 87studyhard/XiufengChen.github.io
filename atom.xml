@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiufengchen.github.io/"/>
-  <updated>2016-09-02T20:22:25.052Z</updated>
+  <updated>2016-08-17T04:07:23.107Z</updated>
   <id>http://xiufengchen.github.io/</id>
   
   <author>
@@ -14,68 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://xiufengchen.github.io/2016/09/02/Bit-Manipulation/"/>
-    <id>http://xiufengchen.github.io/2016/09/02/Bit-Manipulation/</id>
-    <published>2016-09-02T20:21:39.989Z</published>
-    <updated>2016-09-02T20:22:25.052Z</updated>
-    
-    <content type="html">&lt;p&gt;title: Bit Manipulation&lt;br&gt;date: 2016-03-02 20:41:06&lt;br&gt;tags:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- Bit Manipulation
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;categories:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- Algorithm
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This artical comes from a solution disscus from Leetcode.&lt;/p&gt;
-&lt;p&gt;In this problem, we are asked to divide two integers. However, we are not allowed to use division, multiplication and mod operations. So, what else can we use? Yeah, bit manipulations.&lt;/p&gt;
-&lt;p&gt;Let’s do an example and see how bit manipulations work.&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;Suppose we want to divide 15 by 3, so 15 is dividend and 3 is divisor. Well, division simply requires us to find how many times we can subtract the divisor from the the dividend without making the dividend negative.&lt;/p&gt;
-&lt;p&gt;Let’s get started. We subtract 3 from 15 and we get 12, which is positive. Let’s try to subtract more. Well, we shift 3 to the left by 1 bit and we get 6. Subtracting 6 from 15 still gives a positive result. Well, we shift again and get 12. We subtract 12 from 15 and it is still positive. We shift again, obtaining 24 and we know we can at most subtract 12. Well, since 12 is obtained by shifting 3 to left twice, we know it is 4 times of 3. How do we obtain this 4? Well, we start from 1 and shift it to left twice at the same time. We add 4 to an answer (initialized to be0). In fact, the above process is like 15 = 3 * 4 + 3. We now get part of the quotient (4), with a remainder 3.&lt;/p&gt;
-&lt;p&gt;Then we repeat the above process again. We subtract divisor = 3 from the remaining dividend = 3 and obtain 0. We know we are done. No shift happens, so we simply add 1 &amp;lt;&amp;lt; 0 to the answer.&lt;/p&gt;
-&lt;p&gt;Now we have the full algorithm to perform division.&lt;/p&gt;
-&lt;p&gt;According to the problem statement, we need to handle some exceptions, such as overflow.&lt;/p&gt;
-&lt;p&gt;Well, two cases may cause overflow:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;divisor = 0;&lt;br&gt;2.dividend = INT_MIN and divisor = -1 (because abs(INT_MIN) = INT_MAX + 1).&lt;br&gt;Of course, we also need to take the sign into considerations, which is relatively easy.&lt;br&gt;Putting all these together, we have the following code.&lt;/p&gt;
-&lt;p&gt; class Solution {&lt;br&gt; public:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;int divide(int dividend, int divisor) {
-    if (!divisor || (dividend == INT_MIN &amp;amp;&amp;amp; divisor == -1))
-        return INT_MAX;
-    int sign = ((dividend &amp;lt; 0) ^ (divisor &amp;lt; 0)) ? -1 : 1;
-    long long dvd = labs(dividend);
-    long long dvs = labs(divisor);
-    int res = 0;
-    while (dvd &amp;gt;= dvs) {
-        long long temp = dvs, multiple = 1;
-        while (dvd &amp;gt;= (temp &amp;lt;&amp;lt; 1)) {
-            temp &amp;lt;&amp;lt;= 1;
-            multiple &amp;lt;&amp;lt;= 1;
-        }
-        dvd -= temp;
-        res += multiple;
-    }
-    return sign == 1 ? res : -res;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; };&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;title: Bit Manipulation&lt;br&gt;date: 2016-03-02 20:41:06&lt;br&gt;tags:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- Bit Manipulation
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;categories:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- Algorithm
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This artical comes from a solution disscus from Leetcode.&lt;/p&gt;
-&lt;p&gt;In this problem, we are asked to divide two integers. However, we are not allowed to use division, multiplication and mod operations. So, what else can we use? Yeah, bit manipulations.&lt;/p&gt;
-&lt;p&gt;Let’s do an example and see how bit manipulations work.&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Async Actions</title>
@@ -1327,6 +1265,36 @@ isMatch(&amp;quot;aab&amp;quot;, &amp;quot;c*a*b&amp;quot;) → true
       <category term="JavaScript" scheme="http://xiufengchen.github.io/tags/JavaScript/"/>
     
       <category term="jQuery" scheme="http://xiufengchen.github.io/tags/jQuery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Some Common Design Patterns</title>
+    <link href="http://xiufengchen.github.io/2016/03/03/Some-Common-Design-Patterns/"/>
+    <id>http://xiufengchen.github.io/2016/03/03/Some-Common-Design-Patterns/</id>
+    <published>2016-03-03T18:09:25.000Z</published>
+    <updated>2016-09-02T20:33:08.323Z</updated>
+    
+    <content type="html">&lt;p&gt;本篇文章总结几个常用的Design Patterns, 以便理解一些基于这些模式的Java，JavaScript设计框架和事件机制。在介绍设计模式之前首先要介绍一个软件开发中常用到的原则。&lt;/p&gt;
+&lt;h2 id=&quot;开闭原则&quot;&gt;&lt;a href=&quot;#开闭原则&quot; class=&quot;headerlink&quot; title=&quot;开闭原则&quot;&gt;&lt;/a&gt;开闭原则&lt;/h2&gt;&lt;p&gt;[在面向对象编程领域中，开闭原则规定“软件中的对象（类，模块，函数等等）应该对于扩展是开放的，但是对于修改是封闭的”，这意味着一个实体是允许在不改变它的源代码的前提下变更它的行为。该特性在产品化的环境中是特别有价值的，在这种环境中，改变源代码需要代码审查，单元测试以及诸如此类的用以确保产品使用质量的过程。遵循这种原则的代码在扩展时并不发生改变，因此无需上述的过程。][&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://zh.wikipedia.org/wiki/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99&lt;/a&gt;]&lt;/p&gt;
+&lt;h2 id=&quot;工厂模式&quot;&gt;&lt;a href=&quot;#工厂模式&quot; class=&quot;headerlink&quot; title=&quot;工厂模式&quot;&gt;&lt;/a&gt;工厂模式&lt;/h2&gt;&lt;p&gt;本段文章来源于网络。&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/jason0539/article/details/23020989&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JAVA设计模式之工厂模式(简单工厂模式+工厂方法模式)&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;适配器模式&quot;&gt;&lt;a href=&quot;#适配器模式&quot; class=&quot;headerlink&quot; title=&quot;适配器模式&quot;&gt;&lt;/a&gt;适配器模式&lt;/h2&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇文章总结几个常用的Design Patterns, 以便理解一些基于这些模式的Java，JavaScript设计框架和事件机制。在介绍设计模式之前首先要介绍一个软件开发中常用到的原则。&lt;/p&gt;
+&lt;h2 id=&quot;开闭原则&quot;&gt;&lt;a href=&quot;#开闭原则&quot; class=&quot;h
+    
+    </summary>
+    
+      <category term="Design Pattern" scheme="http://xiufengchen.github.io/categories/Design-Pattern/"/>
+    
+    
+      <category term="Singleton" scheme="http://xiufengchen.github.io/tags/Singleton/"/>
+    
+      <category term="Factory" scheme="http://xiufengchen.github.io/tags/Factory/"/>
+    
+      <category term="Observer" scheme="http://xiufengchen.github.io/tags/Observer/"/>
     
   </entry>
   
