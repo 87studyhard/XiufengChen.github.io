@@ -13,13 +13,13 @@
 <meta property="og:site_name" content="Xiufeng">
 <meta property="og:description" content="本文来源于深入浅出 JavaScript 中的 this结合最近在学习的React框架，记录一些this使用的方法。
 由于其运行期绑定的特性，JavaScript 中的 this 含义要丰富得多，它可以是全局对象、当前对象或者任意对象，这完全取决于函数的调用方式。JavaScript 中函数的调用有以下几种方式：作为对象方法调用，作为函数调用，作为构造函数调用，和使用 apply 或 call">
-<meta property="og:image" content="http://i.imgur.com/hkxjug8.jpg?1">
-<meta property="og:updated_time" content="2016-09-06T17:10:35.921Z">
+<meta property="og:image" content="http://i.imgur.com/hkxjug8.jpg?2">
+<meta property="og:updated_time" content="2016-09-06T17:48:04.037Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to use this in JavaScript">
 <meta name="twitter:description" content="本文来源于深入浅出 JavaScript 中的 this结合最近在学习的React框架，记录一些this使用的方法。
 由于其运行期绑定的特性，JavaScript 中的 this 含义要丰富得多，它可以是全局对象、当前对象或者任意对象，这完全取决于函数的调用方式。JavaScript 中函数的调用有以下几种方式：作为对象方法调用，作为函数调用，作为构造函数调用，和使用 apply 或 call">
-<meta name="twitter:image" content="http://i.imgur.com/hkxjug8.jpg?1">
+<meta name="twitter:image" content="http://i.imgur.com/hkxjug8.jpg?2">
   
   
     <link rel="icon" href="/favicon.png">
@@ -101,7 +101,7 @@ ga('send', 'pageview');
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://i.imgur.com/hkxjug8.jpg?1" alt="JavaScript"></p>
+        <p><img src="http://i.imgur.com/hkxjug8.jpg?2" alt="How to use this in JavaScript"></p>
 <p>本文来源于<a href="https://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/" target="_blank" rel="external">深入浅出 JavaScript 中的 this</a><br>结合最近在学习的React框架，记录一些this使用的方法。</p>
 <p>由于其运行期绑定的特性，JavaScript 中的 this 含义要丰富得多，它可以是全局对象、当前对象或者任意对象，这完全取决于函数的调用方式。JavaScript 中函数的调用有以下几种方式：作为对象方法调用，作为函数调用，作为构造函数调用，和使用 apply 或 call 调用。下面我们将按照调用方式的不同，分别讨论 this 的含义。</p>
 <h3 id="1-函数作为对象方法调用时的this"><a href="#1-函数作为对象方法调用时的this" class="headerlink" title="1. 函数作为对象方法调用时的this"></a>1. 函数作为对象方法调用时的this</h3><p>在 JavaScript 中，函数也是对象，函数可以作为一个对象的属性，此时该函数被称为该对象的方法，在使用这种调用方式时，this 被自然绑定到该对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> point = &#123; </div><div class="line"> x : <span class="number">0</span>, </div><div class="line"> y : <span class="number">0</span>, </div><div class="line"> moveTo : <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123; </div><div class="line">	 <span class="keyword">this</span>.x = <span class="keyword">this</span>.x + x; </div><div class="line">	 <span class="keyword">this</span>.y = <span class="keyword">this</span>.y + y; </div><div class="line">	 &#125; </div><div class="line"> &#125;; </div><div class="line"></div><div class="line"> point.moveTo(<span class="number">1</span>, <span class="number">1</span>)<span class="comment">//this 绑定到当前对象，即 point 对象</span></div></pre></td></tr></table></figure></p>

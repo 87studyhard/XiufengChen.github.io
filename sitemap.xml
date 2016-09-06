@@ -2,16 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xiufengchen.github.io/2016/07/07/Learning-Reactjs-2/</loc>
+    
+    <lastmod>2016-09-06T17:56:20.457Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xiufengchen.github.io/2016/07/15/Working-with-Google-Map-API-on-Reactjs/</loc>
+    
+    <lastmod>2016-09-06T17:51:00.242Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xiufengchen.github.io/2016/06/15/How-to-use-this-in-JavaScript/</loc>
+    
+    <lastmod>2016-09-06T17:48:04.037Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://xiufengchen.github.io/2016/04/28/Learning-Angularjs-2/</loc>
     
-    <lastmod>2016-09-06T17:20:15.333Z</lastmod>
+    <lastmod>2016-09-06T17:44:36.997Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://xiufengchen.github.io/2016/05/05/Learning-Angularjs-4/</loc>
     
-    <lastmod>2016-09-06T17:17:01.254Z</lastmod>
+    <lastmod>2016-09-06T17:41:34.502Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xiufengchen.github.io/2016/06/14/Learning-Reactjs-1/</loc>
+    
+    <lastmod>2016-09-06T17:40:01.845Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xiufengchen.github.io/2016/08/15/Async-Actions/</loc>
+    
+    <lastmod>2016-09-06T17:36:21.908Z</lastmod>
     
   </url>
   
@@ -19,41 +54,6 @@
     <loc>http://xiufengchen.github.io/2016/04/29/Learning-Angularjs-3/</loc>
     
     <lastmod>2016-09-06T17:14:16.799Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xiufengchen.github.io/2016/06/15/How-to-use-this-in-JavaScript/</loc>
-    
-    <lastmod>2016-09-06T17:10:35.921Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xiufengchen.github.io/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/</loc>
-    
-    <lastmod>2016-09-06T17:06:56.706Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xiufengchen.github.io/2016/07/07/Learning-Reactjs-2/</loc>
-    
-    <lastmod>2016-09-06T16:59:43.239Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xiufengchen.github.io/2016/06/14/Learning-Reactjs-1/</loc>
-    
-    <lastmod>2016-09-06T16:59:26.506Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xiufengchen.github.io/2016/08/15/Async-Actions/</loc>
-    
-    <lastmod>2016-09-06T16:48:42.023Z</lastmod>
     
   </url>
   

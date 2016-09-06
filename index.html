@@ -89,13 +89,15 @@ ga('send', 'pageview');
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://i.imgur.com/hCkhsjq.png?1" alt="Async"></p>
+        <p><img src="http://i.imgur.com/hCkhsjq.png?2" alt="Imgur"></p>
 <p>This article is based on <a href="http://redux.js.org/docs/advanced/AsyncActions.html">Async Actions tutorial</a> and a <a href="http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559#35415559">solution from stackoverflow</a> about how to dispatch a Redux action with a timeout or any other asynchronous request.</p>
 <h2 id="Why-Using-Thunk"><a href="#Why-Using-Thunk" class="headerlink" title="Why Using Thunk?"></a>Why Using Thunk?</h2><p>本文的第一部分我想先借用Redux作者Dan Abramov在stackoverflow上的回答来阐述一下使用thunk的原理。</p>
 <p><a href="http://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout">How to dispatch a Redux action with a timeout?</a></p>
 <h3 id="dispatch-action"><a href="#dispatch-action" class="headerlink" title="dispatch(action)"></a>dispatch(action)</h3><p>首先来看一下dipatch(action)的API。dispatch 一个action是触发state改变的唯一方法。store的reducer方法将会同时调用getState()的结果和action。reducer方法的返回值就是新的state，一旦状态改变就会通知listener。</p>
 <h4 id="Arguments"><a href="#Arguments" class="headerlink" title="Arguments"></a>Arguments</h4><p>action是向store添加数据的唯一方法，无论该数据是通过UI事件，调用外部回调函数，还是通过WebSockets 得到的。</p>
-<h4 id="Returns"><a href="#Returns" class="headerlink" title="Returns"></a>Returns</h4><p>被调度了的action，一般情况下该返回值是Object。<br>
+<h4 id="Returns"><a href="#Returns" class="headerlink" title="Returns"></a>Returns</h4><p>被调度了的action，一般情况下该返回值是Object。</p>
+<h3 id="Writing-Async-Code-Inline"><a href="#Writing-Async-Code-Inline" class="headerlink" title="Writing Async Code Inline"></a>Writing Async Code Inline</h3><p>这是使用redux实现setTimeout最简单的方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">store.dispatch(&#123; type: <span class="string">'SHOW_NOTIFICATION'</span>, text: <span class="string">'You logged in.'</span> &#125;)</div><div class="line">setTimeout(() =&gt; &#123;</div><div class="line">  store.dispatch(&#123; type: <span class="string">'HIDE_NOTIFICATION'</span> &#125;)</div><div class="line">&#125;, <span class="number">5000</span>)</div></pre></td></tr></table></figure>
         
           <p class="article-more-link">
             <a href="/2016/08/15/Async-Actions/#more">Read More</a>
@@ -117,7 +119,7 @@ ga('send', 'pageview');
 
 
     
-      <article id="post-Working-with-Google-Map-API-on-Reactjs-C" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-Working-with-Google-Map-API-on-Reactjs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -125,14 +127,14 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/">Working with Google Map API on Reactjs</a>
+      <a class="article-title" href="/2016/07/15/Working-with-Google-Map-API-on-Reactjs/">Working with Google Map API on Reactjs</a>
     </h1>
   
 
       </header>
     
     <div class="article-meta">
-      <a href="/2016/07/15/Working-with-Google-Map-API-on-Reactjs-C/" class="article-date">
+      <a href="/2016/07/15/Working-with-Google-Map-API-on-Reactjs/" class="article-date">
   <time datetime="2016-07-15T16:01:38.000Z" itemprop="datePublished">2016-07-15</time>
 </a>
       
@@ -140,7 +142,7 @@ ga('send', 'pageview');
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://i.imgur.com/9ERJwNg.jpg?1" alt="Google Map"></p>
+        <p><img src="http://i.imgur.com/9ERJwNg.jpg?2" alt="Working with Google Map API on Reactjs"></p>
 <p>When we develop a component using 3rd party APIs like Google, Github, we must use their API or load their javascript libraries to get instances they made. There are multiple ways to load 3rd API libraries: one is including libraries with <code>&lt;script&gt;</code>  on the original markup for the page, another is lazily-loading the libraries.</p>
 <p>We can get the purpose and tutorial of Lazy Loading Asyncronous Javascript <a href="https://friendlybit.com/js/lazy-loading-asyncronous-javascript/" target="_blank" rel="external">here</a>. </p>
 
@@ -183,7 +185,7 @@ ga('send', 'pageview');
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://i.imgur.com/lngVeKW.png?1" alt="Reactjs"></p>
+        <p><img src="http://i.imgur.com/5pHysd7.jpg?1" alt="Learning Reactjs 2"></p>
 <h2 id="START-UP-A-REACT-PROJECT"><a href="#START-UP-A-REACT-PROJECT" class="headerlink" title="START UP A REACT PROJECT"></a>START UP A REACT PROJECT</h2><h3 id="Setting-up-package-json"><a href="#Setting-up-package-json" class="headerlink" title="Setting up package.json"></a>Setting up package.json</h3><p>Create a new one using npm init command, selecting defaults where uncertain.<br><strong>/package.json</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="string">"name"</span>: <span class="string">"react-speed-coding-code"</span>,</div><div class="line">	<span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">	<span class="string">"description"</span>: <span class="string">"Companion code for React Speed Coding book"</span>,</div><div class="line">	<span class="string">"main"</span>: <span class="string">"index.js"</span>,</div><div class="line">	<span class="string">"private"</span>: <span class="literal">true</span>,</div><div class="line">	<span class="string">"scripts"</span>: &#123;</div><div class="line">		<span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></div><div class="line">	&#125;,</div><div class="line">	<span class="string">"author"</span>: <span class="string">"Manav Sehgal"</span>,</div><div class="line">	<span class="string">"license"</span>: <span class="string">"MIT"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
         
           <p class="article-more-link">
@@ -233,7 +235,7 @@ ga('send', 'pageview');
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://i.imgur.com/hkxjug8.jpg?1" alt="JavaScript"></p>
+        <p><img src="http://i.imgur.com/hkxjug8.jpg?2" alt="How to use this in JavaScript"></p>
 <p>本文来源于<a href="https://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/">深入浅出 JavaScript 中的 this</a><br>结合最近在学习的React框架，记录一些this使用的方法。</p>
 <p>由于其运行期绑定的特性，JavaScript 中的 this 含义要丰富得多，它可以是全局对象、当前对象或者任意对象，这完全取决于函数的调用方式。JavaScript 中函数的调用有以下几种方式：作为对象方法调用，作为函数调用，作为构造函数调用，和使用 apply 或 call 调用。下面我们将按照调用方式的不同，分别讨论 this 的含义。</p>
 <h3 id="1-函数作为对象方法调用时的this"><a href="#1-函数作为对象方法调用时的this" class="headerlink" title="1. 函数作为对象方法调用时的this"></a>1. 函数作为对象方法调用时的this</h3><p>在 JavaScript 中，函数也是对象，函数可以作为一个对象的属性，此时该函数被称为该对象的方法，在使用这种调用方式时，this 被自然绑定到该对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> point = &#123; </div><div class="line"> x : <span class="number">0</span>, </div><div class="line"> y : <span class="number">0</span>, </div><div class="line"> moveTo : <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123; </div><div class="line">	 <span class="keyword">this</span>.x = <span class="keyword">this</span>.x + x; </div><div class="line">	 <span class="keyword">this</span>.y = <span class="keyword">this</span>.y + y; </div><div class="line">	 &#125; </div><div class="line"> &#125;; </div><div class="line"></div><div class="line"> point.moveTo(<span class="number">1</span>, <span class="number">1</span>)<span class="comment">//this 绑定到当前对象，即 point 对象</span></div></pre></td></tr></table></figure></p>
@@ -287,7 +289,7 @@ ga('send', 'pageview');
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://i.imgur.com/lngVeKW.png?1" alt="Reactjs"></p>
+        <p><img src="http://i.imgur.com/lngVeKW.png?3" alt="Reactjs"></p>
 <h2 id="Cheatsheet-for-props-state-events"><a href="#Cheatsheet-for-props-state-events" class="headerlink" title="Cheatsheet for props, state, events"></a>Cheatsheet for props, state, events</h2><p><strong>Properties:</strong> Passing input data from Root/Owner component to Child. Owner defines a property=value which is used within rendered component. The “Owner-ownee” relationship can exist without property passing, as in owner simply rendering a component.<br>Owner component passing property:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Hello greet=&#123; <span class="keyword">this</span>.state.currentGreeting &#125; message=<span class="string">"World!"</span> /&gt;</div></pre></td></tr></table></figure></p>
 <p><strong>State:</strong> Defined within component whose state changes. State change updates rendered markup. Components can be stateless. Treat this.state as immutable. Do not change its value directly. Use setState method instead.<br>Default state:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.state = &#123;</div><div class="line">	currentGreeting: props.greet</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
         
@@ -338,7 +340,7 @@ ga('send', 'pageview');
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://i.imgur.com/k7FcIJi.jpg?1" alt="Learning Angularjs 4"></p>
+        <p><img src="http://i.imgur.com/k7FcIJi.jpg?2" alt="Learning Angularjs 4"></p>
 <h3 id="HTML-Compiler"><a href="#HTML-Compiler" class="headerlink" title="HTML Compiler"></a>HTML Compiler</h3><p>每一个网页元素都对应着一个对象object</p>
         
           <p class="article-more-link">
@@ -451,7 +453,7 @@ ga('send', 'pageview');
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://i.imgur.com/c5I5FLE.jpg?1" alt="Learning Angularjs 2"></p>
+        <p><img src="http://i.imgur.com/c5I5FLE.jpg?2" alt="Learning Angularjs 2"></p>
 <h3 id="Providers"><a href="#Providers" class="headerlink" title="Providers"></a>Providers</h3><p>在我们创建web应用的时候，我们<strong>需要组合使用多个objects</strong>，每个object需要被实例化才能使用。在Angular应用中，这些<strong>objects被<a href="https://docs.angularjs.org/api/auto/service/$injector">injector service</a>实例化</strong>的。<br>这个injector创建两种objects，services和specialized objects。<br>Services即开发者定义的业务逻辑。<br>Specialized Objects即 controllers, directives, filters 或者animations之一。<br><strong>injector</strong>怎样知道如何创建上面这两种objects呢，可以通过<strong>注册</strong>创建object对应的<strong>recipe</strong>来创建object。此处共有五种recipe，provider，value,factory,service,constant，其中provider是基础，其他四种是provider的语法糖。<br>下面说一下<strong>recipe的结构</strong>，每个recipe有一个<strong>identifier</strong>表示这个<strong>object</strong>的名字，以及<strong>description</strong>表示怎样<strong>创建这个object</strong>。<br>每个recipe属于Angular module。当一个angular module启动时，Angular自动创建一个injector实例，这个injector实例创建一个包含所有recipe注册情况的注册表，这些注册来自于核心ng模块，application module以及它的dependencies，当需要为应用创建一个object的时候，injector询问一下这个注册表就知道了。虽然我们的recipe有五种，但是这五种recipe都是为了创建运行时所需的objects用的，injector通过identifier查找object，通过description实例化object。所以注册recipe的时候使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myApp = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">myApp.recipe();</div></pre></td></tr></table></figure></p>
         
           <p class="article-more-link">
