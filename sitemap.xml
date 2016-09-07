@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xiufengchen.github.io/2016/08/15/Async-Actions/</loc>
+    
+    <lastmod>2016-09-07T00:09:52.889Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://xiufengchen.github.io/2016/06/14/Learning-Reactjs-1/</loc>
     
     <lastmod>2016-09-06T22:46:09.553Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://xiufengchen.github.io/2016/04/22/K-sum-in-Leetcode/</loc>
     
     <lastmod>2016-09-06T18:49:36.803Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xiufengchen.github.io/2016/08/15/Async-Actions/</loc>
-    
-    <lastmod>2016-09-06T18:45:24.983Z</lastmod>
     
   </url>
   
@@ -72,7 +72,7 @@
   </url>
   
   <url>
-    <loc>http://xiufengchen.github.io/tags/index.html</loc>
+    <loc>http://xiufengchen.github.io/about/index.html</loc>
     
     <lastmod>2016-09-06T14:23:09.130Z</lastmod>
     
@@ -86,7 +86,7 @@
   </url>
   
   <url>
-    <loc>http://xiufengchen.github.io/about/index.html</loc>
+    <loc>http://xiufengchen.github.io/tags/index.html</loc>
     
     <lastmod>2016-09-06T14:23:09.130Z</lastmod>
     
