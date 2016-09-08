@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xiufengchen.github.io/2016/03/02/Array-Questions/</loc>
+    
+    <lastmod>2016-09-08T00:51:50.902Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://xiufengchen.github.io/2016/08/15/Async-Actions/</loc>
     
     <lastmod>2016-09-07T00:09:52.889Z</lastmod>
@@ -194,13 +201,6 @@
     <loc>http://xiufengchen.github.io/2016/03/02/Basic-Algorithm-Questions-Updating-all-the-time/</loc>
     
     <lastmod>2016-07-13T02:52:12.276Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xiufengchen.github.io/2016/03/02/Array-Questions/</loc>
-    
-    <lastmod>2016-07-13T02:06:44.780Z</lastmod>
     
   </url>
   
