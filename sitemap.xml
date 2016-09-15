@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xiufengchen.github.io/2016/03/24/Dynamic-Programming/</loc>
+    
+    <lastmod>2016-09-15T20:14:43.704Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xiufengchen.github.io/2016/03/02/List-Node-Summary/</loc>
+    
+    <lastmod>2016-09-12T00:15:49.718Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xiufengchen.github.io/2016/03/02/Basic-Algorithm-Questions-Updating-all-the-time/</loc>
+    
+    <lastmod>2016-09-12T00:08:25.603Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://xiufengchen.github.io/2016/03/02/Array-Questions/</loc>
     
     <lastmod>2016-09-08T00:51:50.902Z</lastmod>
@@ -86,14 +107,14 @@
   </url>
   
   <url>
-    <loc>http://xiufengchen.github.io/categories/index.html</loc>
+    <loc>http://xiufengchen.github.io/tags/index.html</loc>
     
     <lastmod>2016-09-06T14:23:09.130Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://xiufengchen.github.io/tags/index.html</loc>
+    <loc>http://xiufengchen.github.io/categories/index.html</loc>
     
     <lastmod>2016-09-06T14:23:09.130Z</lastmod>
     
@@ -156,13 +177,6 @@
   </url>
   
   <url>
-    <loc>http://xiufengchen.github.io/2016/03/02/List-Node-Summary/</loc>
-    
-    <lastmod>2016-09-02T20:30:00.633Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://xiufengchen.github.io/2016/03/04/jQuery-Questions/</loc>
     
     <lastmod>2016-09-02T20:28:12.946Z</lastmod>
@@ -177,13 +191,6 @@
   </url>
   
   <url>
-    <loc>http://xiufengchen.github.io/2016/03/24/Dynamic-Programming/</loc>
-    
-    <lastmod>2016-09-02T20:24:37.982Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://xiufengchen.github.io/2016/03/18/Database-Questions/</loc>
     
     <lastmod>2016-09-02T20:23:29.233Z</lastmod>
@@ -194,13 +201,6 @@
     <loc>http://xiufengchen.github.io/2016/03/30/Learning-Angularjs-1/</loc>
     
     <lastmod>2016-07-20T12:33:06.756Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xiufengchen.github.io/2016/03/02/Basic-Algorithm-Questions-Updating-all-the-time/</loc>
-    
-    <lastmod>2016-07-13T02:52:12.276Z</lastmod>
     
   </url>
   
