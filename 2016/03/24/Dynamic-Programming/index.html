@@ -7,20 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="本文来自于算法导论第十五章动态规划的学习。
 
-分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，求出原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为跟小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，">
+分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，求出原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为更小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dynamic Programming">
 <meta property="og:url" content="http://xiufengchen.github.io/2016/03/24/Dynamic-Programming/index.html">
 <meta property="og:site_name" content="Xiufeng">
 <meta property="og:description" content="本文来自于算法导论第十五章动态规划的学习。
 
-分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，求出原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为跟小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，">
-<meta property="og:updated_time" content="2016-09-15T20:18:55.053Z">
+分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，求出原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为更小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，">
+<meta property="og:updated_time" content="2016-09-16T02:33:06.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dynamic Programming">
 <meta name="twitter:description" content="本文来自于算法导论第十五章动态规划的学习。
 
-分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，求出原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为跟小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，">
+分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，求出原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为更小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，">
   
   
     <link rel="icon" href="/favicon.png">
@@ -104,7 +104,7 @@ ga('send', 'pageview');
       
         <p>本文来自于算法导论第十五章动态规划的学习。</p>
 <blockquote>
-<p>分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，求出原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为跟小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，避免了这种不必要的计算工作。</p>
+<p>分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，求出原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为更小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，避免了这种不必要的计算工作。</p>
 </blockquote>
 <p>动态规划用来求解最优化问题，一般情况下，问题有多种解，但是要求出一个最优解，也许该问题有多个最优解。<br><a id="more"></a></p>
 <h3 id="钢条切割问题"><a href="#钢条切割问题" class="headerlink" title="钢条切割问题"></a>钢条切割问题</h3><p>Serling公司出售一段长度为i英尺的钢条价格p<sub>i</sub>见下表</p>
@@ -311,7 +311,7 @@ ga('send', 'pageview');
 </tbody>
 </table>
 <p>不管是方法一还是方法二，朴素递归算法的运算效率都是成几何倍数增加。因此我们需要使用动态规划算法，仔细安排求解顺序，对每个子问题只求解一次，并将结果保存下来。如果随后再次需要此子问题的解，只需要查找保存的结果，而不必重新计算。因此，动态规划算法是典型的时空权衡（time-memory trade-off）的例子。<br><strong>两种实现方法</strong><br><em>第一种方法称为 top-down with memoization:</em><br>此方法仍按自然地递归形式编写过程，但过程会保存每个子问题的解（通常保存在一个数组或散列表中）。当需要一个子问题的解时，过程首先检查是否已经保存过此解。如果是，则直接返回保存的值，从而节省了计算时间；否则，按通常方式计算这个子问题。<br><em>第二种方法称为 bottom-up method:</em><br>这种方法一般需要恰当定义子问题“规模”的概念，是的任何子问题的求解都只依赖于“更小的”子问题的求解。因而我们可以将子问题按规模排序，按由小到大的顺序进行求解。当求解某个子问题时，它所依赖的那些更小的子问题都已求解完毕，结果已经保存。每个子问题只需求解一次，当我们求解它（也是第一次遇到它）时，它的所有前提子问题都已求解完成。</p>
-<h3 id="最长公共子序列"><a href="#最长公共子序列" class="headerlink" title="最长公共子序列"></a>最长公共子序列</h3><p>一个给定序列的子序列，就是将给定序列中零个或多个元素去掉之后得到的结果。<br>LCS的最优子结构：令X = &lt; x<sub>1</sub>,x<sub>2</sub>,x<sub>3</sub>,…, x<sub>m</sub>&gt; 和 Y = &lt; y<sub>1</sub>,y<sub>2</sub>,y<sub>3</sub>,…, y<sub>n</sub>&gt;为两个序列，Z = &lt; z<sub>1</sub>,z<sub>2</sub>,z<sub>3</sub>,…, x<sub>k</sub>&gt;为X和Y的任意LCS。</p>
+<h3 id="最长公共子序列"><a href="#最长公共子序列" class="headerlink" title="最长公共子序列"></a>最长公共子序列</h3><p>一个给定序列的子序列，就是将给定序列中零个或多个元素去掉之后得到的结果。<br>LCS的最优子结构：令X = &lt; x<sub>1</sub>,x<sub>2</sub>,x<sub>3</sub>,…, x<sub>m</sub>&gt; 和 Y = &lt; y<sub>1</sub>,y<sub>2</sub>,y<sub>3</sub>,…, y<sub>n</sub>&gt;为两个序列，Z = &lt; z<sub>1</sub>,z<sub>2</sub>,z<sub>3</sub>,…, z<sub>k</sub>&gt;为X和Y的任意LCS。</p>
 <ol>
 <li>如果x<sub>m</sub> = y<sub>n</sub>，则z<sub>k</sub> = x<sub>m</sub> = y<sub>n</sub>且Z<sub>k-1</sub>是X<sub>m-1</sub>和Y<sub>n-1</sub>的一个LCS。</li>
 <li>如果x<sub>m</sub> != y<sub>n</sub>，则z<sub>k</sub> != x<sub>m</sub>且Z是X<sub>m-1</sub>和Y的一个LCS。</li>
@@ -335,13 +335,122 @@ isMatch(&quot;aab&quot;, &quot;c*a*b&quot;) → true
 </code></pre><p>解法来自leetcode的<a href="https://leetcode.com/discuss/8648/my-ac-dp-solution-for-this-problem-asking-for-improvements" target="_blank" rel="external">solution</a></p>
 <p>Basically, the OPT[i][j] means preceding substring of length i of s and length j of p. For any two substrings, the value of OPT[i][j] can be from one of following four cases:<br>case 1: OPT[i-1][j-1] is true, and ith character of s is equal to j th character of p. Or j th character of p is ‘.’<br>case 2: OPT[i-1][j] is true, then my pattern now is ‘<em>‘ and preceding character is equal to incoming character of s<br>case 3: OPT[i][j-1] is true, then my pattern now is ‘</em>‘ which can match an empty string<br>case 4: OPT[i][j-2] is true, and the pattern like (a*) matches an empty string<br>base case is the OPT[0][0], OPT[i][0], OPT[0][j].</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMatch</span><span class="params">(String s, String p)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> m = s.length();</div><div class="line">    <span class="keyword">int</span> n = p.length();</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (s == <span class="keyword">null</span> || p == <span class="keyword">null</span>) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">boolean</span>[][] OPT = <span class="keyword">new</span> <span class="keyword">boolean</span>[m+<span class="number">1</span>][n+<span class="number">1</span>];</div><div class="line">    OPT[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</div><div class="line">      OPT[i][<span class="number">0</span>] = <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</div><div class="line">      OPT[<span class="number">0</span>][j] = (p.charAt(j-<span class="number">1</span>) == <span class="string">'*'</span>) &amp;&amp; (j-<span class="number">2</span> &gt;= <span class="number">0</span>) &amp;&amp; OPT[<span class="number">0</span>][j-<span class="number">2</span>];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</div><div class="line">        OPT[i][j] = ((OPT[i-<span class="number">1</span>][j-<span class="number">1</span>]) &amp;&amp; equals(s, p, i-<span class="number">1</span>, j-<span class="number">1</span>))</div><div class="line">          ||  ((OPT[i-<span class="number">1</span>][j] || OPT[i][j-<span class="number">1</span>]) </div><div class="line">               &amp;&amp; (p.charAt(j-<span class="number">1</span>) == <span class="string">'*'</span>) </div><div class="line">               &amp;&amp; equals(s, p, i-<span class="number">1</span>, j-<span class="number">2</span>))</div><div class="line">          ||  ((p.charAt(j-<span class="number">1</span>) == <span class="string">'*'</span>) &amp;&amp; (j-<span class="number">2</span> &gt;= <span class="number">0</span>) &amp;&amp; OPT[i][j-<span class="number">2</span>]);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> OPT[m][n];</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(String s, String p, <span class="keyword">int</span> si, <span class="keyword">int</span> pi)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> (s.charAt(si) == p.charAt(pi) || p.charAt(pi) == <span class="string">'.'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Longest-Palindromic-Subsequence"><a href="#Longest-Palindromic-Subsequence" class="headerlink" title="Longest Palindromic Subsequence"></a>Longest Palindromic Subsequence</h3><p>Given a string, find a longest palindromic subsequence in it.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Example:</div><div class="line">String A = &quot; agbdba&quot;;</div><div class="line">Longest Palindromic subsequence: abdba</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">g</td>
+<td style="text-align:center">b</td>
+<td style="text-align:center">d</td>
+<td style="text-align:center">b</td>
+<td style="text-align:center">a</td>
+</tr>
+</tbody>
+</table>
+<p>We use Bottom-Up manner, build our sub solution from small to large.</p>
+<p>First traversal: The palindromic of each char is 1.</p>
+<p>Second traversal: The palindromic of each two chars: </p>
+<ol>
+<li><p>if these two chars are the same, the value of later one is 2 </p>
+</li>
+<li><p>if these two chars are different, the value of later one is Math.max(each char value)</p>
+</li>
+</ol>
+<p>Third traversal: The palindromic  of three chars:</p>
+<ol>
+<li>if the head of 3 chars and the tail of 3 chars are the same: the value of later one is 2 + value of chars removing these head and tail char</li>
+<li>if the head of 3 chars and the tail of 3 chars are different: the value of later one is Math.max(first two chars value, second two chars value)</li>
+</ol>
+<p>Forth traversal: The palindromic of 4 chars:</p>
+<p>(Just like above…)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findPalindrome</span><span class="params">(String A)</span></span>&#123;</div><div class="line">  <span class="keyword">char</span> [] chars = A.toCharArray();  <span class="comment">//Convery string to character array..</span></div><div class="line">  <span class="keyword">int</span> [][]LP = <span class="keyword">new</span> <span class="keyword">int</span>[chars.length][chars.length]; </div><div class="line">  <span class="comment">//LP[i][j] - length of palindrome from ith index to jth index</span></div><div class="line">  <span class="comment">// all the characters in the string are palindrome by itself of length 1.</span></div><div class="line">  <span class="comment">//So all LP[i][i] =  1 </span></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;chars.length;i++)&#123;</div><div class="line">    LP[i][i] = <span class="number">1</span>;			</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> sublen = <span class="number">2</span>;sublen&lt;=chars.length;sublen++)&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=LP.length-sublen;i++)&#123;</div><div class="line">      <span class="keyword">int</span> j = i+sublen-<span class="number">1</span>;</div><div class="line">      <span class="keyword">if</span>(chars[i]==chars[j] &amp;&amp; sublen==<span class="number">2</span>)&#123;</div><div class="line">        LP[i][j] = <span class="number">2</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">else</span> <span class="keyword">if</span>(chars[i]==chars[j])&#123;</div><div class="line">        LP[i][j] = LP[i+<span class="number">1</span>][j-<span class="number">1</span>]+<span class="number">2</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">else</span>&#123;</div><div class="line">        LP[i][j] = Math.max(LP[i+<span class="number">1</span>][j],LP[i][j-<span class="number">1</span>]);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  printMatrix(LP);</div><div class="line">  <span class="keyword">return</span> LP[<span class="number">0</span>][LP.length-<span class="number">1</span>];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
     
       <div class="article-toc">
         <h3>Contents</h3>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#钢条切割问题"><span class="toc-number">1.</span> <span class="toc-text">钢条切割问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最长公共子序列"><span class="toc-number">2.</span> <span class="toc-text">最长公共子序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Regular-Expression-Matching"><span class="toc-number">3.</span> <span class="toc-text">Regular Expression Matching</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#钢条切割问题"><span class="toc-number">1.</span> <span class="toc-text">钢条切割问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最长公共子序列"><span class="toc-number">2.</span> <span class="toc-text">最长公共子序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Regular-Expression-Matching"><span class="toc-number">3.</span> <span class="toc-text">Regular Expression Matching</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Longest-Palindromic-Subsequence"><span class="toc-number">4.</span> <span class="toc-text">Longest Palindromic Subsequence</span></a></li></ol>
       </div>
     
     

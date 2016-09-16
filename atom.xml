@@ -749,11 +749,11 @@ The browser re-renders the view with the updated text.
     <link href="http://xiufengchen.github.io/2016/03/24/Dynamic-Programming/"/>
     <id>http://xiufengchen.github.io/2016/03/24/Dynamic-Programming/</id>
     <published>2016-03-24T22:45:47.000Z</published>
-    <updated>2016-09-15T20:18:55.053Z</updated>
+    <updated>2016-09-16T02:33:06.472Z</updated>
     
     <content type="html">&lt;p&gt;本文来自于算法导论第十五章动态规划的学习。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，求出原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为跟小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，避免了这种不必要的计算工作。&lt;/p&gt;
+&lt;p&gt;分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，求出原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为更小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，避免了这种不必要的计算工作。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;动态规划用来求解最优化问题，一般情况下，问题有多种解，但是要求出一个最优解，也许该问题有多个最优解。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;钢条切割问题&quot;&gt;&lt;a href=&quot;#钢条切割问题&quot; class=&quot;headerlink&quot; title=&quot;钢条切割问题&quot;&gt;&lt;/a&gt;钢条切割问题&lt;/h3&gt;&lt;p&gt;Serling公司出售一段长度为i英尺的钢条价格p&lt;sub&gt;i&lt;/sub&gt;见下表&lt;/p&gt;
@@ -960,7 +960,7 @@ The browser re-renders the view with the updated text.
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;不管是方法一还是方法二，朴素递归算法的运算效率都是成几何倍数增加。因此我们需要使用动态规划算法，仔细安排求解顺序，对每个子问题只求解一次，并将结果保存下来。如果随后再次需要此子问题的解，只需要查找保存的结果，而不必重新计算。因此，动态规划算法是典型的时空权衡（time-memory trade-off）的例子。&lt;br&gt;&lt;strong&gt;两种实现方法&lt;/strong&gt;&lt;br&gt;&lt;em&gt;第一种方法称为 top-down with memoization:&lt;/em&gt;&lt;br&gt;此方法仍按自然地递归形式编写过程，但过程会保存每个子问题的解（通常保存在一个数组或散列表中）。当需要一个子问题的解时，过程首先检查是否已经保存过此解。如果是，则直接返回保存的值，从而节省了计算时间；否则，按通常方式计算这个子问题。&lt;br&gt;&lt;em&gt;第二种方法称为 bottom-up method:&lt;/em&gt;&lt;br&gt;这种方法一般需要恰当定义子问题“规模”的概念，是的任何子问题的求解都只依赖于“更小的”子问题的求解。因而我们可以将子问题按规模排序，按由小到大的顺序进行求解。当求解某个子问题时，它所依赖的那些更小的子问题都已求解完毕，结果已经保存。每个子问题只需求解一次，当我们求解它（也是第一次遇到它）时，它的所有前提子问题都已求解完成。&lt;/p&gt;
-&lt;h3 id=&quot;最长公共子序列&quot;&gt;&lt;a href=&quot;#最长公共子序列&quot; class=&quot;headerlink&quot; title=&quot;最长公共子序列&quot;&gt;&lt;/a&gt;最长公共子序列&lt;/h3&gt;&lt;p&gt;一个给定序列的子序列，就是将给定序列中零个或多个元素去掉之后得到的结果。&lt;br&gt;LCS的最优子结构：令X = &amp;lt; x&lt;sub&gt;1&lt;/sub&gt;,x&lt;sub&gt;2&lt;/sub&gt;,x&lt;sub&gt;3&lt;/sub&gt;,…, x&lt;sub&gt;m&lt;/sub&gt;&amp;gt; 和 Y = &amp;lt; y&lt;sub&gt;1&lt;/sub&gt;,y&lt;sub&gt;2&lt;/sub&gt;,y&lt;sub&gt;3&lt;/sub&gt;,…, y&lt;sub&gt;n&lt;/sub&gt;&amp;gt;为两个序列，Z = &amp;lt; z&lt;sub&gt;1&lt;/sub&gt;,z&lt;sub&gt;2&lt;/sub&gt;,z&lt;sub&gt;3&lt;/sub&gt;,…, x&lt;sub&gt;k&lt;/sub&gt;&amp;gt;为X和Y的任意LCS。&lt;/p&gt;
+&lt;h3 id=&quot;最长公共子序列&quot;&gt;&lt;a href=&quot;#最长公共子序列&quot; class=&quot;headerlink&quot; title=&quot;最长公共子序列&quot;&gt;&lt;/a&gt;最长公共子序列&lt;/h3&gt;&lt;p&gt;一个给定序列的子序列，就是将给定序列中零个或多个元素去掉之后得到的结果。&lt;br&gt;LCS的最优子结构：令X = &amp;lt; x&lt;sub&gt;1&lt;/sub&gt;,x&lt;sub&gt;2&lt;/sub&gt;,x&lt;sub&gt;3&lt;/sub&gt;,…, x&lt;sub&gt;m&lt;/sub&gt;&amp;gt; 和 Y = &amp;lt; y&lt;sub&gt;1&lt;/sub&gt;,y&lt;sub&gt;2&lt;/sub&gt;,y&lt;sub&gt;3&lt;/sub&gt;,…, y&lt;sub&gt;n&lt;/sub&gt;&amp;gt;为两个序列，Z = &amp;lt; z&lt;sub&gt;1&lt;/sub&gt;,z&lt;sub&gt;2&lt;/sub&gt;,z&lt;sub&gt;3&lt;/sub&gt;,…, z&lt;sub&gt;k&lt;/sub&gt;&amp;gt;为X和Y的任意LCS。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;如果x&lt;sub&gt;m&lt;/sub&gt; = y&lt;sub&gt;n&lt;/sub&gt;，则z&lt;sub&gt;k&lt;/sub&gt; = x&lt;sub&gt;m&lt;/sub&gt; = y&lt;sub&gt;n&lt;/sub&gt;且Z&lt;sub&gt;k-1&lt;/sub&gt;是X&lt;sub&gt;m-1&lt;/sub&gt;和Y&lt;sub&gt;n-1&lt;/sub&gt;的一个LCS。&lt;/li&gt;
 &lt;li&gt;如果x&lt;sub&gt;m&lt;/sub&gt; != y&lt;sub&gt;n&lt;/sub&gt;，则z&lt;sub&gt;k&lt;/sub&gt; != x&lt;sub&gt;m&lt;/sub&gt;且Z是X&lt;sub&gt;m-1&lt;/sub&gt;和Y的一个LCS。&lt;/li&gt;
@@ -984,13 +984,122 @@ isMatch(&amp;quot;aab&amp;quot;, &amp;quot;c*a*b&amp;quot;) → true
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;解法来自leetcode的&lt;a href=&quot;https://leetcode.com/discuss/8648/my-ac-dp-solution-for-this-problem-asking-for-improvements&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;solution&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Basically, the OPT[i][j] means preceding substring of length i of s and length j of p. For any two substrings, the value of OPT[i][j] can be from one of following four cases:&lt;br&gt;case 1: OPT[i-1][j-1] is true, and ith character of s is equal to j th character of p. Or j th character of p is ‘.’&lt;br&gt;case 2: OPT[i-1][j] is true, then my pattern now is ‘&lt;em&gt;‘ and preceding character is equal to incoming character of s&lt;br&gt;case 3: OPT[i][j-1] is true, then my pattern now is ‘&lt;/em&gt;‘ which can match an empty string&lt;br&gt;case 4: OPT[i][j-2] is true, and the pattern like (a*) matches an empty string&lt;br&gt;base case is the OPT[0][0], OPT[i][0], OPT[0][j].&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Solution&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;isMatch&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String s, String p)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; m = s.length();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; n = p.length();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (s == &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt; || p == &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt;[][] OPT = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt;[m+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][n+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    OPT[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;][&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] = &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; i &amp;lt;= m; i++) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      OPT[i][&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] = &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; j &amp;lt;= n; j++) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      OPT[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;][j] = (p.charAt(j-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) == &lt;span class=&quot;string&quot;&gt;&#39;*&#39;&lt;/span&gt;) &amp;amp;&amp;amp; (j-&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; &amp;gt;= &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &amp;amp;&amp;amp; OPT[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;][j-&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; i &amp;lt;= m; i++) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; j &amp;lt;= n; j++) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        OPT[i][j] = ((OPT[i-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][j-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]) &amp;amp;&amp;amp; equals(s, p, i-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, j-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;          ||  ((OPT[i-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][j] || OPT[i][j-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]) &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;               &amp;amp;&amp;amp; (p.charAt(j-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) == &lt;span class=&quot;string&quot;&gt;&#39;*&#39;&lt;/span&gt;) &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;               &amp;amp;&amp;amp; equals(s, p, i-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, j-&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;          ||  ((p.charAt(j-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) == &lt;span class=&quot;string&quot;&gt;&#39;*&#39;&lt;/span&gt;) &amp;amp;&amp;amp; (j-&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; &amp;gt;= &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &amp;amp;&amp;amp; OPT[i][j-&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;]);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; OPT[m][n];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String s, String p, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; si, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; pi)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (s.charAt(si) == p.charAt(pi) || p.charAt(pi) == &lt;span class=&quot;string&quot;&gt;&#39;.&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Longest-Palindromic-Subsequence&quot;&gt;&lt;a href=&quot;#Longest-Palindromic-Subsequence&quot; class=&quot;headerlink&quot; title=&quot;Longest Palindromic Subsequence&quot;&gt;&lt;/a&gt;Longest Palindromic Subsequence&lt;/h3&gt;&lt;p&gt;Given a string, find a longest palindromic subsequence in it.&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Example:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String A = &amp;quot; agbdba&amp;quot;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Longest Palindromic subsequence: abdba&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;0&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;1&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;2&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;3&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;4&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;5&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;a&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;g&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;b&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;d&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;b&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;We use Bottom-Up manner, build our sub solution from small to large.&lt;/p&gt;
+&lt;p&gt;First traversal: The palindromic of each char is 1.&lt;/p&gt;
+&lt;p&gt;Second traversal: The palindromic of each two chars: &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;if these two chars are the same, the value of later one is 2 &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;if these two chars are different, the value of later one is Math.max(each char value)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Third traversal: The palindromic  of three chars:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;if the head of 3 chars and the tail of 3 chars are the same: the value of later one is 2 + value of chars removing these head and tail char&lt;/li&gt;
+&lt;li&gt;if the head of 3 chars and the tail of 3 chars are different: the value of later one is Math.max(first two chars value, second two chars value)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Forth traversal: The palindromic of 4 chars:&lt;/p&gt;
+&lt;p&gt;(Just like above…)&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;0&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;1&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;2&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;3&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;4&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;5&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;5&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;findPalindrome&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String A)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; [] chars = A.toCharArray();  &lt;span class=&quot;comment&quot;&gt;//Convery string to character array..&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; [][]LP = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[chars.length][chars.length]; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//LP[i][j] - length of palindrome from ith index to jth index&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// all the characters in the string are palindrome by itself of length 1.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//So all LP[i][i] =  1 &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt;chars.length;i++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    LP[i][i] = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;			&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; sublen = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;sublen&amp;lt;=chars.length;sublen++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt;=LP.length-sublen;i++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j = i+sublen-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(chars[i]==chars[j] &amp;amp;&amp;amp; sublen==&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        LP[i][j] = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(chars[i]==chars[j])&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        LP[i][j] = LP[i+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][j-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]+&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        LP[i][j] = Math.max(LP[i+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][j],LP[i][j-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  printMatrix(LP);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; LP[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;][LP.length-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
     
     <summary type="html">
     
       &lt;p&gt;本文来自于算法导论第十五章动态规划的学习。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，求出原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为跟小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，避免了这种不必要的计算工作。&lt;/p&gt;
+&lt;p&gt;分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，求出原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为更小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，避免了这种不必要的计算工作。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;动态规划用来求解最优化问题，一般情况下，问题有多种解，但是要求出一个最优解，也许该问题有多个最优解。&lt;br&gt;
     
