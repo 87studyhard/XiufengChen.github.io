@@ -749,7 +749,7 @@ The browser re-renders the view with the updated text.
     <link href="http://xiufengchen.github.io/2016/03/24/Dynamic-Programming/"/>
     <id>http://xiufengchen.github.io/2016/03/24/Dynamic-Programming/</id>
     <published>2016-03-24T22:45:47.000Z</published>
-    <updated>2016-09-17T02:11:13.916Z</updated>
+    <updated>2016-09-17T02:32:18.225Z</updated>
     
     <content type="html">&lt;p&gt;本文来自于算法导论第十五章动态规划的学习。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1370,7 +1370,7 @@ isMatch(&amp;quot;aab&amp;quot;, &amp;quot;c*a*b&amp;quot;) → true
 &lt;td style=&quot;text-align:center&quot;&gt;0&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;0&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;2&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;0&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;0&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;0&lt;/td&gt;
