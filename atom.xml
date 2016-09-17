@@ -1715,9 +1715,9 @@ isMatch(&amp;quot;aab&amp;quot;, &amp;quot;c*a*b&amp;quot;) → true
       <category term="Algorithm" scheme="http://xiufengchen.github.io/categories/Algorithm/"/>
     
     
-      <category term="SubString" scheme="http://xiufengchen.github.io/tags/SubString/"/>
-    
       <category term="String" scheme="http://xiufengchen.github.io/tags/String/"/>
+    
+      <category term="SubString" scheme="http://xiufengchen.github.io/tags/SubString/"/>
     
   </entry>
   
