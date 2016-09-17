@@ -15,7 +15,7 @@
 <meta property="og:description" content="本文来自于算法导论第十五章动态规划的学习。
 
 分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，求出原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为更小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，">
-<meta property="og:updated_time" content="2016-09-16T02:33:06.472Z">
+<meta property="og:updated_time" content="2016-09-16T20:59:40.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dynamic Programming">
 <meta name="twitter:description" content="本文来自于算法导论第十五章动态规划的学习。
@@ -318,6 +318,84 @@ ga('send', 'pageview');
 <li>如果x<sub>m</sub> != y<sub>n</sub>，则z<sub>k</sub> != y<sub>n</sub>且Z是X和Y<sub>n-1</sub>的一个LCS。</li>
 </ol>
 <p>我们可以很容易的看出LCS问题的重叠子问题性质。为了求X和Y的一个LCS，我们可能需要求X和Y<sub>n-1</sub>及X<sub>M-1</sub>和Y的一个LCS。但是这几个子问题都包含求解X<sub>M-1</sub>和Y<sub>n-1</sub>的LCS的子子问题。很多其他子问题也都共享子子问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Example:</div><div class="line">str1: abcdef</div><div class="line">str2: acbcf</div><div class="line">Longest common subsequence:</div><div class="line">abcf</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">b</th>
+<th style="text-align:center">c</th>
+<th style="text-align:center">d</th>
+<th style="text-align:center">e</th>
+<th style="text-align:center">f</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">c</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">b</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">c</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">f</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lcsDynamic</span><span class="params">(<span class="keyword">char</span> str1[],<span class="keyword">char</span> str2[])</span></span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">int</span> temp[][] = <span class="keyword">new</span> <span class="keyword">int</span>[str1.length + <span class="number">1</span>][str2.length + <span class="number">1</span>];</div><div class="line">  <span class="keyword">int</span> max = <span class="number">0</span>;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i &lt; temp.length; i++)&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j &lt; temp[i].length; j++)&#123;</div><div class="line">      <span class="keyword">if</span>(str1[i-<span class="number">1</span>] == str2[j-<span class="number">1</span>]) &#123;</div><div class="line">        temp[i][j] = temp[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">else</span></div><div class="line">      &#123;</div><div class="line">        temp[i][j] = Math.max(temp[i][j-<span class="number">1</span>],temp[i-<span class="number">1</span>][j]);</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span>(temp[i][j] &gt; max)&#123;</div><div class="line">        max = temp[i][j];</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> max;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Regular-Expression-Matching"><a href="#Regular-Expression-Matching" class="headerlink" title="Regular Expression Matching"></a>Regular Expression Matching</h3><p>本题来自 <a href="https://leetcode.com/problems/regular-expression-matching/" target="_blank" rel="external">leetcode Regular Expression Matching</a></p>
 <pre><code>&apos;.&apos; Matches any single character.
 &apos;*&apos; Matches zero or more of the preceding element.
@@ -335,7 +413,7 @@ isMatch(&quot;aab&quot;, &quot;c*a*b&quot;) → true
 </code></pre><p>解法来自leetcode的<a href="https://leetcode.com/discuss/8648/my-ac-dp-solution-for-this-problem-asking-for-improvements" target="_blank" rel="external">solution</a></p>
 <p>Basically, the OPT[i][j] means preceding substring of length i of s and length j of p. For any two substrings, the value of OPT[i][j] can be from one of following four cases:<br>case 1: OPT[i-1][j-1] is true, and ith character of s is equal to j th character of p. Or j th character of p is ‘.’<br>case 2: OPT[i-1][j] is true, then my pattern now is ‘<em>‘ and preceding character is equal to incoming character of s<br>case 3: OPT[i][j-1] is true, then my pattern now is ‘</em>‘ which can match an empty string<br>case 4: OPT[i][j-2] is true, and the pattern like (a*) matches an empty string<br>base case is the OPT[0][0], OPT[i][0], OPT[0][j].</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMatch</span><span class="params">(String s, String p)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> m = s.length();</div><div class="line">    <span class="keyword">int</span> n = p.length();</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (s == <span class="keyword">null</span> || p == <span class="keyword">null</span>) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">boolean</span>[][] OPT = <span class="keyword">new</span> <span class="keyword">boolean</span>[m+<span class="number">1</span>][n+<span class="number">1</span>];</div><div class="line">    OPT[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</div><div class="line">      OPT[i][<span class="number">0</span>] = <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</div><div class="line">      OPT[<span class="number">0</span>][j] = (p.charAt(j-<span class="number">1</span>) == <span class="string">'*'</span>) &amp;&amp; (j-<span class="number">2</span> &gt;= <span class="number">0</span>) &amp;&amp; OPT[<span class="number">0</span>][j-<span class="number">2</span>];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</div><div class="line">        OPT[i][j] = ((OPT[i-<span class="number">1</span>][j-<span class="number">1</span>]) &amp;&amp; equals(s, p, i-<span class="number">1</span>, j-<span class="number">1</span>))</div><div class="line">          ||  ((OPT[i-<span class="number">1</span>][j] || OPT[i][j-<span class="number">1</span>]) </div><div class="line">               &amp;&amp; (p.charAt(j-<span class="number">1</span>) == <span class="string">'*'</span>) </div><div class="line">               &amp;&amp; equals(s, p, i-<span class="number">1</span>, j-<span class="number">2</span>))</div><div class="line">          ||  ((p.charAt(j-<span class="number">1</span>) == <span class="string">'*'</span>) &amp;&amp; (j-<span class="number">2</span> &gt;= <span class="number">0</span>) &amp;&amp; OPT[i][j-<span class="number">2</span>]);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> OPT[m][n];</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(String s, String p, <span class="keyword">int</span> si, <span class="keyword">int</span> pi)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> (s.charAt(si) == p.charAt(pi) || p.charAt(pi) == <span class="string">'.'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Longest-Palindromic-Subsequence"><a href="#Longest-Palindromic-Subsequence" class="headerlink" title="Longest Palindromic Subsequence"></a>Longest Palindromic Subsequence</h3><p>Given a string, find a longest palindromic subsequence in it.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Example:</div><div class="line">String A = &quot; agbdba&quot;;</div><div class="line">Longest Palindromic subsequence: abdba</div></pre></td></tr></table></figure></p>
+<h3 id="Longest-Palindromic-Subsequence"><a href="#Longest-Palindromic-Subsequence" class="headerlink" title="Longest Palindromic Subsequence"></a>Longest Palindromic Subsequence</h3><p>Question: Given a string, find a longest palindromic subsequence in it.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Example:</div><div class="line">String A = &quot; agbdba&quot;;</div><div class="line">Longest Palindromic subsequence: abdba</div></pre></td></tr></table></figure></p>
 <table>
 <thead>
 <tr>
@@ -444,13 +522,257 @@ isMatch(&quot;aab&quot;, &quot;c*a*b&quot;) → true
 </tbody>
 </table>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findPalindrome</span><span class="params">(String A)</span></span>&#123;</div><div class="line">  <span class="keyword">char</span> [] chars = A.toCharArray();  <span class="comment">//Convery string to character array..</span></div><div class="line">  <span class="keyword">int</span> [][]LP = <span class="keyword">new</span> <span class="keyword">int</span>[chars.length][chars.length]; </div><div class="line">  <span class="comment">//LP[i][j] - length of palindrome from ith index to jth index</span></div><div class="line">  <span class="comment">// all the characters in the string are palindrome by itself of length 1.</span></div><div class="line">  <span class="comment">//So all LP[i][i] =  1 </span></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;chars.length;i++)&#123;</div><div class="line">    LP[i][i] = <span class="number">1</span>;			</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> sublen = <span class="number">2</span>;sublen&lt;=chars.length;sublen++)&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=LP.length-sublen;i++)&#123;</div><div class="line">      <span class="keyword">int</span> j = i+sublen-<span class="number">1</span>;</div><div class="line">      <span class="keyword">if</span>(chars[i]==chars[j] &amp;&amp; sublen==<span class="number">2</span>)&#123;</div><div class="line">        LP[i][j] = <span class="number">2</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">else</span> <span class="keyword">if</span>(chars[i]==chars[j])&#123;</div><div class="line">        LP[i][j] = LP[i+<span class="number">1</span>][j-<span class="number">1</span>]+<span class="number">2</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">else</span>&#123;</div><div class="line">        LP[i][j] = Math.max(LP[i+<span class="number">1</span>][j],LP[i][j-<span class="number">1</span>]);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  printMatrix(LP);</div><div class="line">  <span class="keyword">return</span> LP[<span class="number">0</span>][LP.length-<span class="number">1</span>];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Longest-Increasing-Subsequence"><a href="#Longest-Increasing-Subsequence" class="headerlink" title="Longest Increasing Subsequence"></a>Longest Increasing Subsequence</h3><p>Question: Find a subsequence in given array in which the subsequence’s elements are in sorted order, lowest to highest, and in which the subsequence is as long as possible<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Example: </div><div class="line">3,4,-1,0,6,2,3</div><div class="line">LIS:</div><div class="line">-1,0,2,3</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">j</th>
+<th style="text-align:center">i</th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+</tr>
+</tbody>
+</table>
+<p>We also use Bottom Up manner, </p>
+<p>First, each item has value 1 as increasing base. </p>
+<p>Second, set up i as index of 1 and J as index of 0, compare nums[i] and nums[j]:</p>
+<ol>
+<li>If nums[i]&gt;nums[j], T[i] = Math.max(T[i], T[j] + 1), i move forward, j goes back to 0</li>
+<li>If nums[i]&lt;nums[j],  i move forward, j stay 0</li>
+</ol>
+<p>Third,  compare nums[i] and nums[j]:</p>
+<ol>
+<li>If nums[i]&gt;nums[j], T[i] = Math.max(T[i], T[j] + 1), i move forward, j goes back to 0</li>
+<li>If nums[i]&lt;nums[j],  i stay, j move forward, j != i, compare nums[j] and nums[i], use formula</li>
+</ol>
+<p>Forth, compare (just like above …)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> T[] = <span class="keyword">new</span> <span class="keyword">int</span>[arr.length];</div><div class="line"><span class="keyword">int</span> actualSolution[] = <span class="keyword">new</span> <span class="keyword">int</span>[arr.length];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">  T[i] = <span class="number">1</span>;</div><div class="line">  actualSolution[i] = i;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i &lt; arr.length; i++)&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j &lt; i; j++)&#123;</div><div class="line">    <span class="keyword">if</span>(arr[i] &gt; arr[j])&#123;</div><div class="line">      <span class="keyword">if</span>(T[j] + <span class="number">1</span> &gt; T[i])&#123;</div><div class="line">        T[i] = T[j] + <span class="number">1</span>;</div><div class="line">        <span class="comment">//set the actualSolution to point to guy before me</span></div><div class="line">        actualSolution[i] = j;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Edit-Distance"><a href="#Edit-Distance" class="headerlink" title="Edit Distance"></a>Edit Distance</h3><p>Given two strings, s1 and s2 and edit oper­a­tions (given below). Write an algo­rithm to find min­i­mum num­ber oper­a­tions required to con­vert string s1 into s2.</p>
+<p>Allowed Oper­a­tions:</p>
+<ul>
+<li>Inser­tion — Insert a new character.</li>
+<li>Dele­tion — Delete a character.</li>
+<li>Replace — Replace one char­ac­ter by another.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">String s1 = &quot;horizon&quot;</div><div class="line">String  s2 = &quot;horzon&quot;</div><div class="line">Output: 1  &#123;remove &apos;i&apos; from string s1&#125;</div><div class="line"></div><div class="line">String s1 = &quot;horizon&quot;</div><div class="line">String  s2 = &quot;horizontal&quot;</div><div class="line">Output: 3  &#123;insert &apos;t&apos;, &apos;a&apos;, &apos;l&apos; characters in string s1&#125;</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">“”</th>
+<th style="text-align:center">h</th>
+<th style="text-align:center">o</th>
+<th style="text-align:center">r</th>
+<th style="text-align:center">i</th>
+<th style="text-align:center">z</th>
+<th style="text-align:center">o</th>
+<th style="text-align:center">n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">“”</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:center">h</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:center">o</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">r</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">z</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">o</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">n</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">editDistanceDP</span><span class="params">(String s1, String s2)</span> </span>&#123;</div><div class="line">  <span class="keyword">int</span> [][] solution = <span class="keyword">new</span> <span class="keyword">int</span>[s1.length()+<span class="number">1</span>][s2.length()+<span class="number">1</span>];</div><div class="line"></div><div class="line">  <span class="comment">//base case</span></div><div class="line">  <span class="comment">//If any of the string if empty then number of operations</span></div><div class="line">  <span class="comment">//needed would be equal to the length of other string</span></div><div class="line">  <span class="comment">//(Either all characters will be removed or inserted)</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;=s2.length(); i++) &#123;<span class="comment">//all elements will be inserted</span></div><div class="line">    solution[<span class="number">0</span>][i] =i;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;=s1.length(); i++) &#123;<span class="comment">//all elements will be removed</span></div><div class="line">    solution[i][<span class="number">0</span>] =i;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">//solving it bottom-up manner</span></div><div class="line">  <span class="keyword">int</span> m = s1.length();</div><div class="line">  <span class="keyword">int</span> n = s2.length();</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;=m ; i++) &#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;=n ; j++) &#123;</div><div class="line">      <span class="comment">//If last characters are matching, ignore the last character</span></div><div class="line">      <span class="comment">// then the solution will be same as without the last character.</span></div><div class="line">      <span class="keyword">if</span>(s1.charAt(i-<span class="number">1</span>)==s2.charAt(j-<span class="number">1</span>))</div><div class="line">        solution[i][j] = solution[i-<span class="number">1</span>][j-<span class="number">1</span>];</div><div class="line">      <span class="keyword">else</span></div><div class="line">        solution[i][j] = <span class="number">1</span> +    Math.min(solution[i][j-<span class="number">1</span>], <span class="comment">//Insert</span></div><div class="line">                                         Math.min(solution[i-<span class="number">1</span>][j], <span class="comment">// Remove</span></div><div class="line">                                                  solution[i-<span class="number">1</span>][j-<span class="number">1</span>])); <span class="comment">//Replace</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> solution[s1.length()][s2.length()];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Longest-Common-Substring"><a href="#Longest-Common-Substring" class="headerlink" title="Longest Common Substring"></a>Longest Common Substring</h3><p>Given two string sequences write an algo­rithm to find, find the length of longest sub­string present in both of them.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Example:</div><div class="line">String A = &quot;apple&quot;;</div><div class="line"></div><div class="line">String B = &quot;bapplena&quot;;</div><div class="line"></div><div class="line">Output: Length of Longest Common Substring: 5 (&quot;apple&quot;).</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center">b</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">p</th>
+<th style="text-align:center">p</th>
+<th style="text-align:center">l</th>
+<th style="text-align:center">e</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">p</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">p</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">l</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">e</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">5</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">char</span> [] A, <span class="keyword">char</span> [] B)</span></span>&#123;</div><div class="line">  <span class="keyword">int</span> [][]LCS = <span class="keyword">new</span> <span class="keyword">int</span> [A.length+<span class="number">1</span>][B.length+<span class="number">1</span>];</div><div class="line">  <span class="comment">// if A is null then LCS of A, B =0</span></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=B.length;i++)&#123;</div><div class="line">    LCS[<span class="number">0</span>][i]=<span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// if B is null then LCS of A, B =0</span></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=A.length;i++)&#123; </div><div class="line">    LCS[i][<span class="number">0</span>]=<span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">//fill the rest of the matrix</span></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=A.length;i++)&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=B.length;j++)&#123;</div><div class="line">      <span class="keyword">if</span>(A[i]==B[j])&#123;</div><div class="line">        LCS[i][j] =  LCS[i-<span class="number">1</span>][j-<span class="number">1</span>] +<span class="number">1</span>;</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        LCS[i][j] = Math.max(LCS[i-<span class="number">1</span>][j],LCS[i][j-<span class="number">1</span>]);					</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;	</div><div class="line">  <span class="keyword">return</span> LCS[A.length][B.length];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
     
       <div class="article-toc">
         <h3>Contents</h3>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#钢条切割问题"><span class="toc-number">1.</span> <span class="toc-text">钢条切割问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最长公共子序列"><span class="toc-number">2.</span> <span class="toc-text">最长公共子序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Regular-Expression-Matching"><span class="toc-number">3.</span> <span class="toc-text">Regular Expression Matching</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Longest-Palindromic-Subsequence"><span class="toc-number">4.</span> <span class="toc-text">Longest Palindromic Subsequence</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#钢条切割问题"><span class="toc-number">1.</span> <span class="toc-text">钢条切割问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最长公共子序列"><span class="toc-number">2.</span> <span class="toc-text">最长公共子序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Regular-Expression-Matching"><span class="toc-number">3.</span> <span class="toc-text">Regular Expression Matching</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Longest-Palindromic-Subsequence"><span class="toc-number">4.</span> <span class="toc-text">Longest Palindromic Subsequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Longest-Increasing-Subsequence"><span class="toc-number">5.</span> <span class="toc-text">Longest Increasing Subsequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Edit-Distance"><span class="toc-number">6.</span> <span class="toc-text">Edit Distance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Longest-Common-Substring"><span class="toc-number">7.</span> <span class="toc-text">Longest Common Substring</span></a></li></ol>
       </div>
     
     
