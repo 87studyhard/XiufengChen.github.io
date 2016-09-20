@@ -15,7 +15,7 @@
 <meta property="og:description" content="本文来自于算法导论第十五章动态规划的学习。
 
 分治法和动态规划法的区别是，分治法在于将问题划分为互不相交的子问题，递归地求解子问题，再将它们组合起来，求出原问题的解。与之相反，动态规划应用于子问题重叠的情况，即不同的子问题具有公共的子子问题（子问题的求解是递归进行的，将其划分为更小的子子问题）。动态规划算法对每个子子问题只求解一次，将其解保存在一个表格中，从而无需每次求解一个子子问题是都重新计算，">
-<meta property="og:updated_time" content="2016-09-17T02:32:18.225Z">
+<meta property="og:updated_time" content="2016-09-18T00:52:05.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dynamic Programming">
 <meta name="twitter:description" content="本文来自于算法导论第十五章动态规划的学习。
@@ -766,13 +766,72 @@ isMatch(&quot;aab&quot;, &quot;c*a*b&quot;) → true
 </tbody>
 </table>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">char</span> [] A, <span class="keyword">char</span> [] B)</span></span>&#123;</div><div class="line">  <span class="keyword">int</span> [][]LCS = <span class="keyword">new</span> <span class="keyword">int</span> [A.length+<span class="number">1</span>][B.length+<span class="number">1</span>];</div><div class="line">  <span class="comment">// if A is null then LCS of A, B =0</span></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=B.length;i++)&#123;</div><div class="line">    LCS[<span class="number">0</span>][i]=<span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// if B is null then LCS of A, B =0</span></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=A.length;i++)&#123; </div><div class="line">    LCS[i][<span class="number">0</span>]=<span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">//fill the rest of the matrix</span></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=A.length;i++)&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=B.length;j++)&#123;</div><div class="line">      <span class="keyword">if</span>(A[i-<span class="number">1</span>]==B[j-<span class="number">1</span>])&#123;</div><div class="line">        LCS[i][j] =  LCS[i-<span class="number">1</span>][j-<span class="number">1</span>] +<span class="number">1</span>;</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        LCS[i][j] = <span class="number">0</span>;					</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;	</div><div class="line">  <span class="keyword">int</span> result = -<span class="number">1</span>;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=A.length;i++)&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=B.length;j++)&#123;</div><div class="line">      <span class="keyword">if</span>(result&lt;LCS[i][j])&#123;</div><div class="line">        result = LCS[i][j];</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;	</div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Distinct-Subsequence"><a href="#Distinct-Subsequence" class="headerlink" title="Distinct Subsequence"></a>Distinct Subsequence</h3><p>Given a string <strong>S</strong> and a string <strong>T</strong>, count the number of distinct subsequences of <strong>T</strong> in <strong>S</strong>.</p>
+<p>A subsequence of a string is a new string which is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, <code>&quot;ACE&quot;</code> is a subsequence of <code>&quot;ABCDE&quot;</code> while <code>&quot;AEC&quot;</code> is not).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">“”</th>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">D</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">E</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">“”</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">C</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">E</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numDistinct</span><span class="params">(String S, String T)</span> </span>&#123;</div><div class="line">  <span class="comment">// array creation</span></div><div class="line">  <span class="keyword">int</span>[][] mem = <span class="keyword">new</span> <span class="keyword">int</span>[T.length()+<span class="number">1</span>][S.length()+<span class="number">1</span>];</div><div class="line"></div><div class="line">  <span class="comment">// filling the first row: with 1s</span></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;=S.length(); j++) &#123;</div><div class="line">    mem[<span class="number">0</span>][j] = <span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// the first column is 0 by default in every other rows but the first, which we need.</span></div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;T.length(); i++) &#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;S.length(); j++) &#123;</div><div class="line">      <span class="keyword">if</span>(T.charAt(i) == S.charAt(j)) &#123;</div><div class="line">        mem[i+<span class="number">1</span>][j+<span class="number">1</span>] = mem[i][j] + mem[i+<span class="number">1</span>][j];</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        mem[i+<span class="number">1</span>][j+<span class="number">1</span>] = mem[i+<span class="number">1</span>][j];</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> mem[T.length()][S.length()];</div></pre></td></tr></table></figure>
 
       
     </div>
     
       <div class="article-toc">
         <h3>Contents</h3>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#钢条切割问题"><span class="toc-number">1.</span> <span class="toc-text">钢条切割问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最长公共子序列"><span class="toc-number">2.</span> <span class="toc-text">最长公共子序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Regular-Expression-Matching"><span class="toc-number">3.</span> <span class="toc-text">Regular Expression Matching</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Longest-Palindromic-Subsequence"><span class="toc-number">4.</span> <span class="toc-text">Longest Palindromic Subsequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Longest-Increasing-Subsequence"><span class="toc-number">5.</span> <span class="toc-text">Longest Increasing Subsequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Edit-Distance"><span class="toc-number">6.</span> <span class="toc-text">Edit Distance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Longest-Common-Substring"><span class="toc-number">7.</span> <span class="toc-text">Longest Common Substring</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#钢条切割问题"><span class="toc-number">1.</span> <span class="toc-text">钢条切割问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最长公共子序列"><span class="toc-number">2.</span> <span class="toc-text">最长公共子序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Regular-Expression-Matching"><span class="toc-number">3.</span> <span class="toc-text">Regular Expression Matching</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Longest-Palindromic-Subsequence"><span class="toc-number">4.</span> <span class="toc-text">Longest Palindromic Subsequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Longest-Increasing-Subsequence"><span class="toc-number">5.</span> <span class="toc-text">Longest Increasing Subsequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Edit-Distance"><span class="toc-number">6.</span> <span class="toc-text">Edit Distance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Longest-Common-Substring"><span class="toc-number">7.</span> <span class="toc-text">Longest Common Substring</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Distinct-Subsequence"><span class="toc-number">8.</span> <span class="toc-text">Distinct Subsequence</span></a></li></ol>
       </div>
     
     
