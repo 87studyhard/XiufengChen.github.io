@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xiufengchen.github.io/2016/11/16/Continuous-Pass-Style/</loc>
+    
+    <lastmod>2016-11-17T05:26:00.750Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xiufengchen.github.io/2016/11/15/How-to-use-closure-in-jQuery-plugin/</loc>
+    
+    <lastmod>2016-11-16T06:07:51.357Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://xiufengchen.github.io/2016/04/26/Prototype-in-JavaScript/</loc>
     
     <lastmod>2016-11-09T15:21:39.583Z</lastmod>
@@ -114,14 +128,14 @@
   </url>
   
   <url>
-    <loc>http://xiufengchen.github.io/about/index.html</loc>
+    <loc>http://xiufengchen.github.io/tags/index.html</loc>
     
     <lastmod>2016-09-06T14:23:09.130Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://xiufengchen.github.io/tags/index.html</loc>
+    <loc>http://xiufengchen.github.io/about/index.html</loc>
     
     <lastmod>2016-09-06T14:23:09.130Z</lastmod>
     
