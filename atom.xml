@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiufengchen.github.io/"/>
-  <updated>2016-11-17T05:26:00.750Z</updated>
+  <updated>2016-11-18T02:56:35.983Z</updated>
   <id>http://xiufengchen.github.io/</id>
   
   <author>
@@ -20,10 +20,11 @@
     <link href="http://xiufengchen.github.io/2016/11/16/Continuous-Pass-Style/"/>
     <id>http://xiufengchen.github.io/2016/11/16/Continuous-Pass-Style/</id>
     <published>2016-11-16T19:25:26.000Z</published>
-    <updated>2016-11-17T05:26:00.750Z</updated>
+    <updated>2016-11-18T02:56:35.983Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Naive-Recursive&quot;&gt;&lt;a href=&quot;#Naive-Recursive&quot; class=&quot;headerlink&quot; title=&quot;Naive Recursive&quot;&gt;&lt;/a&gt;Naive Recursive&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;factorial&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;remaining&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;( remaining === &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; ) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; remaining * factorial(remaining&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;函数调用会在内存形成一个call frame，由stack保存call frame，上面的递归函数执行一次保存一次调用的call frame，因此如果求一个大数的阶乘，很可能造成stack overflow error。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h3 id=&quot;Tail-Call-Optimized-Recursive&quot;&gt;&lt;a href=&quot;#Tail-Call-Optimized-Recursive&quot; class=&quot;headerlink&quot; title=&quot;Tail Call Optimized Recursive&quot;&gt;&lt;/a&gt;Tail Call Optimized Recursive&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;factorial&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;remaining, accumulator&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (remaining === &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; accumulator;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; factorial(remaining - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, remaining * accumulator); &lt;span class=&quot;comment&quot;&gt;// &amp;lt;-- tail call&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;尾调用优化由于调用函数是函数的最后一步操作，所以不需要保留外层函数的调用记录，因此可以被优化。&lt;/p&gt;
 &lt;p&gt;尾调用优化真正在JavaScript上支持是在 ES6 以后。&lt;/p&gt;
@@ -56,7 +57,8 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Naive-Recursive&quot;&gt;&lt;a href=&quot;#Naive-Recursive&quot; class=&quot;headerlink&quot; title=&quot;Naive Recursive&quot;&gt;&lt;/a&gt;Naive Recursive&lt;/h3&gt;&lt;figure class=&quot;highli
+      &lt;h3 id=&quot;Naive-Recursive&quot;&gt;&lt;a href=&quot;#Naive-Recursive&quot; class=&quot;headerlink&quot; title=&quot;Naive Recursive&quot;&gt;&lt;/a&gt;Naive Recursive&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;factorial&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;remaining&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;( remaining === &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; ) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; remaining * factorial(remaining&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;函数调用会在内存形成一个call frame，由stack保存call frame，上面的递归函数执行一次保存一次调用的call frame，因此如果求一个大数的阶乘，很可能造成stack overflow error。&lt;/p&gt;
     
     </summary>
     
@@ -70,12 +72,13 @@
     <link href="http://xiufengchen.github.io/2016/11/15/How-to-use-closure-in-jQuery-plugin/"/>
     <id>http://xiufengchen.github.io/2016/11/15/How-to-use-closure-in-jQuery-plugin/</id>
     <published>2016-11-15T23:34:03.000Z</published>
-    <updated>2016-11-16T06:07:51.357Z</updated>
+    <updated>2016-11-18T02:56:58.900Z</updated>
     
     <content type="html">&lt;h3 id=&quot;创建jQuery插件的前期准备&quot;&gt;&lt;a href=&quot;#创建jQuery插件的前期准备&quot; class=&quot;headerlink&quot; title=&quot;创建jQuery插件的前期准备&quot;&gt;&lt;/a&gt;创建jQuery插件的前期准备&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;jQuery.fn = jQuery.prototype = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;　 init: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt; selector, context &lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     &lt;span class=&quot;comment&quot;&gt;//....　&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;jQuery.fn = jQuery.prototype  也即 $.fn = jQuery.prototype&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;jQuery便是一个封装得非常好的类，比如我们用 语句　$(“#btn1”) 会生成一个 jQuery类的实例。&lt;/p&gt;
 &lt;p&gt;jQuery.fn.extend(object); 对jQuery.prototype进得扩展，就是为jQuery类添加“成员函数”。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h3 id=&quot;each-和-selector-each-的区别：&quot;&gt;&lt;a href=&quot;#each-和-selector-each-的区别：&quot; class=&quot;headerlink&quot; title=&quot;\$.each()和\$(selector).each()的区别：&quot;&gt;&lt;/a&gt;\$.each()和\$(selector).each()的区别：&lt;/h3&gt;&lt;p&gt;\$.each()函数和\$(selector).each()是不一样的，\$(selector).each()是专门用来遍历一个jQuery对象。&lt;code&gt;$.each()&lt;/code&gt;函数可用于迭代任何集合，无论是“名/值”对象（JavaScript对象）或数组。在迭代数组的情况下，回调函数每次传递一个数组索引和相应的数组值作为参数。&lt;/p&gt;
 &lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$.each([&lt;span class=&quot;number&quot;&gt;52&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;97&lt;/span&gt;], &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;index, value&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  alert(index + &lt;span class=&quot;string&quot;&gt;&#39;: &#39;&lt;/span&gt; + value);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;\$(selector).each() 方法用来让DOM循环结构更简单更不易出错。它会迭代jQuery对象中的每一个DOM元素。每次回调函数执行时，会传递当前循环次数作为参数(从0开始计数)。更重要的是，回调函数是在当前DOM元素为上下文的语境中触发的。因此关键字 &lt;code&gt;this&lt;/code&gt; 总是指向这个元素(&lt;strong&gt;DOM元素&lt;/strong&gt;)。&lt;/p&gt;
@@ -111,7 +114,10 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;创建jQuery插件的前期准备&quot;&gt;&lt;a href=&quot;#创建jQuery插件的前期准备&quot; class=&quot;headerlink&quot; title=&quot;创建jQuery插件的前期准备&quot;&gt;&lt;/a&gt;创建jQuery插件的前期准备&lt;/h3&gt;&lt;figure class=&quot;highli
+      &lt;h3 id=&quot;创建jQuery插件的前期准备&quot;&gt;&lt;a href=&quot;#创建jQuery插件的前期准备&quot; class=&quot;headerlink&quot; title=&quot;创建jQuery插件的前期准备&quot;&gt;&lt;/a&gt;创建jQuery插件的前期准备&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;jQuery.fn = jQuery.prototype = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;　 init: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt; selector, context &lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     &lt;span class=&quot;comment&quot;&gt;//....　&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;jQuery.fn = jQuery.prototype  也即 $.fn = jQuery.prototype&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;jQuery便是一个封装得非常好的类，比如我们用 语句　$(“#btn1”) 会生成一个 jQuery类的实例。&lt;/p&gt;
+&lt;p&gt;jQuery.fn.extend(object); 对jQuery.prototype进得扩展，就是为jQuery类添加“成员函数”。&lt;/p&gt;
     
     </summary>
     
@@ -1882,9 +1888,9 @@ isMatch(&amp;quot;aab&amp;quot;, &amp;quot;c*a*b&amp;quot;) → true
       <category term="Algorithm" scheme="http://xiufengchen.github.io/categories/Algorithm/"/>
     
     
-      <category term="String" scheme="http://xiufengchen.github.io/tags/String/"/>
-    
       <category term="SubString" scheme="http://xiufengchen.github.io/tags/SubString/"/>
+    
+      <category term="String" scheme="http://xiufengchen.github.io/tags/String/"/>
     
   </entry>
   

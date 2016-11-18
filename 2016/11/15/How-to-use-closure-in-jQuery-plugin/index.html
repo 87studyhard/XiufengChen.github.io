@@ -15,7 +15,7 @@ jQuery便是一个封">
 <meta property="og:description" content="创建jQuery插件的前期准备12345jQuery.fn = jQuery.prototype = &amp;#123;　 init: function( selector, context ) &amp;#123;     //....　   &amp;#125;;&amp;#125;;
 1jQuery.fn = jQuery.prototype  也即 $.fn = jQuery.prototype
 jQuery便是一个封">
-<meta property="og:updated_time" content="2016-11-16T06:07:51.357Z">
+<meta property="og:updated_time" content="2016-11-18T02:56:58.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to use closure in jQuery plugin">
 <meta name="twitter:description" content="创建jQuery插件的前期准备12345jQuery.fn = jQuery.prototype = &amp;#123;　 init: function( selector, context ) &amp;#123;     //....　   &amp;#125;;&amp;#125;;
@@ -102,6 +102,7 @@ ga('send', 'pageview');
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jQuery.fn = jQuery.prototype  也即 $.fn = jQuery.prototype</div></pre></td></tr></table></figure>
 <p>jQuery便是一个封装得非常好的类，比如我们用 语句　$(“#btn1”) 会生成一个 jQuery类的实例。</p>
 <p>jQuery.fn.extend(object); 对jQuery.prototype进得扩展，就是为jQuery类添加“成员函数”。</p>
+<a id="more"></a>
 <h3 id="each-和-selector-each-的区别："><a href="#each-和-selector-each-的区别：" class="headerlink" title="\$.each()和\$(selector).each()的区别："></a>\$.each()和\$(selector).each()的区别：</h3><p>\$.each()函数和\$(selector).each()是不一样的，\$(selector).each()是专门用来遍历一个jQuery对象。<code>$.each()</code>函数可用于迭代任何集合，无论是“名/值”对象（JavaScript对象）或数组。在迭代数组的情况下，回调函数每次传递一个数组索引和相应的数组值作为参数。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$.each([<span class="number">52</span>, <span class="number">97</span>], <span class="function"><span class="keyword">function</span>(<span class="params">index, value</span>) </span>&#123;</div><div class="line">  alert(index + <span class="string">': '</span> + value);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>\$(selector).each() 方法用来让DOM循环结构更简单更不易出错。它会迭代jQuery对象中的每一个DOM元素。每次回调函数执行时，会传递当前循环次数作为参数(从0开始计数)。更重要的是，回调函数是在当前DOM元素为上下文的语境中触发的。因此关键字 <code>this</code> 总是指向这个元素(<strong>DOM元素</strong>)。</p>

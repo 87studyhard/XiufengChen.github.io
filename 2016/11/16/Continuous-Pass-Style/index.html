@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Xiufeng">
 <meta property="og:description" content="Naive Recursive1234function factorial(remaining) &amp;#123;  if( remaining === 0 ) return 1;  return remaining * factorial(remaining-1);&amp;#125;
 函数调用会在内存形成一个call frame，由stack保存call frame，上面的递归函数执行一次保存一次调用的c">
-<meta property="og:updated_time" content="2016-11-17T05:26:00.750Z">
+<meta property="og:updated_time" content="2016-11-18T02:56:35.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Continuous Pass Style">
 <meta name="twitter:description" content="Naive Recursive1234function factorial(remaining) &amp;#123;  if( remaining === 0 ) return 1;  return remaining * factorial(remaining-1);&amp;#125;
@@ -97,6 +97,7 @@ ga('send', 'pageview');
       
         <h3 id="Naive-Recursive"><a href="#Naive-Recursive" class="headerlink" title="Naive Recursive"></a>Naive Recursive</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">remaining</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>( remaining === <span class="number">0</span> ) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">  <span class="keyword">return</span> remaining * factorial(remaining<span class="number">-1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>函数调用会在内存形成一个call frame，由stack保存call frame，上面的递归函数执行一次保存一次调用的call frame，因此如果求一个大数的阶乘，很可能造成stack overflow error。</p>
+<a id="more"></a>
 <h3 id="Tail-Call-Optimized-Recursive"><a href="#Tail-Call-Optimized-Recursive" class="headerlink" title="Tail Call Optimized Recursive"></a>Tail Call Optimized Recursive</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">remaining, accumulator</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span> (remaining === <span class="number">0</span>) <span class="keyword">return</span> accumulator;</div><div class="line">  <span class="keyword">return</span> factorial(remaining - <span class="number">1</span>, remaining * accumulator); <span class="comment">// &lt;-- tail call</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>尾调用优化由于调用函数是函数的最后一步操作，所以不需要保留外层函数的调用记录，因此可以被优化。</p>
 <p>尾调用优化真正在JavaScript上支持是在 ES6 以后。</p>
