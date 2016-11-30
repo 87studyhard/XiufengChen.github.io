@@ -66,118 +66,6 @@ ga('send', 'pageview');
   </div>
 </header>
     <section id="main" class="outer">
-      <article id="post-Prototype-in-JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/26/Prototype-in-JavaScript/">Prototype in JavaScript</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/04/26/Prototype-in-JavaScript/" class="article-date">
-  <time datetime="2016-04-26T19:41:05.000Z" itemprop="datePublished">2016-04-26</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Front-End/">Front End</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h3><h4 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h4><p>我们创建的每个函数都有一个prototype（原型）属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以有特定类型的<strong>所有实例共享的属性和方法</strong>。意思是，不管创建实例1还是实例2，他们访问的都是同一组属性和方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Person.prototype.name = <span class="string">"Tom"</span>;</div><div class="line"><span class="built_in">console</span>.log(Person.name);            <span class="comment">//Person </span></div><div class="line"><span class="comment">//这个例子不好，通过function创建的Function对象含有一系列默认属性</span></div><div class="line"><span class="comment">//[ 'length', 'name', 'arguments', 'caller', 'prototype' ]其中含有name属性</span></div><div class="line">Person.prototype.na = <span class="string">"sad"</span>;</div><div class="line"><span class="built_in">console</span>.log(Person.na);              <span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> Person().na);        <span class="comment">//Tom</span></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div><div class="line"><span class="built_in">console</span>.log(p.name);                 <span class="comment">//Tom</span></div></pre></td></tr></table></figure></p>
-<p>无论什么时候，只要创建了一个新函数，就会根据一组特定的规则为该函数创建一个<strong>prototype属性</strong>，这个属性指向函数的<strong>原型对象</strong>。而原型对象包含一个<strong>constructor属性</strong>，指向原函数。<br>当调用构造函数创建一个<strong>新实例</strong>后，该实例的内部将包含一个指针<strong>[[Prototype]]</strong>（内部属性），<strong>指向构造函数的原型对象</strong>。Runtime可以使用这个内部属性构成的prototype-chain查找属性。一般情况下我们无法使用[[Prototype]]，但是有的JS runtime提供 __proto（后两个下划线省略）属性得到构造函数的原型，例如chrome。</p>
-<p>所以，我们可以把构造函数看做类，原型的属性看做共享的变量，每个实例的方法实现方式相同，就把它加在prototype上。对象的字段是属于各个实例的，则在构造方法中添加。<br>
-        
-          <p class="article-more-link">
-            <a href="/2016/04/26/Prototype-in-JavaScript/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    
-    
-      <footer class="article-footer">
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/prototype/">prototype</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
-      <article id="post-K-sum-in-Leetcode" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/22/K-sum-in-Leetcode/">K Sum in Leetcode</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/04/22/K-sum-in-Leetcode/" class="article-date">
-  <time datetime="2016-04-22T14:23:14.000Z" itemprop="datePublished">2016-04-22</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
-  </div>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="2-Sum"><a href="#2-Sum" class="headerlink" title="2 Sum"></a>2 Sum</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</div><div class="line">		<span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</div><div class="line">		Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</div><div class="line">			<span class="keyword">if</span> (map.containsKey(target - nums[i])) &#123;</div><div class="line">				result[<span class="number">1</span>] = i + <span class="number">1</span>;</div><div class="line">				result[<span class="number">0</span>] = map.get(target - nums[i]);</div><div class="line">				<span class="keyword">return</span> result;</div><div class="line">			&#125;</div><div class="line">			map.put(nums[i], i + <span class="number">1</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2016/04/22/K-sum-in-Leetcode/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    
-    
-      <footer class="article-footer">
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/K-Sum/">K Sum</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-    
       <article id="post-Learning-Angularjs-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -638,6 +526,116 @@ ga('send', 'pageview');
       <footer class="article-footer">
         
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SubString/">SubString</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-jQuery-Questions" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/04/jQuery-Questions/">jQuery Questions</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/04/jQuery-Questions/" class="article-date">
+  <time datetime="2016-03-04T15:24:48.000Z" itemprop="datePublished">2016-03-04</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Interview/">Interview</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文参考<a href="https://www.webcodegeeks.com/javascript/jquery/jquery-interview-questions-answers-programmers/">Top 20 jQuery Interview Questions and Answers for JavaScript Programmers</a>和其他网络资源总结而成。</p>
+<h3 id="1-document-ready-是个什么函数？为什么要用它？"><a href="#1-document-ready-是个什么函数？为什么要用它？" class="headerlink" title="1. $(document).ready() 是个什么函数？为什么要用它？"></a>1. $(document).ready() 是个什么函数？为什么要用它？</h3><p>这个问题很重要，并且常常被问到。 ready() 函数用于在文档进入ready状态时执行代码。当DOM 完全加载（例如HTML被完全解析DOM树构建完成时），jQuery允许你执行代码。使用$(document).ready()的最大好处在于它适用于所有浏览器，jQuery帮你解决了跨浏览器的难题。需要进一步了解的用户可以点击 answer链接查看详细讨论。</p>
+<h3 id="2-JavaScript-window-onload-事件和-jQuery-ready-函数有何不同？"><a href="#2-JavaScript-window-onload-事件和-jQuery-ready-函数有何不同？" class="headerlink" title="2. JavaScript window.onload 事件和 jQuery ready 函数有何不同？"></a>2. JavaScript window.onload 事件和 jQuery ready 函数有何不同？</h3><p>这个问答是紧接着上一个的。JavaScript window.onload 事件和 jQuery ready 函数之间的主要区别是，前者除了要等待 DOM 被创建还要等到包括大型图片、音频、视频在内的所有外部资源都完全加载。如果加载图片和媒体内容花费了大量时间，用户就会感受到定义在 window.onload 事件上的代码在执行时有明显的延迟。<br>另一方面，jQuery ready() 函数只需对 DOM 树的等待，而无需对图像或外部资源加载的等待，从而执行起来更快。使用 jQuery $(document).ready() 的另一个优势是你可以在网页里多次使用它，浏览器会按它们在 HTML 页面里出现的顺序执行它们，相反对于 onload 技术而言，只能在单一函数里使用。鉴于这个好处，用 jQuery ready() 函数比用 JavaScript window.onload 事件要更好些。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/03/04/jQuery-Questions/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+    
+      <article id="post-Some-Common-Design-Patterns" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/03/Some-Common-Design-Patterns/">Some Common Design Patterns</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/03/Some-Common-Design-Patterns/" class="article-date">
+  <time datetime="2016-03-03T18:09:25.000Z" itemprop="datePublished">2016-03-03</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Design-Pattern/">Design Pattern</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本篇文章总结几个常用的Design Patterns, 以便理解一些基于这些模式的Java，JavaScript设计框架和事件机制。在介绍设计模式之前首先要介绍一个软件开发中常用到的原则。</p>
+<h2 id="开闭原则"><a href="#开闭原则" class="headerlink" title="开闭原则"></a>开闭原则</h2><p>[在面向对象编程领域中，开闭原则规定“软件中的对象（类，模块，函数等等）应该对于扩展是开放的，但是对于修改是封闭的”，这意味着一个实体是允许在不改变它的源代码的前提下变更它的行为。该特性在产品化的环境中是特别有价值的，在这种环境中，改变源代码需要代码审查，单元测试以及诸如此类的用以确保产品使用质量的过程。遵循这种原则的代码在扩展时并不发生改变，因此无需上述的过程。][<a href="https://zh.wikipedia.org/wiki/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99</a>]</p>
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><p>本段文章来源于网络。<br><a href="http://blog.csdn.net/jason0539/article/details/23020989" target="_blank" rel="external">JAVA设计模式之工厂模式(简单工厂模式+工厂方法模式)</a></p>
+<h2 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h2>
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Factory/">Factory</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Observer/">Observer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Singleton/">Singleton</a></li></ul>
 
       </footer>
     
